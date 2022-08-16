@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Registro de clientes
+    </title>
+</head>
+<body>
+    <h1>
+        Registro de clientes
+    </h1>
+    <form action="#">   <!-- Datos necesarios para registrar al cliente-->
+        <fieldset>
+            <legend>
+                Datos de la persona
+            </legend>
+
+            <label for="apellido">
+                Apellido
+            </label>
+            <input type="text" name="apellido" id="apellido" size="10" maxlength="250" required placeholder="Apellido">
+            <label for="nombre">
+                Nombre
+            </label> 
+            <input type="text" name="nombre" id="nombre" size="10" maxlength="250" required placeholder="Nombre">
+            <br> <br>
+
+            <label for="cuil">
+                Numero de CUIL
+            </label> <br>
+            <select name="cuil" id="prefijoCuil" required> <!-- Prefijo de CUIL -->
+                <option value="20">20</option> 
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="27">27</option>
+            </select>
+            <input type="number" name="cuil" id="dni" size= "8" maxlength="8" required placeholder="DNI"> <!-- DNI (Valor intermedio del CUIL) -->
+            <input type="number" name="cuil" id="digitoVerificador" min="0" max="9" required> <br><br> <!-- Digito verificador del CUIL -->
+
+            <label for="sexo">
+                Sexo
+            </label> <br>   <!-- Sexo del cliente, solo se puede elegir una opcion-->
+            <input type="radio" name="sexo" id="masculino" value="M" checked="checked" required>Masculino
+            <input type="radio" name="sexo" id="femenino" value="F">Femenino <br><br>
+
+            <label for="fechaDeNacimiento">
+                Fecha de nacimiento
+            </label>        <!-- Fecha de nacimiento del cliente-->
+            <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento"> <br><br>
+
+
+            <label for="telefono">Telefono de contacto</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[4]{1}-[0-9]{6}" required>
+            <small>
+                Formato: 123-456-7890 <!-- Telefono del cliente, debe seguir el formato indicado -->
+            </small>
+            <br><br>
+
+        </fieldset> <br>
+        <fieldset> <!-- Seccion del formulario destinada a rellenar la informacion de la direccion del cliente -->
+            <legend>
+                Dirección
+            </legend>
+
+
+            <label for="calle">
+                Calle
+            </label>
+            <input type="text" name="calle" id="calle" placeholder="Nombre de calle" required>
+            
+            <label for="numero">
+                Numero
+            </label>    <!-- Numero de calle, debe ser mayor o igual a 0 -->
+            <input type="number" min="0" name="numero" id="numero" placeholder="100" required>
+            <br><br>
+            
+            <label for="barrio">
+                Barrio
+            </label>
+            <input type="text" name="barrio" id="barrio" placeholder="Nombre de barrio" required>
+            <br><br>
+            <label for="localidad">
+                Localidad
+            </label>
+            <input type="text" name="localidad" id="localidad" placeholder="Nombre de localidad" required>
+            <br><br>
+            <label for="zona">
+                Zona
+            </label>
+            <select name="zona" id="zona" required> <!-- Codigo de zona-->
+                <option value="1">
+                    Norte
+                </option>
+                <option value="2">
+                    Sur
+                </option>
+                <option value="3">
+                    Este
+                </option>
+                <option value="4">
+                    Oeste
+                </option>
+            </select>
+        </fieldset> <br>
+        <fieldset>
+            <legend>
+                Datos de usuario    
+            </legend>
+
+            <label for="nombreDeUsuario" >
+                Nombre de usuario
+            </label>
+            <input type="text" name="nombreDeUsuario" id="nombreDeUsuario" placeholder="Nombre de usuario" required> 
+            <br><br>
+
+            <label for="email">
+                Email
+            </label>
+            <input type="email" name="email" id="email" placeholder="nombre@dominio.com" required>
+            <br><br>
+
+            <label for="contraseña">
+                Contraseña
+            </label>
+            <input type="password" name="contraseña" id="contraseña" placeholder="1234" required>
+            <br><br>
+
+            <label for="confirmarContraseña">
+                Confirmar contraseña
+            </label>
+            <input type="password" name="confirmarContraseña" id="confirmarContraseña" placeholder="1234" required>
+        </fieldset> <br>
+
+        <input type="submit" name="registrarse" id="registrarse" value="Registrarse">
+    </form>
+</body>
+</html>
