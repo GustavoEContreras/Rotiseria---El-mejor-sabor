@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de plato</title>
+</head>
+<body>
+    <div id="tituloRegistroPlato">
+        <h2>
+            Registrar nuevo plato
+        </h2>
+    </div>
+    <form action="#" id="formularioPlato">
+        <fieldset>
+            <legend>
+                Datos del plato
+            </legend>
+
+            <label for="codigoPlato">
+                Codigo
+            </label>
+            <input type="number" id="codigoPlato" name="codigoPlato" min="0" required>
+            <br><br>
+
+            <label for="nombrePlato">
+                Nombre del plato
+            </label>
+            <input type="text" name="nombrePlato" id="nombrePlato" placeholder="Milanesa con puré" required>
+            <br><br>
+
+            <label for="descripcionPlato">Descripción</label> <br>
+            <ul>    <!-- Lista conformada por los ingredientes que conforman al plato-->
+                <li>
+                    Ingrediente
+                </li>
+            </ul>
+            
+            <select name="listaIngredientes" id="listaIngredientes"> <!-- Lista provisional de ingredientes-->
+                <option value="ingrediente">    <!-- Opciones provistas por la BD -->
+                    Ingrediente
+                </option> 
+            </select>
+            <button type="button">  <!-- Al dar click en el boton, un ingrediente sera añadido -->
+                Añadir              <!-- como nuevo elemento a la lista de ingredientes del plato-->
+            </button> 
+            <br><br>                              
+
+            <label for="tipoPlato">Tipo de plato</label>
+            <select name="tipoPlato" id="tipoPlato" required>
+                <option value="entrada">Entrada</option>
+                <option value="plato principal">Plato principal</option>
+                <option value="postre">Postre</option>
+            </select>
+            <br><br>
+
+            <label for="precioPlato">Precio</label>
+            <input type="number" id="precioPlato" name="precioPlato" required min="1"><a> pesos</a> 
+            <br><br>
+
+            <label for="vigenciaPlato">Vigencia</label>
+            <input type="radio" name="vigenciaPlato" checked required>Si</input>
+            <input type="radio" name="vigenciaPlato">No</input>
+            <br><br>
+
+            <label for="tipoMenu">Tipo de menú al que pertenece</label>
+            <select name="tipoMenu" id="tipoMenu" required>
+                <option value="Normal">Normal</option>
+                <option value="Celiaco">Celiaco</option>
+                <option value="Vegetariano">Vegetariano</option>
+                <option value="Diabetico">Diabetico</option>
+            </select>
+        </fieldset> <br><br>
+        <input type="reset" value="Limpiar" id="botonLimpiar">
+        <input type="submit" value="Registrar!" id="botonRegistrar">
+    </form>
+</body>
+</html>
