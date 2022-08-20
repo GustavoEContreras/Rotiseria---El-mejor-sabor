@@ -9,11 +9,9 @@
 <body>
     <header>
         <div>
-            <img src="Imagenes/EL MEJOR SABOR.jpg" alt="">
+            <img src="Imagenes/EL_MEJOR_SABOR.jpg" alt="">
             <h1>EL MEJOR SABOR</h1>
             <nav>
-                <input type="text" id="barraBusqueda" placeholder="qué estás buscando?" />
-                <button type="search">Buscar</button>
                 <ul>
                     <li>
                         <a href="index.html">Home</a>
@@ -22,7 +20,10 @@
                         <a href="login.html">Ingresar</a>
                     </li>
                 </ul>
-                
+                <form action="#">
+                    <input type="text" id="barraBusqueda" placeholder="qué estás buscando?" />
+                    <button type="submit">Buscar</button>
+                </form>
             </nav><br><br>
         </div>
     
@@ -51,7 +52,7 @@
             <input type="text" name="nombrePlato" id="nombrePlato" placeholder="Milanesa con puré" required>
             <br><br>
 
-            <label for="descripcionPlato">Descripción</label> <br>
+            <label >Descripción</label> <br>    <!--for="descripcionPlato"-->
             <ul>    <!-- Lista conformada por los ingredientes que conforman al plato-->
                 <li>
                     Ingrediente
@@ -70,6 +71,7 @@
 
             <label for="tipoPlato">Tipo de plato</label>
             <select name="tipoPlato" id="tipoPlato" required>
+                <option value="">Plato</option>
                 <option value="entrada">Entrada</option>
                 <option value="plato principal">Plato principal</option>
                 <option value="postre">Postre</option>
@@ -80,13 +82,14 @@
             <input type="number" id="precioPlato" name="precioPlato" required min="1"><a> pesos</a> 
             <br><br>
 
-            <label for="vigenciaPlato">Vigencia</label>
-            <input type="radio" name="vigenciaPlato" checked required>Si</input>
-            <input type="radio" name="vigenciaPlato">No</input>
+            <label>Vigencia</label>
+            <input type="radio" name="vigenciaPlato" checked required>Si
+            <input type="radio" name="vigenciaPlato">No
             <br><br>
 
             <label for="tipoMenu">Tipo de menú al que pertenece</label>
             <select name="tipoMenu" id="tipoMenu" required>
+                <option value="">Menú</option>
                 <option value="Normal">Normal</option>
                 <option value="Celiaco">Celiaco</option>
                 <option value="Vegetariano">Vegetariano</option>

@@ -9,11 +9,9 @@
 <body>
     <header>
         <div>
-            <img src="Imagenes/EL MEJOR SABOR.jpg" alt="">
+            <img src="Imagenes/EL_MEJOR_SABOR.jpg" alt="">
             <h1>EL MEJOR SABOR</h1>
             <nav>
-                <input type="text" id="barraBusqueda" placeholder="qué estás buscando?" />
-                <button type="search">Buscar</button>
                 <ul>
                     <li>
                         <a href="index.html">Home</a>
@@ -22,7 +20,10 @@
                         <a href="login.html">Ingresar</a>
                     </li>
                 </ul>
-                
+                <form action="#">
+                    <input type="text" id="barraBusqueda" placeholder="qué estás buscando?" />
+                    <button type="submit">Buscar</button>
+                </form>
             </nav><br><br>
         </div>
     
@@ -47,19 +48,20 @@
             <input type="text" name="nombre" id="nombre" size="10" maxlength="250" required placeholder="Nombre">
             <br> <br>
 
-            <label for="cuil">
+            <label>
                 Numero de CUIL
             </label> <br>
             <select name="cuil" id="prefijoCuil" required> <!-- Prefijo de CUIL -->
+                <option value="">Prefijo</option>
                 <option value="20">20</option> 
                 <option value="23">23</option>
                 <option value="24">24</option>
                 <option value="27">27</option>
             </select>
-            <input type="number" name="cuil" id="dni" size= "8" maxlength="8" required placeholder="DNI"> <!-- DNI (Valor intermedio del CUIL) -->
+            <input type="number" name="cuil" id="dni" max="99999999" required placeholder="DNI"> <!-- DNI (Valor intermedio del CUIL) -->
             <input type="number" name="cuil" id="digitoVerificador" min="0" max="9" required> <br><br> <!-- Digito verificador del CUIL -->
 
-            <label for="sexo">
+            <label>
                 Sexo
             </label> <br>   <!-- Sexo del cliente, solo se puede elegir una opcion-->
             <input type="radio" name="sexo" id="masculino" value="M" checked="checked" required>Masculino
@@ -72,7 +74,7 @@
 
 
             <label for="telefono">Telefono de contacto</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[4]{1}-[0-9]{6}" required>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[4]{1}-[0-9]{6}" required>
             <small>
                 Formato: 123-456-7890 <!-- Telefono del cliente, debe seguir el formato indicado -->
             </small>
@@ -110,6 +112,7 @@
                 Zona
             </label>
             <select name="zona" id="zona" required> <!-- Codigo de zona-->
+                <option value="">Zona</option>
                 <option value="1">
                     Norte
                 </option>
@@ -137,11 +140,11 @@
             
 
             <label for="fechaDeIngreso">Fecha de ingreso a la rotiseria</label>
-            <input type="date" nombre="fechaDeIngreso" id="fechaDeIngreso" required>
+            <input type="date" name="fechaDeIngreso" id="fechaDeIngreso" required>
             <br><br>
 
             <label for="vigenciaCarnet">Vigencia del carnet de conducir</label>
-            <input type="date" nombre="vigenciaCarnet" id="vigenciaCarnet" required>
+            <input type="date" name="vigenciaCarnet" id="vigenciaCarnet" required>
             <br><br>
 
             <label for="patenteVehiculo">Patente del vehiculo</label>
@@ -150,6 +153,7 @@
 
             <label for="zonaEntrega">Zona de entregas asignada</label>
             <select name="zonaEntrega" id="zonaEntrega" required>
+                <option value="">Zona</option>
                 <option value="1">
                     Norte
                 </option>
