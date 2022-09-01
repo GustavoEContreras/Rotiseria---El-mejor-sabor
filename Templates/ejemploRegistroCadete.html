@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../archivos css/ejemploRegistro.css" type="text/css" media="all">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario-->
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">El mejor sabor</a> <!-- Nombre/Logo de la marca-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    
+                    <form class="d-flex me-auto"> <!-- Busqueda -->
+                        <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
+                            <button class="btn btn-primary" type="submit">
+                                <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
+                                    <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
+                                  </span>
+                            </button>
+                            
+                          </div>
+                        <!-- Carrito. Por el momento no se puede visualizar correctamente
+                            <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            </button>
+                        -->
+                    </form>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">    <!-- Lista con las opciones de la barra de navegacion-->
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Normal</a></li>
+                                <li><a class="dropdown-item" href="#!">Apto para celíacos</a></li>
+                                <li><a class="dropdown-item" href="#!">Recomendado para diabeticos</a></li>
+                                <li><a class="dropdown-item" href="#!">Veggie</a></li>
+                                <!-- <li><hr class="dropdown-divider" /></li> --> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Sobre nosotros</a></li>
+                        <li class="nav-item">
+                            <div class="input-group">
+                                 <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                                <a class="nav-link" href="#!">Ingresar</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <section>
+        <div class="container-fluid">
+            <form id="contactForm" action="#" method="post">
+                <article id="datosPersonales">
+                    <div class="container px-5 my-5">
+                        <div class="text-center">
+                            <h2>
+                                Datos personales
+                            </h2>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-2">
+                                    <label class="form-label" for="apellido">Apellido</label>
+                                    <input class="form-control" id="apellido" type="text" placeholder="Apellido" required/>
+            
+                                </div>
+                                <div class="col-2">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="nombre">Nombre</label>
+                                        <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
+            
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="numeroDeCuil">Numero de CUIL</label>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <select class="form-select" name="cuil" id="prefijoCuil" required> <!-- Prefijo de CUIL -->
+                                                    <option value="">Prefijo</option>
+                                                    <option value="20">20</option> 
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="27">27</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control" type="number" name="cuil" id="dni" max="99999999" required placeholder="DNI"> <!-- DNI (Valor intermedio del CUIL) -->
+                                            </div>
+                                            <div class="col-3">
+                                                <input class="form-control" type="number" name="cuil" id="digitoVerificador" min="0" max="9" required> <!-- Digito verificador del CUIL -->
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label class="form-label d-block">Sexo</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="masculino" type="radio" name="sexo" required/>
+                                        <label class="form-check-label" for="masculino">Masculino</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="femenino" type="radio" name="sexo"/>
+                                        <label class="form-check-label" for="femenino">Femenino</label>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-5">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="fechaDeNacimiento">Fecha de nacimiento</label>
+                                        <input class="form-control" id="fechaDeNacimiento" type="date" placeholder="Fecha de nacimiento" required/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="telefono">Telefono de contacto</label>
+                                    <input class="form-control" id="telefono" type="text" placeholder="Telefono" required/>
+            
+                                </div>
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+            
+                    </div>
+                </article>
+                <hr class="style1">
+                <article id="datosDireccion">
+                    <div class="container px-5 my-5">
+                        <div class="text-center">
+                            <h2>Dirección</h2>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="barrio">Barrio</label>
+                                    <input class="form-control" id="barrio" type="text" placeholder="Barrio" required/>
+        
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="calle">Calle</label>
+                                    <input class="form-control" id="calle" type="text" placeholder="Calle" required />
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="numero">Numero</label>
+                                    <input class="form-control" id="numero" type="number" min="0" placeholder="Numero" required />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="localidad">Localidad</label>
+                                    <input class="form-control" id="localidad" type="text" placeholder="Localidad" required />
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="zona">Zona</label>
+                                    <select class="form-select" id="zona" aria-label="Zona">
+                                        <option value="Norte">Norte</option>
+                                        <option value="Sur">Sur</option>
+                                        <option value="Este">Este</option>
+                                        <option value="Oeste">Oeste</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                </div>
+                </article>
+                <hr class="style1">
+                <article id="datosCadete">
+                    <div class="container px-5 my-5">
+                        <div class="text-center">
+                            <h2>Datos del cadete</h2>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="fechaDeIngreso">Fecha de ingreso a la rotiseria</label>
+                                    <input class="form-control" type="date" name="fechaDeIngreso" id="fechaDeIngreso" required>
+        
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="vigenciaCarnet">Vigencia del carnet de conducir</label>
+                                    <input class="form-control" type="date" name="vigenciaCarnet" id="vigenciaCarnet" required>
+        
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="patenteVehiculo">Patente del vehiculo</label>
+                                    <input class="form-control" type="text" name="patenteVehiculo" id="patenteVehiculo" required maxlength="7" placeholder="ABC123 o AB123CD"/>
+                                     <!-- La patente del vehiculo debe ser tal del formato ABC 123 o AB 123 CD-->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-5"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="zonaEntrega">Zona de entregas</label>
+                                    <select class="form-select" id="zonaEntrega" aria-label="Zona">
+                                        <option value="Norte">Norte</option>
+                                        <option value="Sur">Sur</option>
+                                        <option value="Este">Este</option>
+                                        <option value="Oeste">Oeste</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                </div>
+                </article>
+                <hr class="style1">
+                <article id="datosUsuario">
+                    <div class="container px-5 my-5">
+                        <div class="text-center">
+                            <h2>
+                                Datos de usuario
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input class="form-control" id="email" type="email" placeholder="Email" required />
+            
+                                </div>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="nombreDeUsuario">Nombre de usuario</label>
+                                    <input class="form-control" id="nombreDeUsuario" type="text" placeholder="Nombre de usuario" required />
+                                </div>
+                            </div>
+                        </div> <br>
+            
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="contrasena">Contraseña</label>
+                                    <input class="form-control" id="contrasena" type="text" placeholder="Contraseña" required />
+                                </div>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="confirmarContrasena">Confirmar contraseña</label>
+                                    <input class="form-control" id="confirmarContrasena" type="text" placeholder="Confirmar contraseña" required />
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </article>
+                <hr class="style1">
+                <article id="botonRegistrar">
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Registrarse</button> 
+                    </div>
+                </article>
+            </form>
+        </div>
+    </section>
+    <hr class="style2">
+    <footer>
+        <footer class="container"> <!-- Footer correspondiente -->
+            <p class="float-end"><a href="#">Volver al inicio</a></p>
+            <p>© 2022 Rotiseria El Mejor Sabor © <br> <a href="#">Privacidad</a> · <a href="#">Terminos y condiciones</a></p>
+          </footer>
+    </footer>
+    
+    
+
+</body>
+</html>
