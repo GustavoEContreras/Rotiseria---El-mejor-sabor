@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script> <!-- Link para utilizar iconos de Font Awesome. Son temporales-->
     <link rel="stylesheet" href="../archivos css/ejemploRegistro.css">
     <title>Document</title>
 </head>
@@ -62,89 +63,91 @@
     </header>
     <hr>
     <hr>
-    <hr>
-    <div class="container-fluid">
-        <div class="text-center">
-            <h1>Registrar nuevo plato</h1>
-        </div>
-        <div class="container px-5 my-5">
-            <div class="text-center">
-                <h3>Datos del plato</h3>
+    <div class="container-fluid fondo">
+        <div class="container mt-5 px-4">
+                <div class="text-center">
+                    <h1>Registrar nuevo plato</h1>
+                </div>
+            <div class="container px-5 my-5">
+                <div class="text-center">
+                    <h3>Datos del plato</h3>
+                </div>
+                <form id="contactForm" action="#">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="mb-3">
+                                <label class="form-label" for="codigo">Codigo</label>
+                                <input class="form-control" type="number" id="codigoPlato" name="codigoPlato" min="0" required>
+                                
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="nombreDelPlato">Nombre del plato</label>
+                                <input class="form-control" id="nombreDelPlato" type="text" placeholder="Nombre del plato" required />
+                                <div class="invalid-feedback" data-sb-feedback="nombreDelPlato:required">Nombre del plato is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="tipoDePlato">Tipo de plato</label>
+                                <select class="form-select" id="tipoDePlato" aria-label="Tipo de plato">
+                                    <option value="Entrada">Entrada</option>
+                                    <option value="Plato principal">Plato principal</option>
+                                    <option value="Postre">Postre</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label d-block">Vigencia</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="si" type="radio" name="vigencia" data-sb-validations="" />
+                                    <label class="form-check-label" for="si">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="no" type="radio" name="vigencia" data-sb-validations="" />
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="tipoDeMenu">Tipo de menú</label>
+                                <select class="form-select" id="tipoDeMenu" aria-label="Tipo de menú">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Celíaco">Celíaco</option>
+                                    <option value="Vegetariano">Vegetariano</option>
+                                    <option value="Diabetico">Diabetico</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            <p>To activate this form, sign up at</p>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-            <form id="contactForm" action="#">
-                <div class="row">
-                    <div class="col-2">
-                        <div class="mb-3">
-                            <label class="form-label" for="codigo">Codigo</label>
-                            <input class="form-control" type="number" id="codigoPlato" name="codigoPlato" min="0" required>
-                            
-                        </div>
-                    </div>
-                    <div class="col-2"></div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <label class="form-label" for="nombreDelPlato">Nombre del plato</label>
-                            <input class="form-control" id="nombreDelPlato" type="text" placeholder="Nombre del plato" required />
-                            <div class="invalid-feedback" data-sb-feedback="nombreDelPlato:required">Nombre del plato is required.</div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <label class="form-label" for="tipoDePlato">Tipo de plato</label>
-                            <select class="form-select" id="tipoDePlato" aria-label="Tipo de plato">
-                                <option value="Entrada">Entrada</option>
-                                <option value="Plato principal">Plato principal</option>
-                                <option value="Postre">Postre</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <label class="form-label d-block">Vigencia</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" id="si" type="radio" name="vigencia" data-sb-validations="" />
-                                <label class="form-check-label" for="si">Si</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" id="no" type="radio" name="vigencia" data-sb-validations="" />
-                                <label class="form-check-label" for="no">No</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <label class="form-label" for="tipoDeMenu">Tipo de menú</label>
-                            <select class="form-select" id="tipoDeMenu" aria-label="Tipo de menú">
-                                <option value="Normal">Normal</option>
-                                <option value="Celíaco">Celíaco</option>
-                                <option value="Vegetariano">Vegetariano</option>
-                                <option value="Diabetico">Diabetico</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center mb-3">
-                        <div class="fw-bolder">Form submission successful!</div>
-                        <p>To activate this form, sign up at</p>
-                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                    </div>
-                </div>
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                </div>
-                <div class="d-grid">
-                    <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
-                </div>
-            </form>
         </div>
+        
     </div>
     <hr class="style2">
     <footer>

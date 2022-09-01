@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script> <!-- Link para utilizar iconos de Font Awesome. Son temporales-->
+    <link rel="stylesheet" href="../archivos css/ejemploLogin.css" type="text/css" media="all">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario-->
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">El mejor sabor</a> <!-- Nombre/Logo de la marca-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                
+                <form class="d-flex me-auto"> <!-- Busqueda -->
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
+                        <button class="btn-lg " type="submit">
+                            <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
+                                <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
+                              </span>
+                        </button>
+                        
+                      </div>
+                    <!-- Carrito. Por el momento no se puede visualizar correctamente
+                        <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    -->
+                </form>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">    <!-- Lista con las opciones de la barra de navegacion-->
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Normal</a></li>
+                            <li><a class="dropdown-item" href="#!">Apto para celíacos</a></li>
+                            <li><a class="dropdown-item" href="#!">Recomendado para diabeticos</a></li>
+                            <li><a class="dropdown-item" href="#!">Veggie</a></li>
+                            <!-- <li><hr class="dropdown-divider" /></li> --> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Sobre nosotros</a></li>
+                    <li class="nav-item">
+                        <div class="input-group">
+                             <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                            <a class="nav-link" href="#!">Ingresar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+    <section>
+    <div class="wrapper bg-white">
+        <div class="h2 text-center">
+            El mejor sabor
+        </div>
+        <div class="h4 text-muted text-center pt-2">
+            ¿Quien esta ingresando?
+        </div>
+        <form class="pt-3">
+            <div class="form-group py-2">
+                <div class="input-field"> 
+                    <span class="far fa-user p-2">
+
+                    </span> 
+                    <input type="text" placeholder="Nombre de usuario" required placeholder="alguien15"> </div>
+            </div>
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> 
+                    <span class="fas fa-lock p-2">
+
+                    </span> 
+                    <input type="password" placeholder="Contraseña" required placeholder="1234"> <button class="btn bg-white text-muted"> 
+                        <span class="far fa-eye-slash"></span> 
+                    </button> 
+                </div>
+            </div>
+            <div class="d-inline-flex align-items-start">
+                <div class="remember ml-auto"> 
+                    <label class="option text-muted"> 
+                        Recuerdame 
+                        <input type="radio" name="radio"> <span class="checkmark"></span> 
+                    </label> 
+                </div>    
+            </div>
+            <div class="d-grid gap-2 d-md-block">
+                <button class="btn btn-block text-center my-3">
+                    Ingresar
+                </button>
+
+                <div class="m"> 
+                    <a href="#" id="forgot">
+                    Olvidaste la contraseña?
+                    </a> 
+                </div>
+            </div> 
+            
+            <div class="text-center pt-3 text-muted">
+                Nuevo usuario? 
+                    <a href="#">Click aqui</a>
+            </div>
+        </form>
+    </div>
+    </section>
+
+    <footer>
+        <footer class="container"> <!-- Footer correspondiente -->
+            <p class="float-end"><a href="#">Volver al inicio</a></p>
+            <p>© 2022 Rotiseria El Mejor Sabor © <br> <a href="#">Privacidad</a> · <a href="#">Terminos y condiciones</a></p>
+          </footer>
+    </footer>
+        
+    
+        
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
