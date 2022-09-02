@@ -4,100 +4,157 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de plato</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <!--<script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script>  Link para utilizar iconos de Font Awesome. Son temporales-->
+    <link rel="stylesheet" href="../archivos css/ejemploRegistro.css">
+    <title>Document</title>
 </head>
 <body>
     <header>
-        <div>
-            <img src="Imagenes/EL_MEJOR_SABOR.jpg" alt="">
-            <h1>EL MEJOR SABOR</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                        <a href="menu.html">Menúes</a>
-                        <a href="nosotros.html">Sobre nosotros</a>
-                        <a href="login.html">Ingresar</a>
-                    </li>
-                </ul>
-                <form action="#">
-                    <input type="text" id="barraBusqueda" placeholder="qué estás buscando?" />
-                    <button type="submit">Buscar</button>
-                </form>
-            </nav><br><br>
-        </div>
-    
-       
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario-->
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">El mejor sabor</a> <!-- Nombre/Logo de la marca-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    
+                    <form class="d-flex me-auto"> <!-- Busqueda -->
+                        <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
+                            <button class="btn btn-primary" type="submit">
+                                <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
+                                    <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
+                                  </span>
+                            </button>
+                            
+                          </div>
+                        <!-- Carrito. Por el momento no se puede visualizar correctamente
+                            <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            </button>
+                        -->
+                    </form>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">    <!-- Lista con las opciones de la barra de navegacion-->
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Normal</a></li>
+                                <li><a class="dropdown-item" href="#!">Apto para celíacos</a></li>
+                                <li><a class="dropdown-item" href="#!">Recomendado para diabeticos</a></li>
+                                <li><a class="dropdown-item" href="#!">Veggie</a></li>
+                                <!-- <li><hr class="dropdown-divider" /></li> --> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Sobre nosotros</a></li>
+                        <li class="nav-item">
+                            <div class="input-group">
+                                 <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                                <a class="nav-link" href="#!">Ingresar</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
     </header>
-    <div id="tituloRegistroPlato">
-        <h2>
-            Registrar nuevo plato
-        </h2>
+    <hr>
+    <hr>
+    <div class="container-fluid fondo">
+        <div class="container mt-5 px-4">
+                <div class="text-center">
+                    <h1>Registrar nuevo plato</h1>
+                </div>
+            <div class="container px-5 my-5">
+                <div class="text-center">
+                    <h3>Datos del plato</h3>
+                </div>
+                <form id="contactForm" action="#">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="mb-3">
+                                <label class="form-label" for="codigo">Codigo</label>
+                                <input class="form-control" type="number" id="codigoPlato" name="codigoPlato" min="0" required>
+                                
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="nombreDelPlato">Nombre del plato</label>
+                                <input class="form-control" id="nombreDelPlato" type="text" placeholder="Nombre del plato" required />
+                                <div class="invalid-feedback" data-sb-feedback="nombreDelPlato:required">Nombre del plato is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="tipoDePlato">Tipo de plato</label>
+                                <select class="form-select" id="tipoDePlato" aria-label="Tipo de plato">
+                                    <option value="Entrada">Entrada</option>
+                                    <option value="Plato principal">Plato principal</option>
+                                    <option value="Postre">Postre</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label d-block">Vigencia</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="si" type="radio" name="vigencia" data-sb-validations="" />
+                                    <label class="form-check-label" for="si">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="no" type="radio" name="vigencia" data-sb-validations="" />
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="tipoDeMenu">Tipo de menú</label>
+                                <select class="form-select" id="tipoDeMenu" aria-label="Tipo de menú">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Celíaco">Celíaco</option>
+                                    <option value="Vegetariano">Vegetariano</option>
+                                    <option value="Diabetico">Diabetico</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            <p>To activate this form, sign up at</p>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
     </div>
-    <form action="#" id="formularioPlato">
-        <fieldset>
-            <legend>
-                Datos del plato
-            </legend>
-
-            <label for="codigoPlato">
-                Codigo
-            </label>
-            <input type="number" id="codigoPlato" name="codigoPlato" min="0" required>
-            <br><br>
-
-            <label for="nombrePlato">
-                Nombre del plato
-            </label>
-            <input type="text" name="nombrePlato" id="nombrePlato" placeholder="Milanesa con puré" required>
-            <br><br>
-
-            <label >Descripción</label> <br>    <!--for="descripcionPlato"-->
-            <ul>    <!-- Lista conformada por los ingredientes que conforman al plato-->
-                <li>
-                    Ingrediente
-                </li>
-            </ul>
-            
-            <select name="listaIngredientes" id="listaIngredientes"> <!-- Lista provisional de ingredientes-->
-                <option value="ingrediente">    <!-- Opciones provistas por la BD -->
-                    Ingrediente
-                </option> 
-            </select>
-            <button type="button">  <!-- Al dar click en el boton, un ingrediente sera añadido -->
-                Añadir              <!-- como nuevo elemento a la lista de ingredientes del plato-->
-            </button> 
-            <br><br>                              
-
-            <label for="tipoPlato">Tipo de plato</label>
-            <select name="tipoPlato" id="tipoPlato" required>
-                <option value="">Plato</option>
-                <option value="entrada">Entrada</option>
-                <option value="plato principal">Plato principal</option>
-                <option value="postre">Postre</option>
-            </select>
-            <br><br>
-
-            <label for="precioPlato">Precio</label>
-            <input type="number" id="precioPlato" name="precioPlato" required min="1"><a> pesos</a> 
-            <br><br>
-
-            <label>Vigencia</label>
-            <input type="radio" name="vigenciaPlato" checked required>Si
-            <input type="radio" name="vigenciaPlato">No
-            <br><br>
-
-            <label for="tipoMenu">Tipo de menú al que pertenece</label>
-            <select name="tipoMenu" id="tipoMenu" required>
-                <option value="">Menú</option>
-                <option value="Normal">Normal</option>
-                <option value="Celiaco">Celiaco</option>
-                <option value="Vegetariano">Vegetariano</option>
-                <option value="Diabetico">Diabetico</option>
-            </select>
-        </fieldset> <br><br>
-        <input type="reset" value="Limpiar" id="botonLimpiar">
-        <input type="submit" value="Registrar!" id="botonRegistrar">
-    </form>
+    <hr class="style2">
+    <footer>
+        <footer class="container"> <!-- Footer correspondiente -->
+            <p class="float-end"><a href="#">Volver al inicio</a></p>
+            <p>© 2022 Rotiseria El Mejor Sabor © <br> <a href="#">Privacidad</a> · <a href="#">Terminos y condiciones</a></p>
+          </footer>
+    </footer>
 </body>
 </html>
