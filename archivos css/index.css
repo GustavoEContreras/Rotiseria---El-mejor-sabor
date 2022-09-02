@@ -3,13 +3,18 @@
       margin-bottom: 0;
       border-radius: 0;
     }
+    .fondo{
+      background-color: #ddd58a;
+    }
     
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
+  #myCarousel{
+    margin-bottom: auto;
+  }
   .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
@@ -35,4 +40,15 @@
         width: 100%;
         height: 100%;
         
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      min-height: 100%;
+      padding: 0;
+    }
+
+    .featurette-divider{
+      margin:auto
     }
