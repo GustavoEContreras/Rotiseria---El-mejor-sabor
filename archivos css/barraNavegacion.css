@@ -1,0 +1,51 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 1px solid var(--very-light-pink);
+    
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .navbar-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .navbar-left img{
+    flex-shrink: 0%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .barraNavegacion{
+    align-items: center;
+    margin-left: 100px;
+    
+  }
+  #opcionesBarraNavegacion{
+    width:100%;
+  }
+
+  #barraBusqueda{
+    width: 150%;
+  }
+
+  @media(max-width: 755px) {
+    .barraNavegacion{
+      display: none;
+    }
+  }
+
+  body {
+    min-height: 100%;
+    padding: 0;
+    margin-top:20px;
+  }
+
+  .navbar{
+    background-color: cadetblue;
+  }
