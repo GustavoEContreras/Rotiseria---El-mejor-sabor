@@ -32,6 +32,7 @@ nav {
 
   #barraBusqueda{
     width: 150%;
+    
   }
 
   @media(max-width: 755px) {
