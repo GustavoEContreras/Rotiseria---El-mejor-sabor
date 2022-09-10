@@ -28,6 +28,11 @@
     
 }
  
+#imagenStaff
+{
+  max-width: 100%;
+}
+
 /* Footer */
 .footer {
     position: relative;
