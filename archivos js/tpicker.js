@@ -6,12 +6,12 @@
  =========================================================
  */
 
-var fhr = 12;
-var fmi = 0;
-var ampm = 0;
-var showpicker = 0;
-var elid = 'none';
-var picker_type=0;
+let fhr = 12;
+let fmi = 0;
+let ampm = 0;
+let showpicker = 0;
+let elid = 'none';
+let picker_type=0;
 
 function showpickers(a,b){
 	if(showpicker){
@@ -20,9 +20,9 @@ function showpickers(a,b){
 	}else{
 		elid = a;
 		picker_type = b;
-		var x = $("#"+elid).offset();
+		let x = $("#"+elid).offset();
 		$('.tpicker').show();
-		var kk = $("#"+elid).outerHeight();
+		let kk = $("#"+elid).outerHeight();
 		$('.tpicker').offset({ top: x.top+kk, left: x.left});
 		showpicker=1;
 	}
@@ -37,10 +37,10 @@ function showtime(){
 	$('.pk2').show();
 }
 function updatetime(){
-	var gg="AM";
+	let gg="AM";
 	if(ampm)gg = "PM";
 	if(picker_type==24){
-		var thr = fhr;var tmin = fmi;
+		let thr = fhr;let tmin = fmi;
 		if(ampm){
 			if(fhr<12)thr = fhr+12;
 		}else{
@@ -57,7 +57,7 @@ function updatetime(){
 
 $(function(){
 
-	var pickerhtml = '<div class="tpicker"><div class="pk1"><div class="row"><div class="hr"><i class="fa fa-angle-up hrup"></i><a class="hrhere">12</a><i class="fa fa-angle-down hrdown"></i></div><div class="dot2">:</div><div class="hr">	<i class="fa fa-angle-up minup"></i><a class="minhere">00</a><i class="fa fa-angle-down mindown"></i></div><div class="dot"><button type="button" class="btn btn-primary medchange">AM</button></div></div></div><div class="pk2 mintt"><table class="table table-bordered mintable"><tr><td>00</td><td>05</td><td>10</td><td>15</td></tr><tr><td>20</td><td>25</td><td>30</td><td>35</td></tr><tr><td>40</td><td>45</td><td>50</td><td>55</td></tr></table></div><div class="pk2 hrtt"><table class="table table-bordered hrtable"><tr><td>01</td><td>02</td><td>03</td><td>04</td></tr><tr><td>05</td><td>06</td><td>07</td><td>08</td></tr><tr><td>09</td><td>10</td><td>11</td><td>12</td></tr></table></div></div>';
+	let pickerhtml = '<div class="tpicker"><div class="pk1"><div class="row"><div class="hr"><i class="fa fa-angle-up hrup"></i><a class="hrhere">12</a><i class="fa fa-angle-down hrdown"></i></div><div class="dot2">:</div><div class="hr">	<i class="fa fa-angle-up minup"></i><a class="minhere">00</a><i class="fa fa-angle-down mindown"></i></div><div class="dot"><button type="button" class="btn btn-primary medchange">AM</button></div></div></div><div class="pk2 mintt"><table class="table table-bordered mintable"><tr><td>00</td><td>05</td><td>10</td><td>15</td></tr><tr><td>20</td><td>25</td><td>30</td><td>35</td></tr><tr><td>40</td><td>45</td><td>50</td><td>55</td></tr></table></div><div class="pk2 hrtt"><table class="table table-bordered hrtable"><tr><td>01</td><td>02</td><td>03</td><td>04</td></tr><tr><td>05</td><td>06</td><td>07</td><td>08</td></tr><tr><td>09</td><td>10</td><td>11</td><td>12</td></tr></table></div></div>';
 
 	$('.timepicker').html(pickerhtml);
 
@@ -87,14 +87,14 @@ $(function(){
 		$('.mintt').show();
 	});
 	$('.hrtable td').click(function(){
-		var vaa = $(this).html();
+		let vaa = $(this).html();
 		$('.hrtt').hide();
 		$('.pk1').show();
 		$('.mintt').hide();
 		fhr = parseInt(vaa);updatetime();
 	});
 	$('.mintable td').click(function(){
-		var vaa = $(this).html();
+		let vaa = $(this).html();
 		$('.hrtt').hide();
 		$('.pk1').show();
 		$('.mintt').hide();
