@@ -162,6 +162,39 @@ inputMinutoDesde.addEventListener('change', verificarMinutos);
 inputMinutoDesde.addEventListener('onkeyup', verificarMinutos);
 inputMinutoDesde.addEventListener('onkeydown', verificarMinutos);
 
+
+const inputHorarioHasta = document.getElementById("horariosHasta");
+
+function actualizarHorarioHasta()
+{
+    let horaHasta = parseInt(inputHoraDesde.value,10);
+    let minutoHasta = parseInt(inputMinutoDesde.value,10) + 30;
+    if (minutoHasta >= 60)
+    {
+        minutoHasta -= 60;
+        if (minutoHasta === 0)
+        {
+            minutoHasta = "00";
+        }
+        else if (minutoHasta === 5)
+        {
+            minutoHasta = "05";
+        }
+        else
+        {
+            minutoHasta = minutoHasta.toString();
+        }
+        horaHasta += 1;
+        horaHasta = horaHasta.toString();
+        inputHorarioHasta.value = String.prototype.concat(horaHasta,":",minutoHasta);
+    }
+    else{
+        inputHorarioHasta.value = String.prototype.concat(horaHasta.toString(),":",minutoHasta.toString());
+    }
+}
+
+inputHoraDesde.addEventListener('change', actualizarHorarioHasta);
+inputMinutoDesde.addEventListener('change', actualizarHorarioHasta);
 /*
  Una vez finalizada la orden de pedido, se debe realizar el cálculo del total en forma automática, y ese campo debe estar deshabilitado.
 */
