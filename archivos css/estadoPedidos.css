@@ -43,3 +43,16 @@ h1 {
     padding-bottom:60px;
 }
 
+.rojo{
+    background-color: red;
+    color: white;
+}
+.verde{
+    background-color: green;
+    color: white;
+
+}
+.naranja{
+    background-color: orange;
+    color: white;
+}

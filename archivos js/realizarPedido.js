@@ -123,16 +123,16 @@ function verificarHorario(event)
     let horaDesde = parseInt(inputHoraDesde.value,10);
     
     if (
-        ((horaDesde > 13) ||  (horaDesde === 13 && minutoDesde > 30)) && 
-        ((horaDesde < 20) || (horaDesde === 20 && minutoDesde <= 30)) 
+        ((horaDesde > 13) ||  ((horaDesde === 13) && (minutoDesde > 30))) && 
+        ((horaDesde < 20) || ((horaDesde === 20) && (minutoDesde <= 30))) 
         )
     {
         alert('El pedido no puede ser entregado fuera del horario de la rotiseria');
         event.preventDefault();
     }
     else if (
-        ((horaDesde >= 1) || (horaDesde === 0 && minutoDesde > 30)) &&
-        ((horaDesde < 10)) 
+        ((horaDesde >= 1) || (((horaDesde === 0) && (minutoDesde > 30)) &&
+        ((horaDesde < 10))))
     )
     {
         alert('El pedido no puede ser entregado fuera del horario de la rotiseria');
