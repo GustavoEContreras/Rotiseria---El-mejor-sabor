@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&display=swap');
+
+
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -5,14 +8,33 @@
       background-color: rgb(255, 255, 255);
     }
     .fondo{
-      background-color: #ddd58a;
+      background-color: #08010c;
     }
     
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: #08010c;
       padding: 25px;
+      font-family: 'Amatic SC', cursive;
+      font-size: 150%;
     }
+
+    h1
+    {
+      font-family: 'Amatic SC', cursive;
+      font-size: 500%;
+    }
+
+    h2
+    {
+      font-family: 'Amatic SC', cursive;
+      font-size: 300%;
+    }
+
+    p{
+      font-family: 'Shadows Into Light', cursive;
+    }
+
   #myCarousel{
     margin-bottom: auto;
   }
@@ -55,4 +77,11 @@
       margin:auto
     }
 
+    #footerText
+    {
+      font-family: 'Amatic SC', cursive;
+      font-size: 100%;
+    }
+
+    
    
