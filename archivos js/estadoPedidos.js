@@ -5,7 +5,7 @@ const fechaActual = new Date(new Date().getFullYear, new Date().getMonth, new Da
 // Fecha actual sin tener en cuenta la hora del dia actual
 
 class Pedido{ //Clase Pedido, es la clase principal utilizada para almacenar facilmente la informacion de los pedidos. Consta de los siguientes atributos
-    constructor(nombre,fechaPedido,horaPedido,descripcionPedido,tipoEntrega){
+    constructor(nombre,fechaPedido,horaPedido,descripcionPedido,tipoEntrega,estadoEntrega){
         this.nombre=nombre; // Nombre completo. Tipo String
         this.fechaPedido=fechaPedido; // Fecha del pedido. Objeto Date
         this.fechaPedido.setHours(horaPedido.hora, horaPedido.minutos) // Modificación de fecha pedido para incluir las horas del dia respectivas. Más abajo se define a la clase Hora (utilizada en esta linea de codigo)
@@ -32,7 +32,11 @@ class Pedido{ //Clase Pedido, es la clase principal utilizada para almacenar fac
             {
                 this.colorPedido = "naranja";
             }
-          
+        if ((estadoEntrega == "Devuelto") || (estadoEntrega == "Cancelado") || (estadoEntrega == "Entregado"))
+        {
+            this.colorPedido = "";
+        }
+        this.estadoEntrega = estadoEntrega;
     }
 }
 class Hora{ //Clase Hora. Utilizada para facilitar la inicializacion de un objeto Date añadiendo la hora del dia correspondinte
@@ -118,9 +122,9 @@ const fechaAnterior = new Date(); //Fechas inicializadas para inicializar los co
 const fechaPosterior2 = new Date();
 
 // Pedidos inicializados
-let pedido1 = new Pedido("Gustavo Contreras", fechaAnterior.agregarDias(-5), new Hora(12,0),"Marineras de carne c/ papas fritas","Retira por el local");
-let pedido2 = new Pedido("Paola Romero", new Date(), new Hora(21,50),"Bondiola braseada c/ensalada Caesar","Debe ser entregado por Ozzy Osborne");
-let pedido3 = new Pedido("Homero Simpson", fechaPosterior2.agregarDias(3), new Hora(22,00),"Supremas de pollo c/puré mixto","Debe ser entregado por Lenny Leonard");
+let pedido1 = new Pedido("Gustavo Contreras", fechaAnterior.agregarDias(-5), new Hora(12,0),"Marineras de carne c/ papas fritas","Retira por el local", "Pendiente");
+let pedido2 = new Pedido("Paola Romero", new Date(), new Hora(21,50),"Bondiola braseada c/ensalada Caesar","Debe ser entregado por Ozzy Osborne", "Cancelado");
+let pedido3 = new Pedido("Homero Simpson", fechaPosterior2.agregarDias(3), new Hora(22,00),"Supremas de pollo c/puré mixto","Debe ser entregado por Lenny Leonard", "Entregado");
 
 // Pedidos añadidos a la lista de pedidos
 listaPedidos[0] = pedido1;
@@ -136,6 +140,57 @@ listaPedidos.sort(function(a,b)
     }
 )
 
+function getIndiceEstadoEntrega(estadoEntrega)
+{
+    switch (estadoEntrega)
+    {
+        case "Pendiente":
+            return 0;
+        case "En preparación":
+            return 1;
+        case "En camino":
+            return 2;
+        case "Entregado":
+            return 3;
+        case "Devuelto":
+            return 4;
+        case "Cancelado":
+            return 5;
+        default:
+            return 0;
+    }
+}
+
+function esElIndiceCorrecto(indice,tipoDeEntrega)
+{
+    if (tipoDeEntrega === "Pendiente" && indice === 0)
+    {
+        return 'selected="selected"';
+    }
+    else if (tipoDeEntrega === "En preparación" && indice === 1)
+    {
+        return 'selected="selected"';
+    }
+    else if (tipoDeEntrega === "En camino" && indice === 2)
+    {
+        return 'selected="selected"';
+    }
+    else if (tipoDeEntrega === "Entregado" && indice === 3)
+    {
+        return 'selected="selected"';
+    }
+    else if (tipoDeEntrega === "Devuelto" && indice === 4)
+    {
+        return 'selected="selected"';
+    }
+    else if (tipoDeEntrega === "Cancelado" && indice === 5)
+    {
+        return 'selected="selected"';
+    }
+    else{
+        return "";
+    }
+}
 // Carga de pedidos en el codigo HTML, todos siguen una estructura igual en cuanto a HTML
 for (let auxiliarPedido of listaPedidos)
     {
@@ -143,31 +198,32 @@ for (let auxiliarPedido of listaPedidos)
         const horaPedido = new Hora(auxiliarPedido.fechaPedido.getHours(), auxiliarPedido.fechaPedido.getMinutes()); // Creacion de un objeto tipo Hora utilizado de manera auxiliar para facilitar escribir la hora en el siguiente formato --> "Horas:minutos hs" 
         divPedido.innerHTML = `
             <ul class="list-group list-group-horizontal">
-                <a href="#" class="list-group-item list-group-item-action ${auxiliarPedido.colorPedido}">
-                    <div class="d-flex w-60 justify-content-between">
-                    <h5 class="mb-1">${auxiliarPedido.nombre}</h5>
-                    <small class="">${auxiliarPedido.fechaPedido.toISOString().substring(0,10)}</small>
-                    
-                    </div>
-                    <div class="d-flex w-60 justify-content-between">
-                        <p class="mb-1">${auxiliarPedido.descripcionPedido}</p>
-                        <small class="">Tiempo de entrega estimado</small>
-                    </div>
-                    <div class="d-flex w-60 justify-content-between">
-                        <small class="">${auxiliarPedido.tipoEntrega}</small>
-                        <small class="">${horaPedido.horaString()}</small>
-                    </div>
-                    
+                <a href="#" class="list-group-item list-group-item-action ${auxiliarPedido.colorPedido} cardPedido">
+                    <span class= "${auxiliarPedido.colorPedido}">
+                        <div class="d-flex w-60 justify-content-between">
+                        <h5 class="mb-1">${auxiliarPedido.nombre}</h5>
+                        <small class="">${auxiliarPedido.fechaPedido.toISOString().substring(0,10)}</small>
+                        
+                        </div>
+                        <div class="d-flex w-60 justify-content-between">
+                            <p class="mb-1">${auxiliarPedido.descripcionPedido}</p>
+                            <small class="">Tiempo de entrega estimado</small>
+                        </div>
+                        <div class="d-flex w-60 justify-content-between">
+                            <small class="">${auxiliarPedido.tipoEntrega}</small>
+                            <small class="">${horaPedido.horaString()}</small>
+                        </div>
+                    </span>
                 </a>
                 <li class="list-group-item">
                     <div class="text-center">
                         <select class="mt-2 estadoEntrega"seleccionarEstadoPedido">
-                            <option value="Pendiente">Pendiente</option>
-                            <option value="En preparación">En preparación</option>
-                            <option value="En camino">En camino</option>
-                            <option value="Entregado">Entregado</option>
-                            <option value="Devuelto">Devuelto</option>
-                            <option value="Cancelado">Cancelado</option>
+                            <option value="Pendiente" ${esElIndiceCorrecto(0,auxiliarPedido.estadoEntrega)}>Pendiente</option>
+                            <option value="En preparación" ${esElIndiceCorrecto(1,auxiliarPedido.estadoEntrega)}>En preparación</option>
+                            <option value="En camino" ${esElIndiceCorrecto(2,auxiliarPedido.estadoEntrega)}>En camino</option>
+                            <option value="Entregado" ${esElIndiceCorrecto(3,auxiliarPedido.estadoEntrega)}>Entregado</option>
+                            <option value="Devuelto" ${esElIndiceCorrecto(4,auxiliarPedido.estadoEntrega)}>Devuelto</option>
+                            <option value="Cancelado" ${esElIndiceCorrecto(5,auxiliarPedido.estadoEntrega)}>Cancelado</option>
                         </select>
                     </div>
                 </li>
