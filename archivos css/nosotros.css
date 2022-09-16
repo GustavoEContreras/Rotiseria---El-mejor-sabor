@@ -33,56 +33,6 @@
   max-width: 100%;
 }
 
-/* Footer */
-.footer {
-    position: relative;
-    background-color: #fff;
-    color: #707070;
-    padding: 55px 0 40px;
-}
-.footer h5 {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
-    color: #707070;
-    position: relative;
-    padding-bottom: 16px;
-}
-.footer h5:after {
-    content: '';
-    display: block;
-    margin: 5px 0 0;
-    width: 40%;
-    height: 1px;
-    background-color: #fff;
-}
-.footer ul {
-    list-style: none;
-    line-height: 2.2em;
-    padding-left:0px;
-}
-.footer ul a {
-    color:#707070;;
-}
-.footer ul a:hover {
-    color:#274abb;;
-    text-decoration:none;
-}
-/*footer bottom */
-.footer-bottom {
-    padding-top: 5px;
-    padding-bottom: 15px;
-    border-top: 1px solid rgba(0,0,0,0.09);
-    background: #fff;
-    
-}
-.copyright-text p {
-    color: #707070;
-    margin-top: 18px;
-    margin-bottom: 0;
-    font-size:12px;
-}
-
 
 .team-content {
     padding: 0px 15px 15px 15px;
@@ -184,59 +134,11 @@ body {
     letter-spacing: 0.5px;
     font-weight: 400;
     font-style: normal;
-    color: #494949;
+    background-color: rgb(0, 0, 0)!important;
     font-size: 16px;
   
 }
 
-a:hover {
-    color: #465cff;
-}
-
-h1 {
-    font-size: 35px;
-    line-height: 40px;
-    letter-spacing: 0px;
-    font-weight: 600;
-    color: #000;
-}
-h2 {
-    font-size: 30px;
-    line-height: 40px;
-    letter-spacing: 0px;
-    font-weight: 600;
-    color: #000;
-}
-
-h3 {
-    line-height: 26px;
-    font-size: 20px;
-    letter-spacing: 0px;
-    font-weight: 600;
-    font-style: normal;
-    color: #000;
-}
- h4 { font-size: 19px; 
-     letter-spacing: 0px; 
-     font-weight: 600;
-     font-style: normal;
-     color: #000;
-}
-
-p {
-    font-weight: 400;
-    font-style: normal;
-    color: #494949;
-}
-
-
-a {
-    color: #494949;
-}
-
-.capital {
-    text-transform:uppercase;
-}
 
 
 /* Breadcum bar */
@@ -270,7 +172,11 @@ a {
 
 
 
-
+p{
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 100% !important;
+  color: rgb(230, 146, 22);
+}
 
 
 

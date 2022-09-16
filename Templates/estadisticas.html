@@ -19,6 +19,8 @@
       </head>
 <body>
     <header>
+      <nav class="navbar navbar-default ">
+      </nav>
         <nav class="navbar fixed-top navbar-expand-lg ">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario--> 
           <div class="navbar-left">
             <img src="../Imagenes/logo-rotiseria-redimensionada.png" alt="logo" class="logo">
@@ -82,27 +84,31 @@
          
           </nav>
     </header>
-    <div id="listadoVentas">
+    <div class="container-fluid fondo">
+
+      <div id="listadoVentas">
         <h2>
-            Listado de ventas diarias
+          <span class="textoForm">Listado de ventas diarias</span>
         </h2> 
 
-    </div>
-    <br><br><br>
-    <div id="listadoCantidadesPorCadete">
+      </div>
+      <div id="listadoCantidadesPorCadete">
         <h2>
-            Listado de cantidades entregadas por el cadete
+          <span class="textoForm">Listado de cantidades entregadas por el cadete</span>
         </h2>
 
         <select name="listaCadetes" id="listaCadetes"> <!-- Lista provisional de cadetes -->
             <option value="Gustavo Contreras">Gustavo Contreras</option>    
             <option value="Paola Romero">Paola Romero</option>
         </select>
-    </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <hr class="featurette-divider">
+    </div>
+    
     <!-- /END THE FEATURETTES -->
     <!-- FOOTER -->
+    
   <footer class="container-fluid"> <!-- Footer correspondiente -->
     <p class="float-end"><a id="footerText" href="#">Volver al inicio</a></p>
     <p id="footerText">© 2022 Rotiseria El Mejor Sabor © <br> <a id="footerText" href="#">Privacidad</a> · <a id="footerText" href="#">Terminos y condiciones</a></p>
