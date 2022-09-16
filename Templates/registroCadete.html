@@ -7,95 +7,100 @@
     <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../archivos css/registro.css" type="text/css" media="all">
     <link rel="stylesheet" href="../archivos css/barraNavegacion.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../archivos css/footer.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../archivos css/estiloGeneral.css" type="text/css">
     <script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script>
     <title>Registro de cadetes</title>
 </head>
 <body>
     <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario--> 
-            <div class="navbar-left">
-              <img src="../Imagenes/logo-rotiseria-redimensionada.png" alt="logo" class="logo">
-            </div>  
-            <div class="barraNavegacion mx-auto">
-              <form class="" id="barraBusqueda"> <!-- Busqueda -->
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
-                    <button class="btn btn-primary" type="submit">
-                        <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
-                            <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
-                          </span>
-                    </button>
-                    
-                </div>
-                <!-- Carrito. Por el momento no se puede visualizar correctamente
-                    <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                -->
-              </form>
-            </div>
-                
-            <div class="navbar-right">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
+        <nav class="navbar navbar-default ">
+        </nav>
+        <nav class="navbar fixed-top navbar-expand-lg ">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario--> 
+          <div class="navbar-left">
+            <img src="../Imagenes/logo-rotiseria-redimensionada.png" alt="logo" class="logo">
+          </div>  
+          <div class="barraNavegacion mx-auto">
+            <form class="" id="barraBusqueda"> <!-- Busqueda -->
+              <div class="input-group rounded">
+                  <input type="search" class="form-control rounded" id="textoBarra" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
+                  <button class="btn btn-primary" type="submit">
+                      <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
+                          <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
+                        </span>
+                  </button>
+                  
+              </div>
+              <!-- Carrito. Por el momento no se puede visualizar correctamente
+                  <button class="btn btn-outline-dark" type="submit">
+                  <i class="bi-cart-fill me-1"></i>
+                  Cart
+                  <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                  </button>
+              -->
+            </form>
+          </div>
               
-              <div class="container-fluid  px-1 px-lg-1 ms-auto" id="opcionesBarraNavegacion">
-                <!--<div class="navbar-left">
-                 <img src="Imagenes/logo-rotiseria.png" alt="logo" class="logo">-->
-                 <!--<a class="navbar-brand" href="#"><img src="Imagenes/logo-rotiseria.png" alt=""></a>--> <!-- Nombre/Logo de la marca-->
-                 
-                 
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">  
-                     
-  
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">    <!-- Lista con las opciones de la barra de navegacion-->
-                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.html">Home</a></li>
-                      <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
-                          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
-                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="#!">Normal</a></li>
-                              <li><a class="dropdown-item" href="#!">Apto para celíacos</a></li>
-                              <li><a class="dropdown-item" href="#!">Recomendado para diabeticos</a></li>
-                              <li><a class="dropdown-item" href="#!">Veggie</a></li>
-                              <!-- <li><hr class="dropdown-divider" /></li> --> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
-                          </ul>
-                      </li>
-                      <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre nosotros</a></li>
-                      <li class="nav-item">
-                          <div class="input-group">
-                               <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
-                              <a class="nav-link" href="login.html">Ingresar</a>
-                          </div>
-                      </li>
-                    </ul>
-                </div>
-             </div>
-            </div>
-           
-            </nav>
+          <div class="navbar-right">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
+            
+            <div class="container-fluid  px-1 px-lg-1 ms-auto" id="opcionesBarraNavegacion">
+              <!--<div class="navbar-left">
+               <img src="Imagenes/logo-rotiseria.png" alt="logo" class="logo">-->
+               <!--<a class="navbar-brand" href="#"><img src="Imagenes/logo-rotiseria.png" alt=""></a>--> <!-- Nombre/Logo de la marca-->
+               
+               
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">  
+                   
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" >    <!-- Lista con las opciones de la barra de navegacion-->
+                    <li class="nav-item"><a class="nav-link active" id="texto-color" aria-current="page" href="../index.html">Home</a></li>
+                    <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                        <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a id="texto-color" class="dropdown-item" href="menu.html">Normal</a></li>
+                            <li><a  id="texto-color" class="dropdown-item" href="menu.html">Apto para celíacos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="menu.html">Recomendado para diabeticos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="menu.html">Veggie</a></li>
+                            <li><hr class="dropdown-divider" /></li> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a id="texto-color" class="nav-link" href="nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item">
+                        <div class="input-group">
+                             <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                            <a id="texto-color" class="nav-link" href="login.html">Ingresar</a>
+                        </div>
+                    </li>
+                  </ul>
+              </div>
+           </div>
+          </div>
+         
+          </nav>
     </header>
     <section>
         <div class="container-fluid fondo">
-            <div class="container mt-5 px-4">
+            <hr class="featurette-divider">
+            <div class="container px-4 form">
                 <form id="contactForm" action="#" method="post">
                     <article id="datosPersonales">
                         <div class="container px-5 my-5">
                             <div class="text-center">
                                 <h2>
-                                    Datos personales
+                                   <span class="textoForm">Datos personales</span> 
                                 </h2>
                             </div>
                             <div class="mb-3">
                                 <div class="row">
                                     <div class="col-2">
-                                        <label class="form-label" for="apellido">Apellido</label>
+                                        <label class="form-label textoForm" for="apellido" ><span class="textoSecundario">Apellido</span></label>
                                         <input class="form-control" id="apellido" type="text" placeholder="Apellido" required/>
                 
                                     </div>
                                     <div class="col-2">
                                         <div class="mb-3">
-                                            <label class="form-label" for="nombre">Nombre</label>
+                                            <label class="form-label textoForm" for="nombre" ><span class="textoSecundario">Nombre</span></label>
                                             <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
                 
                                         </div>
@@ -103,7 +108,7 @@
                                     <div class="col-2"></div>
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="numeroDeCuil">Numero de CUIL</label>
+                                            <label class="form-label textoForm" for="numeroDeCuil"><span class="textoSecundario">Número de CUIL</span></label>
                                             <div class="row">
                                                 <div class="col-3">
                                                     <select class="form-select" name="cuil" id="prefijoCuil" required> <!-- Prefijo de CUIL -->
@@ -130,21 +135,21 @@
                             <div class="mb-3">
                                 <div class="row">
                                     <div class="col-5">
-                                        <label class="form-label d-block">Sexo</label>
+                                        <label class="form-label d-block" ><span class="textoForm"><span class="textoSecundario">Sexo</span></span></label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" id="masculino" type="radio" name="sexo" required/>
-                                            <label class="form-check-label" for="masculino">Masculino</label>
+                                            <label class="form-check-label textoForm" for="masculino" class="textoForm"><span class="textoSecundario">Masculino</span></label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" id="femenino" type="radio" name="sexo"/>
-                                            <label class="form-check-label" for="femenino">Femenino</label>
+                                            <label class="form-check-label textoForm" for="femenino" class="textoForm"><span class="textoSecundario">Femenino</span></label>
                                         </div>
                                     </div>
                                     <div class="col-1"></div>
                                     <div class="col-5">
                                         <div class="mb-3">
-                                            <label class="form-label" for="fechaDeNacimiento">Fecha de nacimiento</label>
-                                            <input class="form-control" id="fechaDeNacimiento" type="date" placeholder="Fecha de nacimiento" required/>
+                                            <label class="form-label textoForm" for="fechaDeNacimiento" class="textoForm"><span class="textoSecundario">Fecha de nacimiento</span></label>
+                                            <input class="form-control" id="fechaDeNacimient o" type="date" placeholder="Fecha de nacimiento" required/>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +159,7 @@
                                 <div class="col-3"></div>
                                 <div class="col-6">
                                     <div class="mb-3">
-                                        <label class="form-label" for="telefono">Telefono de contacto</label>
+                                        <label class="form-label textoForm" for="telefono" class="textoForm"><span class="textoSecundario">Teléfono de contacto</span></label>
                                         <input class="form-control" id="telefono" type="text" placeholder="Telefono" required/>
                 
                                     </div>
@@ -168,14 +173,16 @@
                     <article id="datosDireccion">
                         <div class="container px-5 my-5">
                             <div class="text-center">
-                                <h2>Dirección</h2>
+                                <h2>
+                                    <span class="textoForm">Dirección</span>
+                                </h2>
                             </div>
                             
                             <div class="row">
                                 <div class="col-1"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="barrio">Barrio</label>
+                                        <label class="form-label textoForm" for="barrio" class="textoForm"><span class="textoSecundario">Barrio</span></label>
                                         <input class="form-control" id="barrio" type="text" placeholder="Barrio" required/>
             
                                     </div>
@@ -183,13 +190,13 @@
                                 <div class="col-1"></div>
                                 <div class="col-4">
                                     <div class="mb-3">
-                                        <label class="form-label" for="calle">Calle</label>
+                                        <label class="form-label textoForm" for="calle" class="textoForm"><span class="textoSecundario">Calle</span></label>
                                         <input class="form-control" id="calle" type="text" placeholder="Calle" required />
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="numero">Numero</label>
+                                        <label class="form-label textoForm" for="numero" class="textoForm"><span class="textoSecundario">Número</span></label>
                                         <input class="form-control" id="numero" type="number" min="0" placeholder="Numero" required />
                                     </div>
                                 </div>
@@ -199,19 +206,19 @@
                                 <div class="col-1"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="localidad">Localidad</label>
+                                        <label class="form-label textoForm" for="localidad" class="textoForm">Localidad</label>
                                         <input class="form-control" id="localidad" type="text" placeholder="Localidad" required />
                                     </div>
                                 </div>
                                 <div class="col-1"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="zona">Zona</label>
+                                        <label class="form-label textoForm" for="zona" class="textoForm"><span class="textoSecundario">Zona</span></label>
                                         <select class="form-select" id="zona" aria-label="Zona">
-                                            <option value="Norte">Norte</option>
-                                            <option value="Sur">Sur</option>
-                                            <option value="Este">Este</option>
-                                            <option value="Oeste">Oeste</option>
+                                            <option value="Norte"><span class="textoSecundario">Norte</span></option>
+                                            <option value="Sur"><span class="textoSecundario">Sur</span></option>
+                                            <option value="Este"><span class="textoSecundario">Este</span></option>
+                                            <option value="Oeste"><span class="textoSecundario">Oeste</span></option>
                                         </select>
                                     </div>
                                 </div>
@@ -224,29 +231,31 @@
                     <article id="datosCadete">
                         <div class="container px-5 my-5">
                             <div class="text-center">
-                                <h2>Datos del cadete</h2>
+                                <h2>
+                                    <span class="textoForm">Datos del cadete</span>
+                                </h2>
                             </div>
                             
                             <div class="row">
                                 <div class="col-1"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="fechaDeIngreso">Fecha de ingreso a la rotiseria</label>
+                                        <label class="form-label textoForm" for="fechaDeIngreso" class="textoForm"><span class="textoSecundario">Fecha de ingreso a la rotisería</span></label>
                                         <input class="form-control" type="date" name="fechaDeIngreso" id="fechaDeIngreso" required>
             
                                     </div>
                                 </div>
-                                <div class="col-1"></div>
-                                <div class="col-3">
+                        
+                                <div class="col-4">
                                     <div class="mb-3">
-                                        <label class="form-label" for="vigenciaCarnet">Vigencia del carnet de conducir</label>
+                                        <label class="form-label textoForm" for="vigenciaCarnet" class="textoForm"><span class="textoSecundario">Vigencia del carnet de conducir</span></label>
                                         <input class="form-control" type="date" name="vigenciaCarnet" id="vigenciaCarnet" required>
             
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="patenteVehiculo">Patente del vehiculo</label>
+                                        <label class="form-label textoForm" for="patenteVehiculo" class="textoForm"><span class="textoSecundario">Patente del vehiculo</span></label>
                                         <input class="form-control" type="text" name="patenteVehiculo" id="patenteVehiculo" required maxlength="7" placeholder="ABC123 o AB123CD"/>
                                          <!-- La patente del vehiculo debe ser tal del formato ABC 123 o AB 123 CD-->
                                     </div>
@@ -257,12 +266,12 @@
                                 <div class="col-5"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="zonaEntrega">Zona de entregas</label>
+                                        <label class="form-label textoForm" for="zonaEntrega" class="textoForm"><span class="textoSecundario">Zona de entregas</span></label>
                                         <select class="form-select" id="zonaEntrega" aria-label="Zona">
-                                            <option value="Norte">Norte</option>
-                                            <option value="Sur">Sur</option>
-                                            <option value="Este">Este</option>
-                                            <option value="Oeste">Oeste</option>
+                                            <option value="Norte"><span class="textoSecundario">Norte</span></option>
+                                            <option value="Sur"><span class="textoSecundario">Sur</span></option>
+                                            <option value="Este"><span class="textoSecundario">Este</span></option>
+                                            <option value="Oeste"><span class="textoSecundario">Oeste</span></option>
                                         </select>
                                     </div>
                                 </div>
@@ -276,14 +285,14 @@
                         <div class="container px-5 my-5">
                             <div class="text-center">
                                 <h2>
-                                    Datos de usuario
+                                    <span class="textoForm">Datos de usuario</span>
                                 </h2>
                             </div>
                             <div class="row">
                                 <div class="col-2"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="email">Email</label>
+                                        <label class="form-label textoForm" for="email" class="textoForm"><span class="textoSecundario">Email</span></label>
                                         <input class="form-control" id="email" type="email" placeholder="Email" required />
                 
                                     </div>
@@ -291,7 +300,7 @@
                                 <div class="col-2"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="nombreDeUsuario">Nombre de usuario</label>
+                                        <label class="form-label textoForm" for="nombreDeUsuario" class="textoForm"><span class="textoSecundario">Nombre de usuario</span></label>
                                         <input class="form-control" id="nombreDeUsuario" type="text" placeholder="Nombre de usuario" required />
                                     </div>
                                 </div>
@@ -301,14 +310,14 @@
                                 <div class="col-2"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="contrasena">Contraseña</label>
+                                        <label class="form-label textoForm" for="contrasena" class="textoForm"><span class="textoSecundario">Contraseña</span></label>
                                         <input class="form-control" id="contrasena" type="text" placeholder="Contraseña" required />
                                     </div>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-3">
                                     <div class="mb-3">
-                                        <label class="form-label" for="confirmarContrasena">Confirmar contraseña</label>
+                                        <label class="form-label textoForm" for="confirmarContrasena" class="textoForm"><span class="textoSecundario">Confirmar contraseña</span></label>
                                         <input class="form-control" id="confirmarContrasena" type="text" placeholder="Confirmar contraseña" required />
                                     </div>
                                 </div>
@@ -316,10 +325,9 @@
                                 
                         </div>
                     </article>
-                    <hr class="style1">
                     <article id="botonRegistrar">
                         <div class="text-center">
-                            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Registrarse</button> 
+                            <button class="btn btn-primary btn-lg" id="submitButton" type="submit"><span class="textoSecundario">Registrarse</span></button> 
                         </div>
                     </article>
                 </form>
@@ -327,12 +335,12 @@
             
         </div>
     </section>
-    <hr class="style2">
-    <footer>
-        <footer class="container"> <!-- Footer correspondiente -->
-            <p class="float-end"><a href="#">Volver al inicio</a></p>
-            <p>© 2022 Rotiseria El Mejor Sabor © <br> <a href="#">Privacidad</a> · <a href="#">Terminos y condiciones</a></p>
-          </footer>
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+    <!-- FOOTER -->
+    <footer class="container-fluid"> <!-- Footer correspondiente -->
+        <p class="float-end"><a id="footerText" href="#">Volver al inicio</a></p>
+        <p id="footerText">© 2022 Rotiseria El Mejor Sabor © <br> <a id="footerText" href="#">Privacidad</a> · <a id="footerText" href="#">Terminos y condiciones</a></p>
     </footer>
     
     

@@ -4,82 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script>  <!-- Link para utilizar iconos de Font Awesome. Son temporales -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> <!-- Lo que hace que funcione el carrousel, puede ser comentado-->
     <link rel="stylesheet" href="../archivos css/login.css" type="text/css" media="all">
     <link rel="stylesheet" href="../archivos css/barraNavegacion.css" type="text/css">
+    <link rel="stylesheet" href="../archivos css/footer.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../archivos css/estiloGeneral.css" type="text/css">
     <title>Login</title>
 </head>
 <body>
-    <div class="container-fluid" id="fondo">
-        <header>
-            <nav class="navbar fixed-top navbar-expand-lg">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario--> 
-                <div class="navbar-left">
-                  <img src="../Imagenes/logo-rotiseria-redimensionada.png" alt="logo" class="logo">
-                </div>  
-                <div class="barraNavegacion mx-auto">
-                  <form class="" id="barraBusqueda"> <!-- Busqueda -->
-                    <div class="input-group rounded">
-                        <input type="search" class="form-control rounded" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
-                        <button class="btn btn-primary" type="submit">
-                            <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
-                                <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
-                              </span>
-                        </button>
-                        
-                    </div>
-                    <!-- Carrito. Por el momento no se puede visualizar correctamente
-                        <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    -->
-                  </form>
-                </div>
-                    
-                <div class="navbar-right">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
+    <header>
+        <nav class="navbar navbar-default">
+        </nav>
+        <nav class="navbar fixed-top navbar-expand-lg ">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario--> 
+          <div class="navbar-left">
+            <img src="../Imagenes/logo-rotiseria-redimensionada.png" alt="logo" class="logo">
+          </div>  
+          <div class="barraNavegacion mx-auto">
+            <form class="" id="barraBusqueda"> <!-- Busqueda -->
+              <div class="input-group rounded">
+                  <input type="search" class="form-control rounded" id="textoBarra" placeholder="Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" /> <!-- Barra de busqueda -->
+                  <button class="btn btn-primary" type="submit">
+                      <span class="input-group-text" id="search-addon"> <!-- Imagen de busqueda (boton incorporado). Actualmente no funciona la imagen -->
+                          <i class="fa fa-search"></i> <!-- Logo de Font Awesome -->
+                        </span>
+                  </button>
                   
-                  <div class="container-fluid  px-1 px-lg-1 ms-auto" id="opcionesBarraNavegacion">
-                    <!--<div class="navbar-left">
-                     <img src="Imagenes/logo-rotiseria.png" alt="logo" class="logo">-->
-                     <!--<a class="navbar-brand" href="#"><img src="Imagenes/logo-rotiseria.png" alt=""></a>--> <!-- Nombre/Logo de la marca-->
-                     
-                     
-                     <div class="collapse navbar-collapse" id="navbarSupportedContent">  
-                         
-      
-                      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">    <!-- Lista con las opciones de la barra de navegacion-->
-                          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.html">Home</a></li>
-                          <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
-                              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
-                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="#!">Normal</a></li>
-                                  <li><a class="dropdown-item" href="#!">Apto para celíacos</a></li>
-                                  <li><a class="dropdown-item" href="#!">Recomendado para diabeticos</a></li>
-                                  <li><a class="dropdown-item" href="#!">Veggie</a></li>
-                                  <!-- <li><hr class="dropdown-divider" /></li> --> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
-                              </ul>
-                          </li>
-                          <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre nosotros</a></li>
-                          <li class="nav-item">
-                              <div class="input-group">
-                                   <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
-                                  <a class="nav-link" href="login.html">Ingresar</a>
-                              </div>
-                          </li>
-                        </ul>
-                    </div>
-                 </div>
-                </div>
-               
-                </nav>
-            <!---->
+              </div>
+              <!-- Carrito. Por el momento no se puede visualizar correctamente
+                  <button class="btn btn-outline-dark" type="submit">
+                  <i class="bi-cart-fill me-1"></i>
+                  Cart
+                  <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                  </button>
+              -->
+            </form>
+          </div>
+              
+          <div class="navbar-right">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span></button> <!-- Opcion que aparece en resoluciones menores, permite abrir lista deplegable con las opciones de Home, Sobre nosotros, etc.-->
             
-           
-        </header>
+            <div class="container-fluid  px-1 px-lg-1 ms-auto" id="opcionesBarraNavegacion">
+              <!--<div class="navbar-left">
+               <img src="Imagenes/logo-rotiseria.png" alt="logo" class="logo">-->
+               <!--<a class="navbar-brand" href="#"><img src="Imagenes/logo-rotiseria.png" alt=""></a>--> <!-- Nombre/Logo de la marca-->
+               
+               
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">  
+                   
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" >    <!-- Lista con las opciones de la barra de navegacion-->
+                    <li class="nav-item"><a class="nav-link active" id="texto-color" aria-current="page" href="../index.html">Home</a></li>
+                    <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                        <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a id="texto-color" class="dropdown-item" href="menu.html">Normal</a></li>
+                            <li><a  id="texto-color" class="dropdown-item" href="menu.html">Apto para celíacos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="menu.html">Recomendado para diabeticos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="menu.html">Veggie</a></li>
+                            <li><hr class="dropdown-divider" /></li> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a id="texto-color" class="nav-link" href="nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item">
+                        <div class="input-group">
+                             <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
+                            <a id="texto-color" class="nav-link" href="login.html">Ingresar</a>
+                        </div>
+                    </li>
+                  </ul>
+              </div>
+           </div>
+          </div>
+         
+          </nav>
+    </header>
+    <div class="container-fluid" id="fondo">
+        
             <section>
             <div class="wrapper bg-white">
                 <div class="h2 text-center">
@@ -134,16 +136,15 @@
             </div>
             </section>
         
-            <footer>
-                <footer class="container"> <!-- Footer correspondiente -->
-                    <p class="float-end"><a href="#">Volver al inicio</a></p>
-                    <p>© 2022 Rotiseria El Mejor Sabor © <br> <a href="#">Privacidad</a> · <a href="#">Terminos y condiciones</a></p>
-                  </footer>
-            </footer>
+            
     </div>
-    
-        
-    
+    <hr class="featurette-divider">
+                <!-- /END THE FEATURETTES -->
+                <!-- FOOTER -->
+            <footer class="container-fluid"> <!-- Footer correspondiente -->
+                <p class="float-end"><a id="footerText" href="#">Volver al inicio</a></p>
+                <p id="footerText">© 2022 Rotiseria El Mejor Sabor © <br> <a id="footerText" href="#">Privacidad</a> · <a id="footerText" href="#">Terminos y condiciones</a></p>
+            </footer>
         
     
     <!-- Core theme JS 

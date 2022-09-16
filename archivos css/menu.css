@@ -194,3 +194,9 @@ hr.style2 {
       display: none; 
         }
     }
+
+    .fondo{
+        margin: auto;
+        background-image: url(../Imagenes/form-difuminado.png);
+    }
+    

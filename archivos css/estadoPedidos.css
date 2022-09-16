@@ -26,8 +26,9 @@ body {
     letter-spacing: 0.5px;
     font-weight: 400;
     font-style: normal;
-    color: #494949;
+    color: #254e47;
     font-size: 16px;
+
   
 }
 h1 {
@@ -55,4 +56,19 @@ h1 {
 .naranja{
     background-color: orange;
     color: white;
+}
+
+.fondo{
+	margin: auto;
+	background-image: url(../Imagenes/form-difuminado.png);
+}
+
+.listadoPedidos
+{
+    background-color: #112723;;
+}
+
+.featurette-divider{
+	margin: auto;
+	color:aliceblue;
 }

@@ -10,3 +10,8 @@ body {
 .featurette-divider{
     margin:auto
   }
+
+.fondo{
+	margin: auto;
+	background-image: url(../Imagenes/form-difuminado.png);
+}
