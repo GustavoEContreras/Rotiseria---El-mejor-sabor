@@ -27,8 +27,7 @@ section {
 .wrapper {
     max-width: 500px;
     border-radius: 10px;
-    margin: 50px auto;
-    margin-bottom: 1%;
+    margin: auto;
     padding: 30px 40px;
     box-shadow: 20px 20px 80px rgb(206, 206, 206);
 }
@@ -153,14 +152,14 @@ a:hover {
 
 @media(max-width: 575px) {
     .wrapper {
-        margin: 10px
+        margin: auto;
     }
 }
 
 @media(max-width:424px) {
     .wrapper {
         padding: 30px 10px;
-        margin: 5px
+        margin: auto;
     }
 
     .option {
@@ -187,6 +186,20 @@ a:hover {
 }
 
 .container-fluid{
-    margin-left: 0%;
-    margin-top: 7%;
+    margin-left: auto;
+    margin-top: 4%;
+    width:100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+footer.container-fluid{
+    margin:auto;
+}
+.featurette-divider
+{
+    margin:auto;
+}
+div.fondo
+{
+    margin:auto;
 }

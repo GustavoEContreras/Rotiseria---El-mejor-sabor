@@ -199,4 +199,14 @@ hr.style2 {
         margin: auto;
         background-image: url(../Imagenes/form-difuminado.png);
     }
-    
+    .featurette-divider
+    {
+        margin: auto;
+    }
+    .list-unstyled
+    {
+        margin:auto;
+    }
+    #myCarousel{
+        margin:auto;
+    }
