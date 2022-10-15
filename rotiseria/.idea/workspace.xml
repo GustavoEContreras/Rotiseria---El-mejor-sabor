@@ -2,19 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Administrador/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cadete/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cliente/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Estadisticas/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Menu/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pedido/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plato/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usuario/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vianda/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotiseria/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FXlQeLSHyTLc3BzxI6WLCwFyNb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -26,10 +44,19 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Rotiseria---El-mejor-sabor/rotiseria/manage.py",
+    "last_opened_file_path": "C:/Rotiseria---El-mejor-sabor/rotiseria/Vianda",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Vianda" />
+      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Usuario" />
+      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Plato" />
+      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Pedido" />
+      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Menu" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="RUNSERVER" type="PythonConfigurationType" factoryName="Python">
       <module name="rotiseria" />
