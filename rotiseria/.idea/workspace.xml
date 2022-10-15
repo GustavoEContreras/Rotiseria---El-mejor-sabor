@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Administrador/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cadete/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cliente/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Estadisticas/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Menu/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pedido/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plato/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usuario/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vianda/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rotiseria/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrador/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Rotiseria---El-mejor-sabor/rotiseria/Vianda",
+    "last_opened_file_path": "F:/Repositorios - Git/PROG III - Lab/Rotiseria---El-mejor-sabor/rotiseria",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
