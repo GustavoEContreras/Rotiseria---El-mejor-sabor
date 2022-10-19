@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&display=swap');
+
+
+.fondo{
+	margin: auto;
+	background-image: url(../Imagenes/form-difuminado.png);
+}
+
+
+.textoForm{
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; !important;
+}
+.fondo2{
+	margin-top: 10%;
+}
+
+.featurette-divider{
+	margin: auto;
+	color:aliceblue;
+}
+
+/*.fondoForm{
+	background-color: white;
+}
+*/
+
+
+

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&display=swap');
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 1px solid var(--very-light-pink);
+    
+  }
+
+  #texto-color{
+    color: #ffffff;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .navbar-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .navbar-left img{
+    flex-shrink: 0%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .barraNavegacion{
+    align-items: center;
+    margin-left: 100px;
+    font-size: 150%;
+    
+  }
+  #opcionesBarraNavegacion{
+    width:100%;
+  }
+
+  #barraBusqueda{
+    width: 150%;
+    font-size: 150%;
+    
+  }
+
+  @media(max-width: 755px) {
+    .barraNavegacion{
+      display: none;
+    }
+  }
+
+  body {
+    min-height: 100%;
+    padding: 0;
+    margin-top:20px;
+  }
+
+  .navbar{
+    background-color: #08010c;
+    font-family: 'Amatic SC', cursive;
+    font-size: 150%;
+    
+  }
+
+  .dropdown-menu{
+    font-size: 100%;
+    background-color: #08010c;
+  }
+
+  #textoBarra{
+    font-size: 40%;
+    text-align: center;
+  }

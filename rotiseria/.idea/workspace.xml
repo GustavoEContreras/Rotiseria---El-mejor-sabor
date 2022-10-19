@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
+    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Creada migracion para app Administrador">
+      <change afterPath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pedido/templates/Pedido/realizarPedido.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plato/templates/Plato/registroPlato.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usuario/templates/Usuario/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/barraNavegacion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/estadisticas.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/estadoPedidos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/estiloGeneral.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/nosotros.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/realizarPedido.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/registro.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/EL_MEJOR_SABOR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/TEMPORAL_promo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/TEMPORAL_viandas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/Tarta-de-choclo-queso-y-cebolla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/anquin-relleno.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/celiacos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/chefs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/comida-rapida-casera.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/diabetes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/estofado-de-costilla.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/form-difuminado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/frente-nosotros.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gelato.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gluten-free.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/locro-de-trigo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/lofp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo-rotiseria-redimensionada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo-rotiseria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/milanesa-napolitana-con-papas-fritas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/pastafrola.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/pizza-grande-comun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/pollo-a-la-portuguesa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/sandwich-miga-jyq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/staff.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/tarta-de-anquin-y-queso.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/tarta-de-cholocolate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/tarta-de-jyq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/tiramisu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/veggie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/ñoquis-4-quesos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/estadoPedidos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/realizarPedido.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Templates/estadisticas.html" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/templates/Estadisticas/estadisticas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Templates/estadoPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/templates/Administrador/estadoPedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Templates/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Templates/registroCadete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cadete/templates/Cadete/registroCadete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Templates/registroCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/registroCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Administrador/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +70,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -31,21 +86,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/Repositorios - Git/PROG III - Lab/Rotiseria---El-mejor-sabor/rotiseria",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Mi unidad/Facultad/3er año - Segundo cuatrimestre/Modelos y simulación/Laboratorio II/Laboratorio2.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Vianda" />
-      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Usuario" />
-      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Plato" />
-      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Pedido" />
-      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Menu" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\static\img" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\static\js" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\static\css" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\Usuario\templates\Usuario" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\Plato\templates\Plato" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\Estadisticas\templates\Estadisticas" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\Cliente\templates\Cliente" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\Cadete\templates\Cadete" />
+      <recent name="F:\Repositorios - Git\PROG III - Lab\Rotiseria---El-mejor-sabor\rotiseria\Administrador\templates\Administrador" />
     </key>
   </component>
   <component name="RunManager">
@@ -56,7 +118,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Loli\Envs\Rotiseria---El-mejor-sabor\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\gusta\Envs\Rotiseria---El-mejor-sabor\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -80,6 +142,14 @@
       <option name="presentableId" value="Default" />
       <updated>1664646294661</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creada migracion para app Administrador">
+      <created>1665848903619</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665848903619</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,5 +162,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creada migracion para app Administrador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creada migracion para app Administrador" />
   </component>
 </project>

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
-        <!------ Include the above in your HEAD tag ---------->
-        <script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script>
-        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../archivos css/nosotros.css" type="text/css" media="all">
-        <link rel="stylesheet" href="../archivos css/barraNavegacion.css" type="text/css" media="all">
-        <link rel="stylesheet" href="../archivos css/footer.css" type="text/css" media="all">
-        <link rel="stylesheet" href="../archivos css/estiloGeneral.css" type="text/css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-        <title>Sobre nosotros</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/5703f194c3.js" crossorigin="anonymous"></script>  <!-- Link para utilizar iconos de Font Awesome. Son temporales -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> <!-- Lo que hace que funcione el carrousel, puede ser comentado-->
+    <link rel="stylesheet" href="../archivos css/login.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../archivos css/barraNavegacion.css" type="text/css">
+    <link rel="stylesheet" href="../archivos css/footer.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../archivos css/estiloGeneral.css" type="text/css">
+    <title>Login</title>
+</head>
 <body>
     <header>
+        <nav class="navbar navbar-default">
+        </nav>
         <nav class="navbar fixed-top navbar-expand-lg ">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario--> 
           <div class="navbar-left">
             <img src="../Imagenes/logo-rotiseria-redimensionada.png" alt="logo" class="logo">
@@ -82,81 +80,74 @@
          
           </nav>
     </header>
-
-    <div class="image-aboutus-banner"style="margin-top:70px">
-        <div class="container">
-         <div class="row">
-             <div class="col-md-12">
-                <div class="text-center">
-                    <h1 class="lg-text titulos">SOBRE NOSOTROS</h1>
-                </div>
-              
-              <!-- <p class="image-aboutus-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>  -->
-            </div>
-         </div>
-     </div>
-     </div>
-     <!--
-        <div class="bread-bar">
-             <div class="container">
-                 <div class="row">
-                     <div class="col-md-8 col-sm-6 col-xs-8">
-                         <ol class="breadcrumb">
-                             <li><a href="index.html">Home</a></li>
-                             <li class="active">About Us</li>
-                         </ol>
-                     </div>
-                     <div class="col-md-4 col-sm-6 col-xs-4">
-                     </div>
-                 </div>
-               </div>
-         </div>
-     -->
-     
-     <div class="aboutus-secktion paddingTB60">
-         <div class="container">
-             <div class="row">
-                        <!-- 
-                         <div class="col-md-6">
-                             <h1 class="strong">SOBRE NOSOTROS:</h1>
-                             <p class="lead">This is the world's leading portal for<br>easy and quick </p> 
-                         </div>  -->
-                         <div class="col-12">
-                            <p>
-                                Somos un grupo de personas dedicado a brindarte a vos y a tu familia comida rica, sana y con
-                                el toque casero que nos caracteriza. <br>
-                                Llevamos varios años en el rubro, y nos seguimos capacitando de forma constante para que 
-                                a tu mesa llegue lo mejor.
-                            </p>
-                         </div>
-     </div>
-         </div>
-     </div>
-     <div class="container team-sektion paddingTB60">
-         <div class="row">
-             <div class="site-heading text-center">
-                             <h3><span class="textoForm">Nuestro staff</span></h3>
-                             <div class="border"></div>
-                         </div>
-         </div>
-        <div class="row  team-box">
-            <div class="team-img thumbnail">
-                <div class="text-center">
-                    <img id="imagenStaff" src="../Imagenes/staff.jpeg">
-                </div>
-                
-            </div>
-        </div>
+    <div class="container-fluid" id="fondo">
         
-     </div>
-     
-
-     <hr class="featurette-divider">
-     <!-- /END THE FEATURETTES -->
-     <!-- FOOTER -->
-    <footer class="container-fluid"> <!-- Footer correspondiente -->
-        <p class="float-end"><a id="footerText" href="#">Volver al inicio</a></p>
-        <p id="footerText">© 2022 Rotiseria El Mejor Sabor © <br> <a id="footerText" href="#">Privacidad</a> · <a id="footerText" href="#">Terminos y condiciones</a></p>
-    </footer>
+            <section>
+            <div class="wrapper bg-white">
+                <div class="h2 text-center">
+                    El mejor sabor
+                </div>
+                <div class="h4 text-muted text-center pt-2">
+                    ¿Quién está ingresando?
+                </div>
+                <form class="pt-3">
+                    <div class="form-group py-2">
+                        <div class="input-field"> 
+                            <span class="far fa-user p-2">
+        
+                            </span> 
+                            <input type="text" placeholder="Nombre de usuario" required placeholder="alguien15"> </div>
+                    </div>
+                    <div class="form-group py-1 pb-2">
+                        <div class="input-field"> 
+                            <span class="fas fa-lock p-2">
+        
+                            </span> 
+                            <input type="password" placeholder="Contraseña" required placeholder="1234"> <button class="btn bg-white text-muted"> 
+                                <span class="far fa-eye-slash"></span> 
+                            </button> 
+                        </div>
+                    </div>
+                    <div class="d-inline-flex align-items-start">
+                        <div class="remember ml-auto"> 
+                            <label class="option text-muted"> 
+                                Recuérdame 
+                                <input type="radio" name="radio"> <span class="checkmark"></span> 
+                            </label> 
+                        </div>    
+                    </div>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-block text-center my-3">
+                            Ingresar
+                        </button>
+        
+                        <div class="m"> 
+                            <a href="#" id="forgot">
+                            Olvidaste la contraseña?
+                            </a> 
+                        </div>
+                    </div> 
+                    
+                    <div class="text-center pt-3 text-muted">
+                        Nuevo usuario? 
+                            <a href="#">Click aqui</a>
+                    </div>
+                </form>
+            </div>
+            </section>
+        
+            
+    </div>
+    <hr class="featurette-divider">
+                <!-- /END THE FEATURETTES -->
+                <!-- FOOTER -->
+            <footer class="container-fluid"> <!-- Footer correspondiente -->
+                <p class="float-end"><a id="footerText" href="#">Volver al inicio</a></p>
+                <p id="footerText">© 2022 Rotiseria El Mejor Sabor © <br> <a id="footerText" href="#">Privacidad</a> · <a id="footerText" href="#">Terminos y condiciones</a></p>
+            </footer>
+        
+    
+    <!-- Core theme JS 
+    <script src="js/scripts.js"></script>  -->
 </body>
 </html>
