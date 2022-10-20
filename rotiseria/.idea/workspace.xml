@@ -1,65 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Creada migracion para app Administrador">
-      <change afterPath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pedido/templates/Pedido/realizarPedido.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plato/templates/Plato/registroPlato.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usuario/templates/Usuario/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/barraNavegacion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/estadisticas.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/estadoPedidos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/estiloGeneral.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/nosotros.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/realizarPedido.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/registro.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/EL_MEJOR_SABOR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/TEMPORAL_promo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/TEMPORAL_viandas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/Tarta-de-choclo-queso-y-cebolla.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/anquin-relleno.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/celiacos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/chefs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/comida-rapida-casera.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/diabetes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/estofado-de-costilla.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/form-difuminado.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/frente-nosotros.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/gelato.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/gluten-free.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/locro-de-trigo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/lofp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo-rotiseria-redimensionada.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo-rotiseria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/milanesa-napolitana-con-papas-fritas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/pastafrola.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/pizza-grande-comun.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/pollo-a-la-portuguesa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/sandwich-miga-jyq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/staff.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tarta-de-anquin-y-queso.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tarta-de-cholocolate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tarta-de-jyq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tiramisu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/veggie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/ñoquis-4-quesos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/estadoPedidos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/realizarPedido.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Templates/estadisticas.html" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/templates/Estadisticas/estadisticas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Templates/estadoPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/templates/Administrador/estadoPedidos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Templates/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/nosotros.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Templates/registroCadete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cadete/templates/Cadete/registroCadete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Templates/registroCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/registroCliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/index.html" afterDir="false" />
+    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Agregadas plantillas para cada app, archivos static y plantilla base">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrador/templates/Administrador/estadoPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/templates/Administrador/estadoPedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrador/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cadete/templates/Cadete/registroCadete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cadete/templates/Cadete/registroCadete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cadete/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cadete/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/templates/Cliente/registroCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/registroCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cliente/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/templates/Usuario/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/templates/Usuario/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/estadoPedidos.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/estadoPedidos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/registro.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/registro.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665848903619</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Agregadas plantillas para cada app, archivos static y plantilla base">
+      <created>1666194703380</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666194703380</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creada migracion para app Administrador" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creada migracion para app Administrador" />
+    <MESSAGE value="Agregadas plantillas para cada app, archivos static y plantilla base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregadas plantillas para cada app, archivos static y plantilla base" />
   </component>
 </project>

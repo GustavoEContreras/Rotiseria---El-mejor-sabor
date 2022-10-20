@@ -1,5 +1,5 @@
 .image-aboutus-banner {
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../Imagenes/frente-nosotros.jpg");
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center ;
@@ -56,11 +56,6 @@ h1 {
 .naranja{
     background-color: orange;
     color: white;
-}
-
-.fondo{
-	margin: auto;
-	background-image: url(../Imagenes/form-difuminado.png);
 }
 
 .listadoPedidos

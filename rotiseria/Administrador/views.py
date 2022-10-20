@@ -5,4 +5,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def Administrador(request):
-    return HttpResponse("Hola mundo!")
+    return render(request,'Administrador/estadoPedidos.html')

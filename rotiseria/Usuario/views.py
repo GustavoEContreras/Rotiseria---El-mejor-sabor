@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def Usuario(request):
-    return HttpResponse("Hola mundo!")
+    return render(request,'Usuario/login.html')
