@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Menu',
     'Pedido',
     'Plato',
+    'Persona',
     'Usuario',
     'Vianda',
 ]
