@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def Estadisticas(request):
-    return HttpResponse("Hola mundo!")
+    return render(request,'Estadisticas/estadisticas.html')
