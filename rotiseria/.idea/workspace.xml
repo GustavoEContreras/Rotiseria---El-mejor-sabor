@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Creacion de apps y sus vistas.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_11_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_11_44__Changes_.xml" afterDir="false" />
+    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Plantillas faltantes refactorizadas.">
+      <change afterPath="$PROJECT_DIR$/Menu/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Menu/migrations/0002_rename_plato_tipoplato.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Menu/migrations/0003_menu_tipomenu_tipoplato_tipoplato.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Menu/migrations/0004_rename_tipoplato_tipo_plato.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Menu/migrations/0005_rename_tipoplato_tipo_plato_opcionplato.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pedido/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pedido/migrations/0002_tipoentrega_estado_estadopedido_pedido_estado_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plato/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plato/migrations/0002_rename_tipomenu_plato_menu_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plato/migrations/0003_rename_tipoplato_plato_tipo_plato.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plato/migrations/0004_alter_plato_menu_alter_plato_precio_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vianda/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_12_49_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_12_49__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Estadisticas/templates/Estadisticas/estadisticas.html" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/templates/Estadisticas/estadisticas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Estadisticas/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/templates/Pedido/realizarPedido.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/templates/Pedido/realizarPedido.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/templates/Plato/registroPlato.html" beforeDir="false" afterPath="$PROJECT_DIR$/Plato/templates/Plato/registroPlato.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plato/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pedido/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plato/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plato/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vianda/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vianda/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Envs/Rotiseria---El-mejor-sabor/Lib/site-packages/django/db/models/fields/related.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,6 +98,14 @@
       <option name="presentableId" value="Default" />
       <updated>1664646294661</updated>
     </task>
+    <task id="LOCAL-00001" summary="Plantillas faltantes refactorizadas.">
+      <created>1666450193448</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666450193449</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,5 +118,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Plantillas faltantes refactorizadas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Plantillas faltantes refactorizadas." />
   </component>
 </project>
