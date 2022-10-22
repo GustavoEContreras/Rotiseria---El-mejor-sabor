@@ -9,3 +9,4 @@ def SobreNosotros(request):
     return render(request,'Cliente/nosotros.html')
 def RegistroCliente(request):
     return render(request,'Cliente/registroCliente.html')
+

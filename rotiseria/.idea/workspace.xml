@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Plantillas refactorizadas">
-      <change afterPath="$PROJECT_DIR$/Administrador/migrations/0002_delete_administrador.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cadete/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cliente/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persona/views.py" afterDir="false" />
+    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Modelos actualizados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Administrador/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cadete/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cadete/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cliente/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/templates/Cliente/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/templates/Cliente/nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persona/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Persona/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/nosotros.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nosotros.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666263812903</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modelos actualizados">
+      <created>1666362016575</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666362016575</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +135,7 @@
     <MESSAGE value="Creada migracion para app Administrador" />
     <MESSAGE value="Agregadas plantillas para cada app, archivos static y plantilla base" />
     <MESSAGE value="Plantillas refactorizadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plantillas refactorizadas" />
+    <MESSAGE value="Modelos actualizados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modelos actualizados" />
   </component>
 </project>

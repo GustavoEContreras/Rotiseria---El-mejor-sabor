@@ -39,8 +39,6 @@ class Persona(models.Model):
         (FEMENINO, "F")
     )
 
-
-
     sexo = models.CharField(max_length=1,
                             choices=SEXO_OPCIONES,
                             default=FEMENINO)
