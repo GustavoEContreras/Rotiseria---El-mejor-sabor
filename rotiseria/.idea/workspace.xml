@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Modelos actualizados">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Migraciones realizadas para Menu, Plato y Vianda. Error corregido.">
       <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_09_35__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_09_35__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Menu/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0002_rename_plato_tipoplato.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0003_menu_tipomenu_tipoplato_tipoplato.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0004_rename_tipoplato_tipo_plato.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0005_rename_tipoplato_tipo_plato_opcionplato.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plato/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/migrations/0002_rename_tipomenu_plato_menu_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/migrations/0003_rename_tipoplato_plato_tipo_plato.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/migrations/0004_alter_plato_menu_alter_plato_precio_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plato/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vianda/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vianda/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vianda/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +35,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/Repositorios - Git/PROG III - Lab/Rotiseria---El-mejor-sabor/rotiseria",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Repositorios - Git/PROG III - Lab/Rotiseria---El-mejor-sabor/rotiseria&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Vianda" />
@@ -70,7 +61,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Loli\Envs\Rotiseria---El-mejor-sabor\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\gusta\Envs\Rotiseria---El-mejor-sabor\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -94,6 +85,14 @@
       <option name="presentableId" value="Default" />
       <updated>1664646294661</updated>
     </task>
+    <task id="LOCAL-00001" summary="Migraciones realizadas para Menu, Plato y Vianda. Error corregido.">
+      <created>1666535248006</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666535248006</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,5 +105,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Migraciones realizadas para Menu, Plato y Vianda. Error corregido." />
+    <option name="LAST_COMMIT_MESSAGE" value="Migraciones realizadas para Menu, Plato y Vianda. Error corregido." />
   </component>
 </project>

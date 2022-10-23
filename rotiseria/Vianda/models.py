@@ -1,7 +1,5 @@
 from django.db import models
-from model_utils import Choices
-from Menu.models import Menu
-from Pedido.models import TipoEntrega
+
 
 
 # Create your models here.
