@@ -7,35 +7,179 @@
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/estadisticas.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/estadisticas.css' %}" type="text/css" media="all">
 {% endblock %}
 
 
 
 {% block contenido %}
-
-      <div class="container-fluid fondo">
-
+      <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png' %});">
+        <br><br>
       <div id="listadoVentas">
         <h2>
           <span class="textoForm">Listado de ventas diarias</span>
         </h2>
+        <form method="GET" name="listarVentasDiarias">
+          <div class="row">
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaDesde1" class="textoForm">Fecha desde</label>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde1" name="fechaDesde" type="date" required/>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaHasta1" class="textoForm">Fecha hasta</label>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta1" name="fechaDesde" type="date" required/>
+                     </div>
+                    <div class="col-4">
+                        <input type="submit" class="btn btn-primary" value="Visualizar">
+                    </div>
+          </div>
+      </form>
 
       </div>
+        <br>
+        <hr class="featurette-divider">
       <div id="listadoCantidadesPorCadete">
         <h2>
           <span class="textoForm">Listado de cantidades entregadas por el cadete</span>
         </h2>
+        <form method="get" name="listarCantidadPorCadete">
+            <div class="row">
+                <div class="col-3">
+                    <select class="form-select" name="listaCadetes" id="listaCadetes">
+                    {% for cadete in cadetes %}
+                    <option value={{cadete.cuil}}>{{cadete.nombre}} {{cadete.apellido}}</option>
+                    {% endfor %}
+                </select>
+                </div>
 
-        <select name="listaCadetes" id="listaCadetes"> <!-- Lista provisional de cadetes -->
-            <option value="Gustavo Contreras">Gustavo Contreras</option>
-            <option value="Paola Romero">Paola Romero</option>
-        </select>
+                <div class="col-8 row">
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaDesde2" class="textoForm">Fecha desde</label>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde2" name="fechaDesde" type="date" required/>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaHasta2" class="textoForm">Fecha hasta</label>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta2" name="fechaDesde" type="date" required/>
+                     </div>
+                    <div class="col-4">
+                        <input type="submit" class="btn btn-primary" value="Visualizar">
+                    </div>
+                </div>
+            </div>
+
+
+          </form>
+        
       </div>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>
+        <hr class="featurette-divider">
+      <div id="listadoViandas">
+        <h2>
+          <span class="textoForm">Cantidad de viandas</span>
+        </h2>
+        <form method="GET" name="listarViandas">
+          <div class="row">
+            <div class="col-3">
+                        <label class="form-label textoForm" for="fechaDesde3" class="textoForm">Fecha desde</label>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde3" name="fechaDesde" type="date" required/>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaHasta3" class="textoForm">Fecha hasta</label>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta3" name="fechaDesde" type="date" required/>
+                     </div>
+                    <div class="col-4">
+                        <input type="submit" class="btn btn-primary" value="Visualizar">
+                    </div>
+          </div>
+      </form>
 
+      </div>
+          <br>
+        <hr class="featurette-divider">
+      <div id="listadoViandasPorZona">
+        <h2>
+          <span class="textoForm">Cantidad de viandas entregadas por zona</span>
+        </h2>
+        <form method="get" name="listarViandasPorZona">
+            <div class="row">
+                <div class="col-2">
+                    <select class="form-select" name="listaZona" id="listaZona">
+                    {% for zona in zonas %}
+                    <option value={{zona.id}}>{{zona.zona}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+
+                <div class="col-8 row">
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaDesde4" class="textoForm">Fecha desde</label>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde4" name="fechaDesde" type="date" required/>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaHasta4" class="textoForm">Fecha hasta</label>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta4" name="fechaDesde" type="date" required/>
+                     </div>
+                    <div class="col-4">
+                        <input type="submit" class="btn btn-primary" value="Visualizar">
+                    </div>
+                </div>
+            </div>
+
+
+          </form>
+
+      </div>
+          <br>
+        <hr class="featurette-divider">
+      <div id="listadoPlatos">
+        <h2>
+          <span class="textoForm">Listado de platos más solicitados</span>
+        </h2>
+        <form method="GET" name="listarPlatos">
+          <div class="row">
+            <div class="col-3">
+                        <label class="form-label textoForm" for="fechaDesde5" class="textoForm">Fecha desde</label>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde5" name="fechaDesde" type="date" required/>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaHasta5" class="textoForm">Fecha hasta</label>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta5" name="fechaDesde" type="date" required/>
+                     </div>
+                    <div class="col-4">
+                        <input type="submit" class="btn btn-primary" value="Visualizar">
+                    </div>
+          </div>
+      </form>
+
+      </div>
+          <br>
+        <hr class="featurette-divider">
+      <div id="listadoMenu">
+        <h2>
+          <span class="textoForm">Listado de menús</span>
+        </h2>
+        <form method="GET" name="listarMenu">
+          <div class="row">
+            <div class="col-3">
+                        <label class="form-label textoForm" for="fechaDesde6" class="textoForm">Fecha desde</label>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde6" name="fechaDesde" type="date" required/>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" for="fechaHasta6" class="textoForm">Fecha hasta</label>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta6" name="fechaDesde" type="date" required/>
+                     </div>
+                    <div class="col-4">
+                        <input type="submit" class="btn btn-primary" value="Visualizar">
+                    </div>
+          </div>
+      </form>
+
+      </div>
+          <br>
+        <hr class="featurette-divider">
+    <br><br><br>
     </div>
 
 {% endblock %}

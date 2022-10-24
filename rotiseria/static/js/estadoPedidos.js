@@ -1,5 +1,5 @@
 const divListaPedidos = document.getElementById('listaPedidos'); // DIV principal donde se añadiran (como hijos) cada div que pertenecera a un pedido
-divListaPedidos.innerHTML='';
+//divListaPedidos.innerHTML='';
 
 const fechaActual = new Date(new Date().getFullYear, new Date().getMonth, new Date().getDate());
 // Fecha actual sin tener en cuenta la hora del dia actual
@@ -115,7 +115,7 @@ para los cuales falta menos de 1 hora para la entrega y en verde los pedidos don
 más de 1 hora para la entrega.
 */
 
-
+/*
 const listaPedidos = []; // Lista de pedidos. Tipo array. Utilizada para ordenar los pedidos
 
 const fechaAnterior = new Date(); //Fechas inicializadas para inicializar los correspondientes pedidos. Objeto tipo Date
@@ -139,7 +139,7 @@ listaPedidos.sort(function(a,b)
         return fecha1.getTime() - fecha2.getTime();
     }
 )
-
+*/
 function getIndiceEstadoEntrega(estadoEntrega)
 {
     switch (estadoEntrega)
@@ -191,6 +191,7 @@ function esElIndiceCorrecto(indice,tipoDeEntrega)
         return "";
     }
 }
+/*
 // Carga de pedidos en el codigo HTML, todos siguen una estructura igual en cuanto a HTML
 for (let auxiliarPedido of listaPedidos)
     {
@@ -232,7 +233,7 @@ for (let auxiliarPedido of listaPedidos)
     }
 
 
-
+*/
 const selectEstadoEntrega = document.getElementsByClassName('estadoEntrega'); // Se obtiene una coleccion de todos los elementos SELECT que indican el estado de entrega de un pedido especifico
 
 
