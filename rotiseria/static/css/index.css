@@ -79,6 +79,9 @@
       font-family: 'Amatic SC', cursive;
       font-size: 100%;
     }
+    .dropdown-divider{
+        color: white;
+    }
 
     
    

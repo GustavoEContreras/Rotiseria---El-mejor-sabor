@@ -22,6 +22,7 @@
           <span class="textoForm">Listado de ventas diarias</span>
         </h2>
         <form method="GET" name="listarVentasDiarias">
+            {% csrf_token %}
           <div class="row">
                     <div class="col-3">
                         <label class="form-label textoForm" for="fechaDesde1" class="textoForm">Fecha desde</label>
@@ -45,6 +46,7 @@
           <span class="textoForm">Listado de cantidades entregadas por el cadete</span>
         </h2>
         <form method="get" name="listarCantidadPorCadete">
+            {% csrf_token %}
             <div class="row">
                 <div class="col-3">
                     <select class="form-select" name="listaCadetes" id="listaCadetes">
@@ -80,6 +82,7 @@
           <span class="textoForm">Cantidad de viandas</span>
         </h2>
         <form method="GET" name="listarViandas">
+            {% csrf_token %}
           <div class="row">
             <div class="col-3">
                         <label class="form-label textoForm" for="fechaDesde3" class="textoForm">Fecha desde</label>
@@ -103,6 +106,7 @@
           <span class="textoForm">Cantidad de viandas entregadas por zona</span>
         </h2>
         <form method="get" name="listarViandasPorZona">
+            {% csrf_token %}
             <div class="row">
                 <div class="col-2">
                     <select class="form-select" name="listaZona" id="listaZona">
@@ -138,6 +142,7 @@
           <span class="textoForm">Listado de platos más solicitados</span>
         </h2>
         <form method="GET" name="listarPlatos">
+            {% csrf_token %}
           <div class="row">
             <div class="col-3">
                         <label class="form-label textoForm" for="fechaDesde5" class="textoForm">Fecha desde</label>
@@ -161,6 +166,7 @@
           <span class="textoForm">Listado de menús</span>
         </h2>
         <form method="GET" name="listarMenu">
+            {% csrf_token %}
           <div class="row">
             <div class="col-3">
                         <label class="form-label textoForm" for="fechaDesde6" class="textoForm">Fecha desde</label>
@@ -177,8 +183,7 @@
       </form>
 
       </div>
-          <br>
-        <hr class="featurette-divider">
+
     <br><br><br>
     </div>
 

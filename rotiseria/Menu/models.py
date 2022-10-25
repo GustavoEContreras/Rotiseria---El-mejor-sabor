@@ -18,3 +18,5 @@ class Menu(models.Model):
 
     tipo = models.CharField(max_length=15, choices=TIPO_MENU, default=NORMAL, unique=True)
 
+    def __str__(self):
+        return self.tipo

@@ -21,20 +21,21 @@
                 <div class="h4 text-muted text-center pt-2">
                     ¿Quién está ingresando?
                 </div>
-                <form class="pt-3">
+                <form action="{% url 'Usuario:login' %}" class="pt-3" method="POST">
+                    {% csrf_token %}
                     <div class="form-group py-2">
                         <div class="input-field">
                             <span class="far fa-user p-2">
 
                             </span>
-                            <input type="text" placeholder="Nombre de usuario" required placeholder="alguien15"> </div>
+                            <input type="text" name="username" placeholder="Nombre de usuario" required placeholder="alguien15"> </div>
                     </div>
                     <div class="form-group py-1 pb-2">
                         <div class="input-field">
                             <span class="fas fa-lock p-2">
 
                             </span>
-                            <input type="password" placeholder="Contraseña" required placeholder="1234"> <button class="btn bg-white text-muted">
+                            <input type="password" name="password" placeholder="Contraseña" required placeholder="1234"> <button class="btn bg-white text-muted">
                                 <span class="far fa-eye-slash"></span>
                             </button>
                         </div>
@@ -48,9 +49,9 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-block text-center my-3">
+                        <input type="submit" class="btn btn-block text-center my-3">
                             Ingresar
-                        </button>
+                        </input>
 
                         <div class="m">
                             <a href="#" id="forgot">

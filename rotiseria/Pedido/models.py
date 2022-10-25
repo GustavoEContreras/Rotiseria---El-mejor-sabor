@@ -1,7 +1,7 @@
 from django.db import models
 from model_utils import Choices
 from Cliente.models import Cliente
-
+from Plato.models import Plato
 # Create your models here.
 
 class Pedido(models.Model):
@@ -11,6 +11,7 @@ class Pedido(models.Model):
     horaEntregaHasta = models.DateTimeField()
     TipoEntrega = models.ForeignKey("TipoEntrega", on_delete=models.CASCADE, null=True)
     Estado = models.ForeignKey("Estado", on_delete=models.CASCADE, null=True)
+    platos = models.ManyToManyField(Plato)
 
     def __str__(self):
         return (self.Persona.nombre +' '+self.Persona.apellido +'-'+self.Estado.estadoPedido+'-'+self.TipoEntrega.tipoEntrega)

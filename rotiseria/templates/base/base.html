@@ -57,22 +57,57 @@
 
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" >    <!-- Lista con las opciones de la barra de navegacion-->
-                    <li class="nav-item"><a class="nav-link active" id="texto-color" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" id="texto-color" aria-current="page" href="{% url 'Cliente:Index' %}">Home</a></li>
                     <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
                         <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menús</a>
+
+
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a id="texto-color" class="dropdown-item" href="Templates/menu.html">Normal</a></li>
                             <li><a  id="texto-color" class="dropdown-item" href="Templates/menu.html">Apto para celíacos</a></li>
                             <li><a id="texto-color" class="dropdown-item" href="Templates/menu.html">Recomendado para diabeticos</a></li>
                             <li><a id="texto-color" class="dropdown-item" href="Templates/menu.html">Veggie</a></li>
-                            <li><hr class="dropdown-divider" /></li> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                            {% if user.is_authenticated and user.is_superuser %}
+                                <li><hr class="dropdown-divider" /></li> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
+                                <li><a id="texto-color" class="dropdown-item" href="{% url 'Plato:registrar' %}">Registrar plato</a></li>
+                                <li><a id="texto-color" class="dropdown-item" href="">Editar menús</a></li>
+                            {% endif %}
                         </ul>
                     </li>
-                    <li class="nav-item"><a id="texto-color" class="nav-link" href="/Templates/nosotros.html">Sobre nosotros</a></li>
+                    {% if user.is_authenticated and user.is_superuser %}
+                    <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                        <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
+
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Pedido:registroPedido' %}">Registrar pedido</a></li>
+                            <li><a  id="texto-color" class="dropdown-item" href="{% url 'Administrador:estadoPedidos' %}">Estado de pedidos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Estadisticas:Estadisticas' %}">Estadisticas</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% if user.is_authenticated and user.is_superuser %}
+                        <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                        <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Cliente:RegistroCliente' %}">Registrar cliente</a></li>
+                            <li><a  id="texto-color" class="dropdown-item" href="{% url 'Cadete:registroCadete' %}">Registrar cadete</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                        <li class="nav-item"><a id="texto-color" class="nav-link" href="{% url 'Cliente:SobreNosotros' %}">Sobre nosotros</a></li>
+                    {% endif %}
+
                     <li class="nav-item">
                         <div class="input-group">
                              <!-- Logo de login <i class="fa fa-sign-in" aria-hidden="true"></i> -->
-                            <a id="texto-color" class="nav-link" href="/Templates/login.html">Ingresar</a>
+                            {% if user.is_authenticated %}
+                                <a id="texto-color" class="nav-link" href ="{% url 'Usuario:logout' %}">Cerrar sesión</a>
+                            {% else %}
+                                <a id="texto-color" class="nav-link" href="{% url 'Usuario:login' %}">Ingresar</a>
+                            {% endif %}
                         </div>
                     </li>
                   </ul>
