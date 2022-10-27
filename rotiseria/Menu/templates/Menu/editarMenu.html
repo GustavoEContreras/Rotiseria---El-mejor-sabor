@@ -1,13 +1,92 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+
+{% block title %}
+    Editar menús
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}" type="text/css" media="all">
+{% endblock %}
+
+{% block contenido %}
+    <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png' %});">
+            <hr class="featurette-divider">
+            <div class="container px-4 form">
+                <form id="elegirMenu" action="{% url 'Menu:editarMenu' %}" method="GET">
+                    <article id="tipoMenu">
+                        <div class="container px-5 my-5 mb-0">
+                            <div class="text-center">
+                                <h2>
+                                   <span class="textoForm">Tipo de menu</span>
+                                </h2>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-2">
+
+                                    </div>
+                                    <div class="col-3">
+                                        <label class="form-label textoForm" for="tipoMenu" ><span class="textoSecundario">Menu</span></label>
+                                        <select class="form-select" name="tipoMenu" id="tipoMenu">
+                                        {% for menu in menus %}
+                                            <option value={{menu.id}} {% if TIPO_MENU == menu.id %} selected="selected" {% endif %}>{{menu.tipo}}</option>
+                                        {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-2">
+
+                                    </div>
+                                    <div class="col-3" id="botonMenu">
+                                        <input type="submit" class="btn btn-primary"  value="Editar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </form>
+            </div>
+            {% if MOSTRAR_DETALLE %}
+            <div>
+                <form id="elegirPlato" action="{% url 'Menu:editarMenu' %}" method="GET">
+                    <article id="tipoMenu">
+                        <div class="container px-5 my-5 mb-0">
+                            <div class="text-center">
+                                <h2>
+                                   <span class="textoForm">Platos del menu</span>
+                                </h2>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-2">
+
+                                    </div>
+                                    <div class="col-3">
+                                        <label class="form-label textoForm" for="platoMenu" ><span class="textoSecundario">Plato</span></label>
+                                        <input type="text" list="platosDisponibles" placeholder="Nombre del plato" class="form-control">
+                                        <datalist id="platosDisponibles">
+                                            {% for plato in platos %}
+                                                <option value="{{plato.nombre}}"></option>
+                                            {% endfor %}
+                                        </datalist>
+                                    </div>
+                                    <div class="col-2">
+
+                                    </div>
+                                    <div class="col-3" id="botonMenu">
+                                        <input type="submit" class="btn btn-primary"  value="Ver información">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </form>
+            </div>
+            {% endif %}
+    </div>
+{% endblock %}
+

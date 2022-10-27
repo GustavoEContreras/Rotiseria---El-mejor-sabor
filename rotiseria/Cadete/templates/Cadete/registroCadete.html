@@ -14,248 +14,27 @@
     <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png' %});">
             <hr class="featurette-divider">
             <div class="container px-4 form">
-                <form id="contactForm" action="#" method="post">
-                    <article id="datosPersonales">
-                        <div class="container px-5 my-5">
-                            <div class="text-center">
-                                <h2>
-                                   <span class="textoForm">Datos personales</span>
-                                </h2>
-                            </div>
-                            <div class="mb-3">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <label class="form-label textoForm" for="apellido" ><span class="textoSecundario">Apellido</span></label>
-                                        <input class="form-control" id="apellido" type="text" placeholder="Apellido" required/>
-
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label class="form-label textoForm" for="nombre" ><span class="textoSecundario">Nombre</span></label>
-                                            <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
-
-                                        </div>
-                                    </div>
-                                    <div class="col-2"></div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label class="form-label textoForm" for="numeroDeCuil"><span class="textoSecundario">Número de CUIL</span></label>
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <select class="form-select" name="cuil" id="prefijoCuil" required> <!-- Prefijo de CUIL -->
-                                                        <option value="">Prefijo</option>
-                                                        <option value="20">20</option>
-                                                        <option value="23">23</option>
-                                                        <option value="24">24</option>
-                                                        <option value="27">27</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-6">
-                                                    <input class="form-control" type="number" name="cuil" id="dni" max="99999999" required placeholder="DNI"> <!-- DNI (Valor intermedio del CUIL) -->
-                                                </div>
-                                                <div class="col-3">
-                                                    <input class="form-control" type="number" name="cuil" id="digitoVerificador" min="0" max="9" required> <!-- Digito verificador del CUIL -->
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <label class="form-label d-block" ><span class="textoForm"><span class="textoSecundario">Sexo</span></span></label>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" id="masculino" type="radio" name="sexo" required/>
-                                            <label class="form-check-label textoForm" for="masculino" class="textoForm"><span class="textoSecundario">Masculino</span></label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" id="femenino" type="radio" name="sexo"/>
-                                            <label class="form-check-label textoForm" for="femenino" class="textoForm"><span class="textoSecundario">Femenino</span></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-1"></div>
-                                    <div class="col-5">
-                                        <div class="mb-3">
-                                            <label class="form-label textoForm" for="fechaDeNacimiento" class="textoForm"><span class="textoSecundario">Fecha de nacimiento</span></label>
-                                            <input class="form-control" id="fechaDeNacimient o" type="date" placeholder="Fecha de nacimiento" required/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
+                <div class="text-center">
+                    <h1>
+                        <span class="textoForm">Registrar cadete</span>
+                    </h1>
+                </div>
+                <form id="z" action="#" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="row">
                                 <div class="col-3"></div>
                                 <div class="col-6">
                                     <div class="mb-3">
-                                        <label class="form-label textoForm" for="telefono" class="textoForm"><span class="textoSecundario">Teléfono de contacto</span></label>
-                                        <input class="form-control" id="telefono" type="text" placeholder="Telefono" required/>
-
+                                        {{ field.errors }}
+                                        <label class="textoForm" for="{{ field.auto_id }}">{{ field.label }}</label>
+                                        {{ field }}
                                     </div>
                                 </div>
                                 <div class="col-3"></div>
                             </div>
+                    {% endfor %}
 
-                        </div>
-                    </article>
-                    <hr class="style1">
-                    <article id="datosDireccion">
-                        <div class="container px-5 my-5">
-                            <div class="text-center">
-                                <h2>
-                                    <span class="textoForm">Dirección</span>
-                                </h2>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="barrio" class="textoForm"><span class="textoSecundario">Barrio</span></label>
-                                        <input class="form-control" id="barrio" type="text" placeholder="Barrio" required/>
-
-                                    </div>
-                                </div>
-                                <div class="col-1"></div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="calle" class="textoForm"><span class="textoSecundario">Calle</span></label>
-                                        <input class="form-control" id="calle" type="text" placeholder="Calle" required />
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="numero" class="textoForm"><span class="textoSecundario">Número</span></label>
-                                        <input class="form-control" id="numero" type="number" min="0" placeholder="Numero" required />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="localidad" class="textoForm">Localidad</label>
-                                        <input class="form-control" id="localidad" type="text" placeholder="Localidad" required />
-                                    </div>
-                                </div>
-                                <div class="col-1"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="zona" class="textoForm"><span class="textoSecundario">Zona</span></label>
-                                        <select class="form-select" id="zona" aria-label="Zona">
-                                            <option value="Norte"><span class="textoSecundario">Norte</span></option>
-                                            <option value="Sur"><span class="textoSecundario">Sur</span></option>
-                                            <option value="Este"><span class="textoSecundario">Este</span></option>
-                                            <option value="Oeste"><span class="textoSecundario">Oeste</span></option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                    </div>
-                    </article>
-                    <hr class="style1">
-                    <article id="datosCadete">
-                        <div class="container px-5 my-5">
-                            <div class="text-center">
-                                <h2>
-                                    <span class="textoForm">Datos del cadete</span>
-                                </h2>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="fechaDeIngreso" class="textoForm"><span class="textoSecundario">Fecha de ingreso a la rotisería</span></label>
-                                        <input class="form-control" type="date" name="fechaDeIngreso" id="fechaDeIngreso" required>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="vigenciaCarnet" class="textoForm"><span class="textoSecundario">Vigencia del carnet de conducir</span></label>
-                                        <input class="form-control" type="date" name="vigenciaCarnet" id="vigenciaCarnet" required>
-
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="patenteVehiculo" class="textoForm"><span class="textoSecundario">Patente del vehiculo</span></label>
-                                        <input class="form-control" type="text" name="patenteVehiculo" id="patenteVehiculo" required maxlength="7" placeholder="ABC123 o AB123CD"/>
-                                         <!-- La patente del vehiculo debe ser tal del formato ABC 123 o AB 123 CD-->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-5"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="zonaEntrega" class="textoForm"><span class="textoSecundario">Zona de entregas</span></label>
-                                        <select class="form-select" id="zonaEntrega" aria-label="Zona">
-                                            <option value="Norte"><span class="textoSecundario">Norte</span></option>
-                                            <option value="Sur"><span class="textoSecundario">Sur</span></option>
-                                            <option value="Este"><span class="textoSecundario">Este</span></option>
-                                            <option value="Oeste"><span class="textoSecundario">Oeste</span></option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                    </div>
-                    </article>
-                    <hr class="style1">
-                    <article id="datosUsuario">
-                        <div class="container px-5 my-5">
-                            <div class="text-center">
-                                <h2>
-                                    <span class="textoForm">Datos de usuario</span>
-                                </h2>
-                            </div>
-                            <div class="row">
-                                <div class="col-2"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="email" class="textoForm"><span class="textoSecundario">Email</span></label>
-                                        <input class="form-control" id="email" type="email" placeholder="Email" required />
-
-                                    </div>
-                                </div>
-                                <div class="col-2"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="nombreDeUsuario" class="textoForm"><span class="textoSecundario">Nombre de usuario</span></label>
-                                        <input class="form-control" id="nombreDeUsuario" type="text" placeholder="Nombre de usuario" required />
-                                    </div>
-                                </div>
-                            </div> <br>
-
-                            <div class="row">
-                                <div class="col-2"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="contrasena" class="textoForm"><span class="textoSecundario">Contraseña</span></label>
-                                        <input class="form-control" id="contrasena" type="text" placeholder="Contraseña" required />
-                                    </div>
-                                </div>
-                                <div class="col-2"></div>
-                                <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label textoForm" for="confirmarContrasena" class="textoForm"><span class="textoSecundario">Confirmar contraseña</span></label>
-                                        <input class="form-control" id="confirmarContrasena" type="text" placeholder="Confirmar contraseña" required />
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </article>
                     <article id="botonRegistrar">
                         <div class="text-center">
                             <button class="btn btn-primary btn-lg" id="submitButton" type="submit"><span class="textoSecundario">Registrarse</span></button>

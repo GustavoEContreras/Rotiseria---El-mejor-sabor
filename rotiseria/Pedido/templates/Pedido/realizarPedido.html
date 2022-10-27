@@ -8,7 +8,7 @@
 
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/realizarPedido.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
 {% endblock %}
@@ -17,57 +17,57 @@
      <section>
         <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png'%});">
             <div class="container px-5">
-                <div class="text-center">
+                <div class="text-center textoForm">
                     <h1>Realizar nuevo pedido</h1>
                 </div>
             </div>
-            <div class="container px-5 my-2">
+            <div class="container px-5">
                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                     <div class="row">
-                        <div class="text-center">
+                        <div class="text-center textoForm">
                             <h3>Datos del pedido</h3>
                         </div>
                         <div class="col-2"></div>
                         <div class="col-2">
                             <div class="mb-3">
-                                <label class="form-label" for="codigo">Codigo</label>
+                                <label class="form-label textoForm" for="codigo">Codigo</label>
                                 <input class="form-control" id="codigo" type="text" placeholder="Codigo" readonly required/>
                             </div>
                         </div>
                         <div class="col-1"></div>
                         <div class="col-2">
                             <div class="mb-3">
-                                <label class="form-label" for="fechaDelPedido">Fecha del pedido</label>
+                                <label class="form-label textoForm" for="fechaDelPedido">Fecha del pedido</label>
                                 <input class="form-control" id="fechaDelPedido" type="date" required/>
                             </div>
                         </div>
                         <div class="col-1"></div>
                         <div class="col-2">
                             <div class="mb-3">
-                                <label class="form-label" for="estadoDelPedido">Estado del pedido</label>
+                                <label class="form-label textoForm" for="estadoDelPedido">Estado del pedido</label>
                                 <input type="text" class="form-control" value="Pendiente" required disabled>
                             </div>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="text-center">
+                        <div class="text-center textoForm">
                             <h3>Datos del cliente</h3>
                         </div>
                         <br><br><br><br>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="text-center">
+                        <div class="text-center textoForm">
                             <h3>Datos de la entrega</h3>
                         </div>
                         <div class="col-1"></div>
                         <div class="col-5">
                             <div class="mb-3">
-                                <div class="text-center">
+                                <div class="text-center textoForm">
                                     <label class="form-label" for="rangoHorario">Rango horario</label>
                                 </div>
-                                <div class="row ">
+                                <div class="row">
                                         <div class="col-2"></div>
                                         <div class="col-3">
                                             <input class="form-control" type="number" id="horaDesde" value="10"> <!--min="10" max="22" -->
@@ -78,7 +78,7 @@
                                         <div class="col-3">
                                             <input class="form-control" type="number" id="minutoDesde" value="00"  step="5"> <!--min="55" max="0" -->
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-3 textoForm">
                                             <p><b>Desde</b></p>
                                         </div>
 
@@ -87,12 +87,12 @@
                                 <div class="row">
                                         <div class="col-3"></div>
                                         <div class="col-5">
-                                            <div class="text-center">
+                                            <div class="text-center textoForm">
                                                 <input type="text" class="form-control" id="horariosHasta" value="10:30" readonly>
                                             </div>
                                         </div>
                                         <div class="col-1"></div>
-                                        <div class="col-3">
+                                        <div class="col-3 textoForm">
                                             <p><b>Hasta</b></p>
                                         </div>
                                 </div>
@@ -101,21 +101,21 @@
                         <div class="col-1"></div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label class="form-label d-block">Tipo de entrega</label>
+                                <label class="form-label d-block textoForm">Tipo de entrega</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" id="retiro" type="radio" name="tipoDeEntrega" required checked/>
-                                    <label class="form-check-label" for="retiro">Retiro</label>
+                                    <label class="form-check-label textoForm" for="retiro">Retiro</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" id="delivery" type="radio" name="tipoDeEntrega" required/>
-                                    <label class="form-check-label" for="delivery">Delivery</label>
+                                    <label class="form-check-label textoForm" for="delivery">Delivery</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <hr>
                     <div class="row" id="listaProductos">
-                        <div class="text-center">
+                        <div class="text-center textoForm">
                             <h3>
                                 Estás llevando:
                             </h3>
@@ -142,31 +142,31 @@
                         <div class="text-center">
                             <div class="row">
                                 <div class="col-4"></div>
-                                <div class="col-2">
+                                <div class="col-2 textoForm">
                                     <h5>Productos</h5>
                                 </div>
                                 <div class="col-1">
-                                    <input type="number" value="" readonly required disabled id="precioProductos">
+                                    <input class="textoForm" type="number" value="" readonly required disabled id="precioProductos">
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="col-4"></div>
-                                <div class="col-2">
+                                <div class="col-2 textoForm">
                                     <h5>Envio</h5>
                                 </div>
                                 <div class="col-1">
-                                    <input type="number" value="50" readonly required disabled id="envio">
+                                    <input class="textoForm" type="number" value="50" readonly required disabled id="envio">
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="col-4"></div>
-                                <div class="col-2">
+                                <div class="col-2 textoForm">
                                     <h5>Total</h5>
                                 </div>
                                 <div class="col-1">
-                                    <input type="number" value="" readonly required disabled id="precioTotal">
+                                    <input class="textoForm" type="number" value="" readonly required disabled id="precioTotal">
                                 </div>
 
                             </div>

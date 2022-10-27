@@ -7,5 +7,5 @@ from Persona.models import Zona
 
 class Cadete(Persona):
     vigenciaCarnet = models.DateField()
-    patenteVehiculo = models.CharField(max_length=7)
+    patenteVehiculo = models.CharField(max_length=9)
     zona = models.ForeignKey("Persona.Zona", on_delete=models.CASCADE)

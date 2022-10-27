@@ -23,7 +23,7 @@
             </div>
             <div class="carousel-inner"> <!-- En este div se encuentran todas las diapositivas-->
               <div class="carousel-item active"> <!-- La primer diapositiva, siempre se la ve cuando se actualiza/refresca la página-->
-                <img src="{% static 'img/EL_MEJOR _SABOR.jpg' %}"> <!-- Imagen de fondo de la diapositiva, si se quiere editar recomiendo darle una clase-->
+                <img src="{% static 'img/EL_MEJOR_SABOR.jpg' %}"> <!-- Imagen de fondo de la diapositiva, si se quiere editar recomiendo darle una clase-->
 
                 <!-- Texto que acompaña a la diapositiva, de ejemplo ver la diapositiva 3
                     <div class="container">
@@ -83,7 +83,7 @@
         <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png'%});">
             <div class="text-center">
                 <h1>
-                    <span class="textoForm">Menú</span>       <!-- Segun el menú elegido, aca iria el nombre "menú vegetariano o diabetico"-->
+                    <span class="textoForm">{{NOMBRE_MENU}}</span>       <!-- Segun el menú elegido, aca iria el nombre "menú vegetariano o diabetico"-->
                 </h1>
             </div>
             <hr class="style2">
@@ -98,7 +98,8 @@
                     <div class="col-12">
                         <ul class="list-unstyled" id="listaEntradas">
                             <div class="row">
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                {% for entrada in entradas %}
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
                                     <li>
                                         <div class="food-card food-card--vertical">
                                             <div class="food-card_img">
@@ -107,16 +108,16 @@
                                             </div>
                                             <div class="food-card_content">
                                                 <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Tarta de choclo</a>
+                                                    <a href="#!" class="food-card_title">{{entrada.nombre}}</a>
                                                     <a href="#!" class="food-card_author">
-                                                        Cymbopogon, hierba de limon, limonaria, limoncillo, paja, cedron, mal, ojillo, malojillo, y zacate limon
+                                                        {{entrada.descripcionPlato}}
                                                     </a>
                                                 </div>
                                                 <div class="food-card_bottom-section">
                                                     <hr>
                                                     <div class="space-between">
                                                         <div class="food-card_price">
-                                                            <span>400$</span>
+                                                            <span>{{entrada.Precio.precio}}</span>
                                                         </div>
                                                         <div class="food-card_order-count">
                                                             <div class="input-group mb-3">
@@ -135,127 +136,13 @@
                                         </div>
                                     </li> <!-- Aca puede ir cada comida, acompañada de la foto, precio y opcion de pedir-->
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/tarta-de-jyq.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Tarta de jamón y queso</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        Tapa de tarta, jamón cocido, queso cremoso, huevos, mostaza, sal, pimienta, orégano
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>400$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </li>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/tarta-de-anquin-y-queso.jpg' %}" alt="" >
-                                                <!--
-
-                                                -->
-
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Tarta de anquin y queso</a>
-                                                    <a href="#!" class="food-card_author">Zanahoria, Cebolla, 1 lima, Habanero, Aceite de oliva sal, 100 g de acelgas, Ocumo, Borraja</a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>5.99$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li> <!-- Aca puede ir cada comida, acompañada de la foto, precio y opcion de pedir-->
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/sandwich-miga-jyq.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Sandwich miga jamon queso huevo</a>
-                                                    <a href="#!" class="food-card_author">Pán de miga, jamon, queso, huevo, mayonesa, lechuga, tomate</a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>600$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </li>
-                                </div>
+                                {% endfor %}
                             </div>
 
                         </ul>
                     </div>
                 </div>
-            </article>
+            </article> <!-- Fin de entradas -->
             <hr class="style1">
             <article>
                 <div class="container mt-5 px-4">
@@ -268,6 +155,7 @@
                     <div class="col-12">
                         <ul class="list-unstyled" id="listaPlatosPrincipales">
                             <div class="row">
+                                {% for platoPrincipal in platosPrincipales %}
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <li>
                                         <div class="food-card food-card--vertical">
@@ -277,14 +165,14 @@
                                             </div>
                                             <div class="food-card_content">
                                                 <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Milanesa napolitana con papas fritas</a>
-                                                    <a href="#!" class="food-card_author">Milanesas, 150g de queso mozzarella, 150g de jamón cocido, Una lata de puré de tomate. Una cebolla, Aceite, Sal</a>
+                                                    <a href="#!" class="food-card_title">{{platoPrincipal.nombre}}</a>
+                                                    <a href="#!" class="food-card_author">{{platoPrincipal.descripcionPlato}}</a>
                                                 </div>
                                                 <div class="food-card_bottom-section">
                                                     <hr>
                                                     <div class="space-between">
                                                         <div class="food-card_price">
-                                                            <span>900$</span>
+                                                            <span>${{platoPrincipal.Precio.precio}}</span>
                                                         </div>
                                                         <div class="food-card_order-count">
                                                             <div class="input-group mb-3">
@@ -303,119 +191,8 @@
                                         </div>
                                     </li> <!-- Aca puede ir cada comida, acompañada de la foto, precio y opcion de pedir-->
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/pizza-grande-comun.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Pizza grande común</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        1 kilo harina, 20 gramos levadura, 20 gramos azúcar, 600 cc agua, 50 gramos sal, 75 cc aceite de oliva, Salsa de tomate, orégano, aceituna, 1 kg mozzarella
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>1000$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                {% endfor %}
 
-                                </li>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/locro-de-trigo.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Locro de trigo</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        500 g de trigo, 200 g de porotos alubia, 250 g de cerdo, 700 g de falda sin hueso, 100 g de panceta ahumada, Sal a gusto
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>800$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li> <!-- Aca puede ir cada comida, acompañada de la foto, precio y opcion de pedir-->
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/pollo-a-la-portuguesa.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Pollo a la portuguesa</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        1 pollo entero trozado, 2 cebollas blancas, 1 pimiento morrón rojo y 1 verde, 2 dientes de ajo, 1 lata de arvejas, 2 papas peladas
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>700$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </li>
-                                </div>
                             </div>
 
                         </ul>
@@ -434,6 +211,7 @@
                     <div class="col-12">
                         <ul class="list-unstyled" id="listaPostres">
                             <div class="row">
+                                {% for postre in postres %}
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <li>
                                         <div class="food-card food-card--vertical">
@@ -443,16 +221,16 @@
                                             </div>
                                             <div class="food-card_content">
                                                 <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Tarta de chocolate</a>
+                                                    <a href="#!" class="food-card_title">{{postre.nombre}}</a>
                                                     <a href="#!" class="food-card_author">
-                                                        Galletas tipo Digestive, Mantequilla a temperatura ambiente, Chocolate negro para postres, Leche entera, Azúcar
+                                                        {{postre.descripcionPlato}}
                                                     </a>
                                                 </div>
                                                 <div class="food-card_bottom-section">
                                                     <hr>
                                                     <div class="space-between">
                                                         <div class="food-card_price">
-                                                            <span>5.99$</span>
+                                                            <span>${{postre.Precio.precio}}</span>
                                                         </div>
                                                         <div class="food-card_order-count">
                                                             <div class="input-group mb-3">
@@ -471,129 +249,8 @@
                                         </div>
                                     </li> <!-- Aca puede ir cada comida, acompañada de la foto, precio y opcion de pedir-->
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
+                                {% endfor %}
 
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/gelato.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Gelato</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        Leche, yemas de huevo , azúcar, esencia de vainilla, puré de fresas, chispas de chocolate
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <div class="space-between">
-                                                        <div>
-                                                            <span class="fa fa-fire"></span> 220 - 280 Kcal
-                                                        </div>
-                                                        <div class="pull-right">
-                                                            <span class="badge badge-success">Veg</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>5.99$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </li>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/tiramisu.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Tiramisú</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        Azucar, crema de leche, mascarpone, yemas de huevo, café, paquetes de vainillas/bizcocho de soletilla, Cacao amargo y chocolate semi amargo
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>700$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li> <!-- Aca puede ir cada comida, acompañada de la foto, precio y opcion de pedir-->
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <li>
-
-                                        <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/pastafrola.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="food-card_content">
-                                                <div class="food-card_title-section">
-                                                    <a href="#!" class="food-card_title">Pastafrola</a>
-                                                    <a href="#!" class="food-card_author">
-                                                        Huevo, yema, harina leudante, azúcar, manteca, esencia de vainilla, sal
-                                                    </a>
-                                                </div>
-                                                <div class="food-card_bottom-section">
-                                                    <hr>
-                                                    <div class="space-between">
-                                                        <div class="food-card_price">
-                                                            <span>300$</span>
-                                                        </div>
-                                                        <div class="food-card_order-count">
-                                                            <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
-                                                                </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </li>
-                                </div>
                             </div>
 
                         </ul>

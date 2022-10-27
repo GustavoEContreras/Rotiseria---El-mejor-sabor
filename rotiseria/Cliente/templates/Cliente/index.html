@@ -101,7 +101,7 @@
                         Si tenés ganas de algo rico y además nutritivo, esta es tu mejor opción. Tenemos
                         diferentes platos que te llegan directo al corazón (en el buen sentido de la palabra).
                     </p>
-                    <p><a class="btn btn-secondary" href="Templates/menu.html">Ver más »</a></p> <!-- Boton que redirecciona al usuario a la pág de menú correspondiente-->
+                    <p><a class="btn btn-secondary" href="{% url 'Menu:menuNormal' %}">Ver más »</a></p> <!-- Boton que redirecciona al usuario a la pág de menú correspondiente-->
                 </div>
 
               </div><!-- /.col-lg-4 -->
@@ -119,7 +119,7 @@
                     Nuestro equipo de cocineros capacitados te brindan comida rica que podes consumir
                     con la tranquilidad que te garantizan nuestros estándares.
                 </p>
-                <p><a class="btn btn-secondary" href="Templates/menu.html">Ver más »</a></p>
+                <p><a class="btn btn-secondary" href="{% url 'Menu:menuCeliaco' %}">Ver más »</a></p>
             </div>
 
 
@@ -136,7 +136,7 @@
                     de viandas aptas para diabéticos. <br>
                     Porque comer rico y saludable van de la mano, nosotros nos encargamos del resto.
                 </p>
-                <p><a class="btn btn-secondary" href="Templates/menu.html">Ver más »</a></p>
+                <p><a class="btn btn-secondary" href="{% url 'Menu:menuDiabetico' %}">Ver más »</a></p>
             </div>
 
 
@@ -151,7 +151,7 @@
                     Nuestro menú de viandas vegetarianas son una bomba de sabor. <br>
                     Aún no los probaste? Estás a tiempo!
                 </p>
-                <p><a class="btn btn-secondary" href="Templates/menu.html">Ver más »</a></p>
+                <p><a class="btn btn-secondary" href="{% url 'Menu:menuVegetariano' %}">Ver más »</a></p>
             </div>
 
 
@@ -190,7 +190,7 @@
                 <p class="lead">Apio de monte levistico, Collombarda, Maiz/Choclo, 400 ml de caldo de verduras, 1 cucharadita de sesamo o ajonjoli</p>
               </div>
               <div class="col-md-5 order-md-1">
-                <img src="{% static 'img/Imagenes/anquin-relleno.jpg' %}" alt="Promo2" class="imagenPromo">
+                <img src="{% static 'img/anquin-relleno.jpg' %}" alt="Promo2" class="imagenPromo">
 
               </div>
             </div>

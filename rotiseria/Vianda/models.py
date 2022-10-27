@@ -9,4 +9,4 @@ class Vianda(models.Model):
     fechaInicio = models.DateField()
     fechaVigencia = models.DateField()
     tipoEntregaVianda = models.ForeignKey("Pedido.TipoEntrega", on_delete=models.CASCADE)
-
+    Cliente = models.ForeignKey("Cliente.Cliente", on_delete=models.CASCADE,null=True)

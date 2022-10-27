@@ -8,9 +8,11 @@ class Telefono (models.Model):
     FIJO = "Fijo"
     CELULAR = "Celular"
     TIPO_TELEFONO = Choices("Fijo", "Celular")
-    tipoTelefono = models.CharField(max_length=7, choices=TIPO_TELEFONO, default=CELULAR, unique=True)
+    tipoTelefono = models.CharField(max_length=7, choices=TIPO_TELEFONO, default=CELULAR)
     Persona = models.ForeignKey("Persona", on_delete=models.CASCADE)
 
+    def __str__(self):
+        return (str(self.numeroTelefono) +' - '+ self.tipoTelefono+' - '+self.Persona.nombre+ " " +self.Persona.apellido)
 
 class Direccion(models.Model):
     barrio = models.CharField(max_length=50)

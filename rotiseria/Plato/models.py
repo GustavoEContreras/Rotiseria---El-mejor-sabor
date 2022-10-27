@@ -14,7 +14,7 @@ class Plato(models.Model):
     Menu = models.ForeignKey("Menu.Menu", on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return (self.nombre)
+        return (self.nombre + " - " + self.TipoPlato.tipoPlato + " - " + self.Menu.tipo)
 class TipoPlato (models.Model):
     TIPO_OPCIONES = Choices('Entrada', 'Plato principal', 'Postre')
     ENTRADA = 'Entrada'

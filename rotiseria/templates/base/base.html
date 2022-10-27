@@ -63,10 +63,10 @@
 
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a id="texto-color" class="dropdown-item" href="Templates/menu.html">Normal</a></li>
-                            <li><a  id="texto-color" class="dropdown-item" href="Templates/menu.html">Apto para celíacos</a></li>
-                            <li><a id="texto-color" class="dropdown-item" href="Templates/menu.html">Recomendado para diabeticos</a></li>
-                            <li><a id="texto-color" class="dropdown-item" href="Templates/menu.html">Veggie</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Menu:menuNormal' %}">Normal</a></li>
+                            <li><a  id="texto-color" class="dropdown-item" href="{% url 'Menu:menuCeliaco' %}">Apto para celíacos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Menu:menuDiabetico' %}">Recomendado para diabeticos</a></li>
+                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Menu:menuVegetariano' %}">Veggie</a></li>
                             {% if user.is_authenticated and user.is_superuser %}
                                 <li><hr class="dropdown-divider" /></li> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
                                 <li><a id="texto-color" class="dropdown-item" href="{% url 'Plato:registrar' %}">Registrar plato</a></li>
