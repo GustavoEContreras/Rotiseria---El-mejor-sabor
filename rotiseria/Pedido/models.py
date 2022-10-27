@@ -7,14 +7,14 @@ from Plato.models import Plato
 class Pedido(models.Model):
     Persona = models.ForeignKey("Cliente.Cliente",on_delete=models.CASCADE, null=True)
     fechaPedido = models.DateField()
-    horaEntregaDesde = models.DateTimeField()
-    horaEntregaHasta = models.DateTimeField()
+    horaEntregaDesde = models.TimeField()
+    horaEntregaHasta = models.TimeField()
     TipoEntrega = models.ForeignKey("TipoEntrega", on_delete=models.CASCADE, null=True)
     Estado = models.ForeignKey("Estado", on_delete=models.CASCADE, null=True)
     platos = models.ManyToManyField(Plato)
 
     def __str__(self):
-        return (self.Persona.nombre +' '+self.Persona.apellido +'-'+self.Estado.estadoPedido+'-'+self.TipoEntrega.tipoEntrega)
+        return self.Persona.nombre + ' ' + self.Persona.apellido + '-' + self.Estado.estadoPedido + '-' + self.TipoEntrega.tipoEntrega
 
 
 

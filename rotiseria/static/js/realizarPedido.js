@@ -2,7 +2,7 @@
 /*
  Verificar que la fecha del pedido sea la fecha actual, no permitir que sea una fecha
 anterior.
-*/
+
 const inputFechaEntrega = document.getElementById('fechaDelPedido');
 
 const fechaActual = new Date();
@@ -112,9 +112,10 @@ function actualizarHorarioHasta()   // El horario "hasta" debe ser hasta 30 minu
 inputHoraDesde.addEventListener('change', actualizarHorarioHasta);
 inputMinutoDesde.addEventListener('change', actualizarHorarioHasta);
 
+*/
 /*
  Una vez finalizada la orden de pedido, se debe realizar el cálculo del total en forma automática, y ese campo debe estar deshabilitado.
-*/
+
 
 class Producto { //Clase Producto
     constructor(nombre, precio, cantidad)
@@ -201,6 +202,7 @@ inputTipoEntregaDelivery.addEventListener("change", actualizarPrecioTotal);
 
 actualizarPrecioEnvio();
 actualizarPrecioTotal();
+*/
 /*
  En el caso de que se cambie el estado del pedido a “devuelto” o “cancelado”, requerir al
 usuario que ingrese un comentario.
