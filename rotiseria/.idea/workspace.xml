@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Django Forms iniciadas para cadete y cliente.">
-      <change afterPath="$PROJECT_DIR$/Pedido/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plato/forms.py" afterDir="false" />
+    <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Django Forms iniciadas para Plato y Pedido">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/templates/Pedido/realizarPedido.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/templates/Pedido/realizarPedido.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/templates/Plato/registroPlato.html" beforeDir="false" afterPath="$PROJECT_DIR$/Plato/templates/Plato/registroPlato.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plato/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plato/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/realizarPedido.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/realizarPedido.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666873249479</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Django Forms iniciadas para Plato y Pedido">
+      <created>1666883488406</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666883488406</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +135,7 @@
     <MESSAGE value="Modificaciones realizadas a Estadisticas y pedidos." />
     <MESSAGE value="Vistas y urls creadas. Login y logout funcional. Panel de administrador terminado." />
     <MESSAGE value="Django Forms iniciadas para cadete y cliente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Django Forms iniciadas para cadete y cliente." />
+    <MESSAGE value="Django Forms iniciadas para Plato y Pedido" />
+    <option name="LAST_COMMIT_MESSAGE" value="Django Forms iniciadas para Plato y Pedido" />
   </component>
 </project>
