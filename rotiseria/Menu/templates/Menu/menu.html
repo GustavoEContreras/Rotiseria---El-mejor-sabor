@@ -99,13 +99,9 @@
                         <ul class="list-unstyled" id="listaEntradas">
                             <div class="row">
                                 {% for entrada in entradas %}
-                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-4">
                                     <li>
                                         <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/Tarta-de-choclo-queso-y-cebolla.png' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
                                             <div class="food-card_content">
                                                 <div class="food-card_title-section">
                                                     <a href="#!" class="food-card_title">{{entrada.nombre}}</a>
@@ -156,13 +152,10 @@
                         <ul class="list-unstyled" id="listaPlatosPrincipales">
                             <div class="row">
                                 {% for platoPrincipal in platosPrincipales %}
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-sm-6 col-md-4 col-lg-4">
                                     <li>
                                         <div class="food-card food-card--vertical">
-                                            <div class="food-card_img">
-                                                <img src="{% static 'img/milanesa-napolitana-con-papas-fritas.jpg' %}" alt="">
-                                                <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
+
                                             <div class="food-card_content">
                                                 <div class="food-card_title-section">
                                                     <a href="#!" class="food-card_title">{{platoPrincipal.nombre}}</a>
@@ -174,6 +167,7 @@
                                                         <div class="food-card_price">
                                                             <span>${{platoPrincipal.Precio.precio}}</span>
                                                         </div>
+                                                        {% if user.is_authenticated %}
                                                         <div class="food-card_order-count">
                                                             <div class="input-group mb-3">
                                                                 <div class="input-group-prepend">
@@ -185,6 +179,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -212,13 +207,14 @@
                         <ul class="list-unstyled" id="listaPostres">
                             <div class="row">
                                 {% for postre in postres %}
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-sm-6 col-md-6 col-lg-4">
                                     <li>
                                         <div class="food-card food-card--vertical">
+                                            <!--
                                             <div class="food-card_img">
                                                 <img src="{% static 'img/tarta-de-cholocolate.jpg' %}" alt="">
                                                 <a href="#!"><i class="fa fa-heart"></i></a>
-                                            </div>
+                                            </div> -->
                                             <div class="food-card_content">
                                                 <div class="food-card_title-section">
                                                     <a href="#!" class="food-card_title">{{postre.nombre}}</a>

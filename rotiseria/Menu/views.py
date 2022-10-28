@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.urls import reverse
+
 from Plato.models import Plato
 from Menu.models import Menu
 
@@ -27,7 +29,7 @@ def MenuNormal(request):
 
 
 def MenuVegetariano(request):
-    platos = Plato.objects.filter(Menu__tipo="Normal").filter(activo=True)
+    platos = Plato.objects.filter(Menu__tipo="Vegetariano").filter(activo=True)
     entradas = platos.filter(TipoPlato__tipoPlato='Entrada')
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
@@ -42,7 +44,7 @@ def MenuVegetariano(request):
 
 
 def MenuDiabetico(request):
-    platos = Plato.objects.filter(Menu__tipo="Normal").filter(activo=True)
+    platos = Plato.objects.filter(Menu__tipo="Diabetico").filter(activo=True)
     entradas = platos.filter(TipoPlato__tipoPlato='Entrada')
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
@@ -57,7 +59,7 @@ def MenuDiabetico(request):
 
 
 def MenuCeliaco(request):
-    platos = Plato.objects.filter(Menu__tipo="Normal").filter(activo=True)
+    platos = Plato.objects.filter(Menu__tipo="Celiaco").filter(activo=True)
     entradas = platos.filter(TipoPlato__tipoPlato='Entrada')
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
@@ -72,19 +74,23 @@ def MenuCeliaco(request):
 
 
 def EditarMenu(request):
-    platos = None
-    MOSTRAR_DETALLE = False
-    TIPO_MENU = None
-    if request.GET.get("tipoMenu"):
-        MOSTRAR_DETALLE = True
-        TIPO_MENU = request.GET.get("tipoMenu")
-        platos = Plato.objects.filter(Menu__id=TIPO_MENU).filter(activo=True)
-    menus = Menu.objects.all()
-    context = {
-        'menus': menus,
-        'platos': platos,
-        'MOSTRAR_DETALLE': MOSTRAR_DETALLE,
-        'TIPO_MENU': TIPO_MENU
-    }
-    return render(request, 'Menu/editarMenu.html', context)
+    if request.user.is_authenticated and request.user.is_staff:
+        platos = None
+        MOSTRAR_DETALLE = False
+        TIPO_MENU = None
+        if request.GET.get("tipoMenu"):
+            MOSTRAR_DETALLE = True
+            TIPO_MENU = request.GET.get("tipoMenu")
+            platos = Plato.objects.filter(Menu__id=TIPO_MENU).filter(activo=True)
+        menus = Menu.objects.all()
+        context = {
+            'menus': menus,
+            'platos': platos,
+            'MOSTRAR_DETALLE': MOSTRAR_DETALLE,
+            'TIPO_MENU': TIPO_MENU
+        }
+        return render(request, 'Menu/editarMenu.html', context)
+    else:
+        return redirect(reverse('Cliente:Index'))
+
 
