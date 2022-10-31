@@ -21,23 +21,28 @@
         <h2>
           <span class="textoForm">Listado de ventas diarias</span>
         </h2>
-        <form method="GET" name="listarVentasDiarias">
+        <form method="GET" name="listarVentasDiarias" action="{% url 'Estadisticas:ListarVentas' %}">
             {% csrf_token %}
           <div class="row">
                     <div class="col-3">
                         <label class="form-label textoForm" for="fechaDesde1" class="textoForm">Fecha desde</label>
-                        <input class="form-control" class="fechaDesde" id="fechaDesde1" name="fechaDesde" type="date" required/>
+                        <input class="form-control" class="fechaDesde" id="fechaDesde1" name="fechaDesde1" type="date" required/>
                     </div>
                     <div class="col-3">
                         <label class="form-label textoForm" for="fechaHasta1" class="textoForm">Fecha hasta</label>
-                        <input class="form-control" class="fechaHasta" id="fechaHasta1" name="fechaDesde" type="date" required/>
+                        <input class="form-control" class="fechaHasta" id="fechaHasta1" name="fechaHasta1" type="date" required/>
                      </div>
                     <div class="col-4">
                         <input type="submit" class="btn btn-primary" value="Visualizar">
                     </div>
+
           </div>
       </form>
-
+                    {% for pedido in pedidos %}
+                        <p>
+                            {{ pedido }}
+                        </p>
+                    {% endfor %}
       </div>
         <br>
         <hr class="featurette-divider">

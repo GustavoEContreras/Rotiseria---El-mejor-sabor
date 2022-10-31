@@ -16,7 +16,9 @@ class ClienteForm(ModelForm):
 
         widgets = {
             'cuil': forms.NumberInput(attrs={'max': "999999999999"}),
-            'fechaDeNacimiento': DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
+            'fechaDeNacimiento': DateInput(
+                attrs={'class': 'form-control', 'placeholder': 'dd/mm/yyyy', 'data-inputmask': "'alias': 'dd/mm/yyyy'",
+                       'data-mask': ''}),
         }
 
     def __init__(self, *args, **kwargs):

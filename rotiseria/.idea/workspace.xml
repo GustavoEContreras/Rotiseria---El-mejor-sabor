@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40d4a8ee-f31b-4ebc-ba91-5c437352aa8f" name="Changes" comment="Django Forms iniciadas para Plato y Pedido">
+      <change afterPath="$PROJECT_DIR$/Usuario/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usuario/templates/Usuario/crearUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_11_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_11_44__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_09_35_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_09_35__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_11_50_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_11_50__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_18_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2022_18_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2022_19_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2022_19_07__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2022_21_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2022_21_20__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estadisticas/templates/Estadisticas/estadisticas.html" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/templates/Estadisticas/estadisticas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estadisticas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estadisticas/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Estadisticas/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pedido/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotiseria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotiseria/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,24 +52,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Repositorios - Git/PROG III - Lab/Rotiseria---El-mejor-sabor/rotiseria&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/Loli/Desktop/Legajos  22 - copia/legajos/legajos_project",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Usuario\templates\Usuario" />
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Vianda" />
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Usuario" />
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Plato" />
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Pedido" />
-      <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\Menu" />
     </key>
   </component>
   <component name="RunManager">
@@ -57,7 +80,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\gusta\Envs\Rotiseria---El-mejor-sabor\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Loli\Envs\Rotiseria---El-mejor-sabor\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />

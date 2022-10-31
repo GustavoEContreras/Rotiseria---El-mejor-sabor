@@ -12,6 +12,8 @@ class Pedido(models.Model):
     TipoEntrega = models.ForeignKey("TipoEntrega", on_delete=models.CASCADE, null=True)
     Estado = models.ForeignKey("Estado", on_delete=models.CASCADE, null=True)
     platos = models.ManyToManyField(Plato)
+    Cadete = models.ForeignKey("Cadete.Cadete", on_delete=models.CASCADE, null= True, blank=True)
+
 
     def __str__(self):
         return self.Persona.nombre + ' ' + self.Persona.apellido + '-' + self.Estado.estadoPedido + '-' + self.TipoEntrega.tipoEntrega
