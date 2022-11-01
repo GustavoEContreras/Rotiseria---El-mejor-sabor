@@ -21,28 +21,65 @@
         <h2>
           <span class="textoForm">Listado de ventas diarias</span>
         </h2>
-        <form method="GET" name="listarVentasDiarias" action="{% url 'Estadisticas:ListarVentas' %}">
+        <form method="POST" name="listarVentasDiarias" action="{% url 'Estadisticas:ListarVentas' %}">
             {% csrf_token %}
           <div class="row">
                     <div class="col-3">
-                        <label class="form-label textoForm" for="fechaDesde1" class="textoForm">Fecha desde</label>
-                        <input class="form-control" class="fechaDesde" id="fechaDesde1" name="fechaDesde1" type="date" required/>
+                        <label class="form-label textoForm" class="textoForm">{{formPedidos.Fecha_desde.label}}</label>
+                        {{formPedidos.Fecha_desde}}
                     </div>
                     <div class="col-3">
-                        <label class="form-label textoForm" for="fechaHasta1" class="textoForm">Fecha hasta</label>
-                        <input class="form-control" class="fechaHasta" id="fechaHasta1" name="fechaHasta1" type="date" required/>
-                     </div>
+                        <label class="form-label textoForm" class="textoForm">{{formPedidos.Fecha_hasta.label}}</label>
+                        {{formPedidos.Fecha_hasta}}
+                    </div>
                     <div class="col-4">
                         <input type="submit" class="btn btn-primary" value="Visualizar">
                     </div>
-
           </div>
       </form>
+          {% if pedidos is None %}
+            {% else %}
+            <div class="text-center col-12 my-3">
+            <table class="table-primary table-bordered border-light table-hover textoForm bg-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Persona</th>
+                        <th scope="col">Horario de entrega</th>
+                        <th scope="col">Tipo de entrega</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Platos</th>
+                        <th scope="col">Cadete a cargo</th>
+                    </tr>
+                </thead>
+
+                <tbody>
                     {% for pedido in pedidos %}
-                        <p>
-                            {{ pedido }}
-                        </p>
+                    <tr>
+                        <th scope="row">{{pedido.id}}</th>
+                        <td>{{pedido.Persona.nombre}} {{pedido.Persona.apellido}}</td>
+                        <td>{{pedido.horaEntregaDesde}} - {{pedido.horaEntregaHasta}}</td>
+                        <td>{{pedido.TipoEntrega.tipoEntrega}}</td>
+                        <td>{{pedido.Estado.estadoPedido}}</td>
+                        <td>
+                            <ul>
+                            {% for plato in pedido.platos.all %}
+                                <li>
+                                    {{plato.nombre}}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                        <td>{{pedido.Cadete.nombre}} {{pedido.Cadete.apellido}}</td>
+                    </tr>
                     {% endfor %}
+                </tbody>
+            </table>
+          </div>
+          {% endif %}
+
+
+
       </div>
         <br>
         <hr class="featurette-divider">
@@ -50,38 +87,53 @@
         <h2>
           <span class="textoForm">Listado de cantidades entregadas por el cadete</span>
         </h2>
-        <form method="get" name="listarCantidadPorCadete">
+        <form method="POST" name="listarCantidadEntregadaPorCadete" action="{% url 'Estadisticas:ListarCantidadesEntregadasPorCadete' %}">
             {% csrf_token %}
-            <div class="row">
-                <div class="col-3">
-                    <select class="form-select" name="listaCadetes" id="listaCadetes">
-                    {% for cadete in cadetes %}
-                    <option value={{cadete.cuil}}>{{cadete.nombre}} {{cadete.apellido}}</option>
-                    {% endfor %}
-                </select>
-                </div>
-
-                <div class="col-8 row">
-                    <div class="col-3">
-                        <label class="form-label textoForm" for="fechaDesde2" class="textoForm">Fecha desde</label>
-                        <input class="form-control" class="fechaDesde" id="fechaDesde2" name="fechaDesde" type="date" required/>
+          <div class="row">
+                    <div class="col-2">
+                        <label class="form-label textoForm" class="textoForm">{{formCadete.Cadete.label}}</label>
+                        {{formCadete.Cadete}}
                     </div>
                     <div class="col-3">
-                        <label class="form-label textoForm" for="fechaHasta2" class="textoForm">Fecha hasta</label>
-                        <input class="form-control" class="fechaHasta" id="fechaHasta2" name="fechaDesde" type="date" required/>
-                     </div>
+                        <label class="form-label textoForm" class="textoForm">{{formCadete.Fecha_desde.label}}</label>
+                        {{formCadete.Fecha_desde}}
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label textoForm" class="textoForm">{{formCadete.Fecha_hasta.label}}</label>
+                        {{formCadete.Fecha_hasta}}
+                    </div>
                     <div class="col-4">
                         <input type="submit" class="btn btn-primary" value="Visualizar">
                     </div>
-                </div>
-            </div>
+          </div>
+      </form>
+          {% if pedidoCadete is None %}
+            {% else %}
+            <div class="text-center col-12 my-3">
+            <table class="table-primary table-bordered border-light table-hover textoForm bg-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">CUIL</th>
+                        <th scope="col">Cadete</th>
+                        <th scope="col">Cantidades entregadas</th>
+                    </tr>
+                </thead>
 
-
-          </form>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{pedidoCadete.0}}</th>
+                        <td>{{pedidoCadete.1}}</td>
+                        <td>{{pedidoCadete.2}}</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          {% endif %}
         
       </div>
         <br>
         <hr class="featurette-divider">
+         <!--
       <div id="listadoViandas">
         <h2>
           <span class="textoForm">Cantidad de viandas</span>
@@ -142,26 +194,60 @@
       </div>
           <br>
         <hr class="featurette-divider">
+        -->
       <div id="listadoPlatos">
         <h2>
           <span class="textoForm">Listado de platos más solicitados</span>
         </h2>
-        <form method="GET" name="listarPlatos">
+        <form method="POST" name="listarPlatos" action="{% url 'Estadisticas:ListarPlatosSolicitados' %}">
             {% csrf_token %}
           <div class="row">
-            <div class="col-3">
-                        <label class="form-label textoForm" for="fechaDesde5" class="textoForm">Fecha desde</label>
-                        <input class="form-control" class="fechaDesde" id="fechaDesde5" name="fechaDesde" type="date" required/>
+                    <div class="col-3">
+                        <label class="form-label textoForm" class="textoForm">{{formPlatos.Fecha_desde.label}}</label>
+                        {{formPlatos.Fecha_desde}}
                     </div>
                     <div class="col-3">
-                        <label class="form-label textoForm" for="fechaHasta5" class="textoForm">Fecha hasta</label>
-                        <input class="form-control" class="fechaHasta" id="fechaHasta5" name="fechaDesde" type="date" required/>
-                     </div>
+                        <label class="form-label textoForm" class="textoForm">{{formPlatos.Fecha_hasta.label}}</label>
+                        {{formPlatos.Fecha_hasta}}
+                    </div>
                     <div class="col-4">
                         <input type="submit" class="btn btn-primary" value="Visualizar">
                     </div>
           </div>
       </form>
+          {% if platosSolicitados is None %}
+            {% else %}
+            <div class="text-center col-12 my-3">
+            <table class="table-primary table-bordered border-light table-hover textoForm bg-dark">
+                <thead>
+                    <tr>
+                        <!--
+                         (plato.id,plato.nombre, plato.TipoPlato.tipoPlato, plato.Precio.precio, plato.Menu.tipo, cantidadSolicitadaPlato(plato, fecha_desde, fecha_hasta))
+                         -->
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Tipo de plato</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Menu</th>
+                        <th scope="col">Cantidad solicitada</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for plato in platosSolicitados %}
+                    <tr>
+                        <th scope="row">{{plato.0}}</th>
+                        <td>{{plato.1}}</td>
+                        <td>{{plato.2}}</td>
+                        <td>${{plato.3}}</td>
+                        <td>{{plato.4}}</td>
+                        <td>{{plato.5}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          </div>
+          {% endif %}
 
       </div>
           <br>
@@ -170,22 +256,45 @@
         <h2>
           <span class="textoForm">Listado de menús</span>
         </h2>
-        <form method="GET" name="listarMenu">
+
+        <form method="POST" name="listarMenus" action="{% url 'Estadisticas:ListarMenus' %}">
             {% csrf_token %}
           <div class="row">
-            <div class="col-3">
-                        <label class="form-label textoForm" for="fechaDesde6" class="textoForm">Fecha desde</label>
-                        <input class="form-control" class="fechaDesde" id="fechaDesde6" name="fechaDesde" type="date" required/>
+                    <div class="col-3">
+                        <label class="form-label textoForm" class="textoForm">{{formMenus.Fecha_desde.label}}</label>
+                        {{formMenus.Fecha_desde}}
                     </div>
                     <div class="col-3">
-                        <label class="form-label textoForm" for="fechaHasta6" class="textoForm">Fecha hasta</label>
-                        <input class="form-control" class="fechaHasta" id="fechaHasta6" name="fechaDesde" type="date" required/>
-                     </div>
+                        <label class="form-label textoForm" class="textoForm">{{formMenus.Fecha_hasta.label}}</label>
+                        {{formMenus.Fecha_hasta}}
+                    </div>
                     <div class="col-4">
                         <input type="submit" class="btn btn-primary" value="Visualizar">
                     </div>
           </div>
       </form>
+          {% if menus is None %}
+            {% else %}
+            <div class="text-center col-12 my-3">
+            <table class="table-primary table-bordered border-light table-hover textoForm bg-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Menu</th>
+                        <th scope="col">Cantidad</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for menu in menus %}
+                    <tr>
+                        <th scope="row">{{menu.0}}</th>
+                        <td>{{menu.1}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          </div>
+          {% endif %}
 
       </div>
 

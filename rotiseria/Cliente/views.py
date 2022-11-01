@@ -8,7 +8,7 @@ from Cliente.forms import ClienteForm
 
 # Create your views here.
 
-def Index(request):
+def index(request):
     return render(request, 'Cliente/index.html')
 
 
