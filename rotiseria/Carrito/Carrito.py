@@ -12,7 +12,7 @@ class Carrito:
     def agregar(self, plato):
         id = str(plato.id)
         if id not in self.carrito.keys():
-            self.carrito[id]={
+            self.carrito[id] = {
                 "plato_id": plato.id,
                 "nombre": plato.nombre,
                 "descripcion": plato.descripcionPlato,

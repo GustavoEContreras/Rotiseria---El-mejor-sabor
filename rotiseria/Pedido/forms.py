@@ -32,18 +32,7 @@ class PedidoForm(ModelForm):
 class PedidoClienteForm(ModelForm):
     class Meta:
         model = Pedido
-        fields = ('fechaPedido', 'horaEntregaDesde', 'horaEntregaHasta', 'TipoEntrega', 'Estado', 'platos',
-                  'Cadete','Persona')
-        exclude = ('Estado','Cadete')
-        widgets = {
-            'Persona': forms.Select(attrs={'readonly': True}),
-            'fechaPedido': DateInput(format='%Y-%m-%d', attrs={'type': 'date', 'readonly': True}),
-            'horaEntregaDesde': TimePickerInput(attrs={'readonly': True}),
-            'horaEntregaHasta': TimePickerInput(attrs={'readonly': True}),
-            'Estado': forms.Select(attrs={'readonly': True}),
-            'platos': forms.SelectMultiple(attrs={'readonly': True}),
-            'Cadete':forms.Select(attrs={'readonly': True})
-        }
+        exclude = ('fechaPedido', 'horaEntregaDesde', 'horaEntregaHasta', 'Estado', 'Cadete', 'Persona', 'platos')
 
     def __init__(self, *args, **kwargs):
         super(PedidoClienteForm, self).__init__(*args, **kwargs)

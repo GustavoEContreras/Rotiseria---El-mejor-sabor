@@ -18,11 +18,31 @@
         <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png'%});">
             <div class="container px-5">
                 <div class="text-center textoForm">
-                    <h1><Detalles></Detalles> del pedido</h1>
+                    <h1>Detalles del pedido</h1>
                 </div>
             </div>
             <div class="container px-5">
-                <form id="registrarPedido" method="post" action="{% url 'Pedido:registroPedido' %}">
+                <form id="registrarPedidoCliente" method="POST" action="{% url 'Pedido:pedidoCliente' %}">
+                    <div class="row"> <!-- Fecha del pedido -->
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="fecha_pedido">Fecha del pedido</label>
+                                        <input type="text" name="fecha_pedido" disabled class="form-control" required id="fecha_pedido" value="{{fechaActual}}">
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                    <div class="row"> <!-- Hora de entrega a partir -->
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="hora_entrega_desde">Hora estimada de entrega</label>
+                                        <input type="text" name="hora_entrega_desde" disabled class="form-control" required id="hora_entrega_desde" value="{{horaEntregaDesde}} - {{horaEntregaHasta}}">
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
                     {% csrf_token %}
                     {% for field in form %}
                         <div class="row">
@@ -42,15 +62,103 @@
                                 <div class="col-3"></div>
                             </div>
                     {% endfor %}
-                        <div class="row">
-                            <div class="col-4"></div>
-                            <div class="col-4">
-                                <div class="d-grid">
-                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirmar pedido</button>
+                    <div class="row"> <!-- Platos listados -->
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="id_platos">Platos seleccionados:</label>
+                                        <select name="platos" readonly="" class="form-control" required="" id="id_platos" multiple="">
+                                            {% for key, value in request.session.carrito.items %}
+                                            <option value="{{key}}">{{value.nombre}} - x {{value.cantidad}} - $ {{value.acumulado}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    </div>
                                 </div>
+                                <div class="col-3"></div>
                             </div>
-                            <div class="col-4"></div>
+                    <div class="row"> <!-- Total a pagar -->
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="precio_total">Total a pagar:</label>
+                                        <input type="text" name="precio_total" disabled class="form-control" required id="precio_total" value="{{total_carrito}}">
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                    <script type="text/javascript">
+                        SelectTipoEntrega = document.getElementById("id_TipoEntrega");
+                        InputPrecioTotal = document.getElementById("precio_total");
+                                            
+                        function precioEntrega()
+                        {
+                            indiceSeleccionado = SelectTipoEntrega.selectedIndex
+
+                            if (indiceSeleccionado == 1)
+                            {
+                                total = {{total_carrito}}+150
+                                InputPrecioTotal.value = total
+                            }
+                            else
+                            {
+                                InputPrecioTotal.value = {{total_carrito}}
+                            }      
+
+                        }
+                        SelectTipoEntrega.addEventListener('change', precioEntrega);
+                    </script>
+                    <!--
+                    <div class="row">  Cadete a cargo (si el tipo de entrega es delivery
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="cadete">Cadete</label>
+                                        <input type="text" name="cadete" disabled class="form-control" required id="cadete" value="{{cadete.nombre}} {{cadete.apellido}}">
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div> -->
+                    <hr>
+                    <div class="container px-5">
+                        <div class="text-center textoForm">
+                            <h1>Datos personales</h1>
                         </div>
+
+                    </div>
+                    <div class="container px-5">
+                        <div class="row"> <!-- Nombre de la persona -->
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="nombre_persona">Nombre completo</label>
+                                        <input type="text" name="nombre_persona" disabled class="form-control" required id="nombre_persona" value="{{cliente.nombre}} {{cliente.apellido}}">
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                        <div class="row"> <!-- Domicilio -->
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label class="textoForm" for="domicilio_persona">Domicilio</label>
+                                        <input type="text" name="domicilio_persona" disabled class="form-control" required id="domicilio_persona" value="{{cliente.Direccion.calle}} {{cliente.Direccion.numero}}, {{cliente.Direccion.barrio}}">
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirmar pedido</button>
+                            </div>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
                 </form>
             </div>
         </div>
