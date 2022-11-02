@@ -28,7 +28,7 @@ class Ingrediente(models.Model):
     def __str__(self):
         return (self.nombre)
 class Precio(models.Model):
-    precio = models.DecimalField(decimal_places=2, max_digits=6)
+    precio = models.IntegerField()
     Plato = models.ForeignKey("Plato", on_delete=models.CASCADE, null=True)
     fechaActualizacionPrecio = models.DateField()
 

@@ -24,6 +24,8 @@ def MenuNormal(request):
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
+        'menu_id': 1,
+        'value.plato_id': 0
     }
     return render(request, 'Menu/Menu.html', context)
 
@@ -39,6 +41,8 @@ def MenuVegetariano(request):
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
+        'menu_id': 2,
+        'value.plato_id': 0
     }
     return render(request, 'Menu/Menu.html', context)
 
@@ -54,6 +58,8 @@ def MenuDiabetico(request):
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
+        'menu_id': 3,
+        'value.plato_id': 0
     }
     return render(request, 'Menu/Menu.html', context)
 
@@ -69,6 +75,8 @@ def MenuCeliaco(request):
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
+        'menu_id': 4,
+        'value.plato_id': 0
     }
     return render(request, 'Menu/Menu.html', context)
 

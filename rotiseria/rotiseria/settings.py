@@ -50,10 +50,9 @@ INSTALLED_APPS = [
     'Persona',
     'Usuario',
     'Vianda',
-    'crispy_forms',
+    'Carrito',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Carrito.context_processor.total_carrito',
             ],
         },
     },
