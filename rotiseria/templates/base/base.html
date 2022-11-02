@@ -19,11 +19,11 @@
 </head>
 <body>
     <header>
-        <nav class="navbar fixed-top navbar-expand-lg ">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario-->
+        <nav class="navbar fixed-top navbar-expand-lg">   <!-- Barra de navegacion, la clase "fixed-top" mantiene fija la barra sin importar donde este situado el usuario-->
           <div class="navbar-left">
             <img src="{% static 'img/logo-rotiseria-redimensionada.png' %}" alt="logo" class="logo">
           </div>
-        {% block carrito%}
+            {% block carrito%}
             {% endblock%}
           <div class="barraNavegacion mx-auto" style="visibility: hidden;">
             <form class="" id="barraBusqueda">

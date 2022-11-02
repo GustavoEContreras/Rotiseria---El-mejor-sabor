@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Pedidos cliente
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
+{% endblock %}
+
+{% block contenido %}
+
+     <section>
+        <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png'%});">
+            <div class="container px-5">
+                <div class="text-center textoForm">
+                    <h1><Detalles></Detalles> del pedido</h1>
+                </div>
+            </div>
+            <div class="container px-5">
+                <form id="registrarPedido" method="post" action="{% url 'Pedido:registroPedido' %}">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        {% if field.error %}
+                                        <span class="textoForm">
+                                            {{ field.errors }}
+                                        </span>
+                                        {% endif %}
+
+                                        <label class="textoForm" for="{{ field.auto_id }}">{{ field.label }}</label>
+                                        {{ field }}
+                                    </div>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                    {% endfor %}
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Confirmar pedido</button>
+                                </div>
+                            </div>
+                            <div class="col-4"></div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+{% endblock %}

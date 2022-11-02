@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
 {% endblock %}
 
+{% if user.is_authenticated %}
 {% block carrito%}
-    <ul style="list-style-type: none;">
+<ul style="list-style-type: none;">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"> <span><<i class="fa-light fa-cart-shopping"></i></span>Carrito<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"> <span><img class="pt-3" style="width: 50px; height: 80px;" src="{% static 'img/carro-de-la-carretilla.png' %}"></a>
           <ul class="dropdown-menu dropdown-cart" role="menu"  style="color:white;">
 
               {% if request.session.carrito.items %}
@@ -27,9 +28,11 @@
                                   <span class="item-left">
                                       <span class="item-info">
                                           <span>{{value.nombre}}</span>
-                                          <span>{{value.cantidad}}</span>
+                                          <br>
+                                          <span>X {{value.cantidad}}</span>
                                       </span>
                                     </span>
+
                                   <span class="item-right">
                                       <span class="item-info">
                                           <span>$ {{value.acumulado}}</span>
@@ -94,6 +97,7 @@
         </li>
     </ul>
 {% endblock %}
+{% endif %}
 
 {% block contenido %}
 
@@ -341,6 +345,14 @@
                 </div>
             </article>
         </div>
+
+        {% if user.is_authenticated %}
+
+        {% else %}
+             <script>
+                alert('{{alerta}}');
+            </script>
+        {% endif %}
 
 
         <script src="{% static 'js/menu.js' %}"></script>

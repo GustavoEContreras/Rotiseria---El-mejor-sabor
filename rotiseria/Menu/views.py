@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse
@@ -19,14 +20,17 @@ def MenuNormal(request):
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
     NOMBRE_MENU = 'Menu normal'
+    alerta = ('Para añadir platos a tu carrito, necesitas ingresar a tu cuenta.')
     context = {
         'NOMBRE_MENU': NOMBRE_MENU,
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
         'menu_id': 1,
-        'value.plato_id': 0
+        'value.plato_id': 0,
+        'alerta': alerta
     }
+
     return render(request, 'Menu/Menu.html', context)
 
 
@@ -36,13 +40,15 @@ def MenuVegetariano(request):
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
     NOMBRE_MENU = 'Menu vegetariano'
+    alerta = ('Para añadir platos a tu carrito, necesitas ingresar a tu cuenta.')
     context = {
         'NOMBRE_MENU': NOMBRE_MENU,
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
         'menu_id': 2,
-        'value.plato_id': 0
+        'value.plato_id': 0,
+        'alerta': alerta
     }
     return render(request, 'Menu/Menu.html', context)
 
@@ -53,13 +59,15 @@ def MenuDiabetico(request):
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
     NOMBRE_MENU = 'Menu diabetico'
+    alerta = ('Para añadir platos a tu carrito, necesitas ingresar a tu cuenta.')
     context = {
         'NOMBRE_MENU': NOMBRE_MENU,
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
         'menu_id': 3,
-        'value.plato_id': 0
+        'value.plato_id': 0,
+        'alerta': alerta
     }
     return render(request, 'Menu/Menu.html', context)
 
@@ -70,13 +78,15 @@ def MenuCeliaco(request):
     platosPrincipales = platos.filter(TipoPlato__tipoPlato='Plato principal')
     postres = platos.filter(TipoPlato__tipoPlato='Postre')
     NOMBRE_MENU = 'Menu Celiaco'
+    alerta = ('Para añadir platos a tu carrito, necesitas ingresar a tu cuenta.')
     context = {
         'NOMBRE_MENU': NOMBRE_MENU,
         'entradas': entradas,
         'platosPrincipales': platosPrincipales,
         'postres': postres,
         'menu_id': 4,
-        'value.plato_id': 0
+        'value.plato_id': 0,
+        'alerta': alerta
     }
     return render(request, 'Menu/Menu.html', context)
 

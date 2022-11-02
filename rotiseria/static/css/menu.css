@@ -1,10 +1,14 @@
 /* Carta de plato */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap);
-
+{% load static %}
 .dropdown .list-group-item{
-    width: 400px!important;
+    width: 300px!important;
 }
+
+.logo {
+    max-width: 100%;
+  }
 
 body {
     background: #f9f9f9;

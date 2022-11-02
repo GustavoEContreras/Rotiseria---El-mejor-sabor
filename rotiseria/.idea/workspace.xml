@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b4c7dd1-f00c-4983-8fa8-7496a57b60b5" name="Changes" comment="Carrito de compras funcional, revisar detalles." />
+    <list default="true" id="3b4c7dd1-f00c-4983-8fa8-7496a57b60b5" name="Changes" comment="Carrito de compras funcional, revisar detalles.">
+      <change afterPath="$PROJECT_DIR$/Pedido/templates/Pedido/pedidoCliente.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/carro-de-la-carretilla.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pedido/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pedido/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pedido/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -26,14 +38,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Rotiseria---El-mejor-sabor/rotiseria/static/img&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Rotiseria---El-mejor-sabor/rotiseria/static/img",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\static\img" />
@@ -86,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667353402261</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Carrito de compras funcional, revisar detalles.">
+      <created>1667391591529</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667391591529</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
