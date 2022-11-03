@@ -32,7 +32,7 @@ class PedidoForm(ModelForm):
 class PedidoClienteForm(ModelForm):
     class Meta:
         model = Pedido
-        exclude = ('fechaPedido', 'horaEntregaDesde', 'horaEntregaHasta', 'Estado', 'Cadete', 'Persona', 'platos')
+        exclude = ('fechaPedido', 'horaEntregaDesde', 'horaEntregaHasta', 'Estado', 'Cadete', 'Persona', 'platos', 'comentario')
 
     def __init__(self, *args, **kwargs):
         super(PedidoClienteForm, self).__init__(*args, **kwargs)

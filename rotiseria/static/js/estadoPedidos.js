@@ -233,14 +233,15 @@ for (let auxiliarPedido of listaPedidos)
     }
 
 
-*/
-const selectEstadoEntrega = document.getElementsByClassName('estadoEntrega'); // Se obtiene una coleccion de todos los elementos SELECT que indican el estado de entrega de un pedido especifico
 
+const selectEstadoEntrega = document.getElementsByClassName('estadoEntrega'); // Se obtiene una coleccion de todos los elementos SELECT que indican el estado de entrega de un pedido especifico
+const botonesGuardar = document.getElementsByClassName('guardarEstadoPedido')
 
 for(let i = 0; i < selectEstadoEntrega.length; i++) { // A cada uno de estos elementos SELECT se les añade un event listener el cual funciona al momento de ocurrir un evento "change"
 
     selectEstadoEntrega[i].addEventListener('change', function()
     {
+        const botonGuardar = this.parentElement.querySelector("#guardarEstadoPedido");
         let cajaComentario = document.createElement('input');
         cajaComentario.setAttribute('class', "mt-2");
         cajaComentario.setAttribute('placeholder', 'Comentario');
@@ -254,11 +255,23 @@ for(let i = 0; i < selectEstadoEntrega.length; i++) { // A cada uno de estos ele
         {
             this.parentElement.removeChild(this.parentElement.lastChild);
         }
+        botonGuardar.removeAttribute("disabled");
+        
+        const comentario = this.parentElement.lastChild.value;
+        if (this.parentElement.contains(cajaComentario))
+        {
+            botonGuardar.setAttribute('href', "{% url 'Menu: cambiarEstadoPedidoConComentario' %} ${comentario}");
+        }
+        else
+        {
+            botonGuardar.setAttribute('href', "{% url 'Menu: cambiarEstadoPedidoSinComentario'%}");
+        }
+        botonGuardar.removeAttribute("disabled");
     });
 }
 
 
-
+*/
 
 
 

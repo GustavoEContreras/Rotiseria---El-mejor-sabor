@@ -13,6 +13,7 @@ class Pedido(models.Model):
     Estado = models.ForeignKey("Estado", on_delete=models.CASCADE, null=True)
     platos = models.ManyToManyField(Plato)
     Cadete = models.ForeignKey("Cadete.Cadete", on_delete=models.CASCADE, null= True, blank=True)
+    comentario = models.CharField(max_length=500, null=True, blank=True)
 
 
     def __str__(self):

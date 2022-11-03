@@ -40,28 +40,52 @@
 
                         </div>
                         <div class="d-flex w-60 justify-content-between">
-                            <p class="mb-1">Pollo a la crema c/ guarnición</p>
+                            <p class="mb-1">
+                                {% if pedido.platos.all.count == 1 %}
+                                    {% for plato in pedido.platos.all %}
+                                        {{plato.nombre}}
+                                    {% endfor %}
+                                {% else %}
+                                    {% for plato in pedido.platos.all %}
+                                        {{plato.nombre}},
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
                             <small class="text-muted">Tiempo de entrega estimado</small>
                         </div>
                         <div class="d-flex w-60 justify-content-between">
                             <small class="text-muted">{{pedido.TipoEntrega.tipoEntrega}}</small>
                             <small class="text-muted">{{pedido.horaEntregaDesde}}- {{pedido.horaEntregaHasta}}</small>
                         </div>
-
                     </a>
                     <li class="list-group-item">
-                        <div class="text-center">
-                            <select class="mt-2 estadoEntrega"seleccionarEstadoPedido">
-                                <option value="Pendiente">Pendiente</option>
-                                <option value="En preparación">En preparación</option>
-                                <option value="En camino">En camino</option>
-                                <option value="Entregado">Entregado</option>
-                                <option value="Devuelto">Devuelto</option>
-                                <option value="Cancelado">Cancelado</option>
-                            </select>
+                        <form method="post" action="{% url 'Administrador:cambiarEstadoPedidoConComentario' pedido.id %}">
+                            <div class="text-center">
+                                {% csrf_token %}
+                                <select name="estadoPedido" class="selectpicker form-select">
+                                    {% for valor,texto in form.fields.estadoPedido.choices %}
+                                        {% if valor == pedido.Estado.id %}
+                                            <option value="{{valor}}" selected>{{texto}}</option>
+                                        {% else %}
+                                            <option value="{{valor}}">{{texto}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                {% if pedido.comentario is None %}
+                                    <input type="text" name="comentario" maxlength="500" required value="" id="id_comentario">
+                                {% else %}
+                                    <input type="text" name="comentario" maxlength="500" required value="{{pedido.comentario}}" id="id_comentario">
+                                {% endif %}
+
+
+                                <button type="submit" class="btn btn-primary pl-2" id="guardarEstadoPedido">Guardar</button>
                         </div>
+                        </form>
+
 
                         <!--<input class="mt-2 estadoEntrega" type="text" placeholder="Comentario"> -->
+
+
                     </li>
                 </ul>
                  {% endfor %}

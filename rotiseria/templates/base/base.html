@@ -142,5 +142,16 @@
         </a>
       </p>
     </footer>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>
+                <script>
+                    alert("{{message}}");
+                </script>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     </body>
 </html>

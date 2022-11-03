@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
 {% endblock %}
 
-{% if user.is_authenticated %}
+{% if not user.is_staff and user.is_authenticated %}
 {% block carrito%}
 <ul style="list-style-type: none;">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"> <span><img class="pt-3" style="width: 50px; height: 80px;" src="{% static 'img/carro-de-la-carretilla.png' %}"></a>
-          <ul class="dropdown-menu dropdown-cart" role="menu"  style="color:white;">
+          <ul class="dropdown-menu dropdown-cart" role="menu"  style="color:white; font-weight: bold;">
 
               {% if request.session.carrito.items %}
               {% for key, value in request.session.carrito.items %}
@@ -76,6 +76,12 @@
                                     </span>
                               </span>
                           </div>
+                  </div>
+              </li>
+              <li class="divider"></li>
+              <li class="list-group-item">
+                  <div class="row">
+                          <a href="{% url 'Pedido:pedidoCliente' %}" class="btn btn-success" role="button">Comprar</a>
                   </div>
               </li>
             {% else %}
@@ -202,20 +208,21 @@
                                                     <hr>
                                                     <div class="space-between">
                                                         <div class="food-card_price">
-                                                            <span>{{entrada.Precio.precio}}</span>
+                                                            <span>${{entrada.Precio.precio}}</span>
                                                         </div>
+                                                        {% if user.is_authenticated %}
                                                         <div class="food-card_order-count">
-                              <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                      <a href="{% url 'Menu:Sub' entrada.id menu_id %}"><button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button></a>
-                                  </div>
-                                  <input type="text" class="form-control input-manulator text-center" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="{{value.cantidad}}">
-                                  <div class="input-group-append">
-                                      <a href="{% url 'Menu:Add' entrada.id menu_id %}"><button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button></a>
-
-                                  </div>
-                              </div>
-                          </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <a href="{% url 'Menu:Sub' entrada.id menu_id %}"><button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button></a>
+                                                                </div>
+                                                                <input type="text" class="form-control input-manulator text-center" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="{{value.cantidad}}">
+                                                                <div class="input-group-append">
+                                                                    <a href="{% url 'Menu:Add' entrada.id menu_id %}"><button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -319,17 +326,19 @@
                                                         <div class="food-card_price">
                                                             <span>${{postre.Precio.precio}}</span>
                                                         </div>
+                                                        {% if user.is_authenticated %}
                                                         <div class="food-card_order-count">
                                                             <div class="input-group mb-3">
                                                                 <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button>
+                                                                    <a href="{% url 'Menu:Sub' postre.id menu_id %}"><button class="btn btn-outline-secondary minus-btn" type="button" id="button-addon1"><i class="fa fa-minus"></i></button></a>
                                                                 </div>
-                                                                <input type="text" class="form-control input-manulator" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="0">
+                                                                <input type="text" class="form-control input-manulator text-center" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="{{value.cantidad}}">
                                                                 <div class="input-group-append">
-                                                                    <button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button>
+                                                                    <a href="{% url 'Menu:Add' postre.id menu_id %}"><button class="btn btn-outline-secondary add-btn" type="button" id="button-addon1"><i class="fa fa-plus"></i></button></a>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>

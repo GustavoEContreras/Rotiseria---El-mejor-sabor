@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b4c7dd1-f00c-4983-8fa8-7496a57b60b5" name="Changes" comment="Carrito de compras funcional, revisar detalles.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rotiseria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rotiseria.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_11_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2022_11_44__Changes_.xml" afterDir="false" />
+    <list default="true" id="3b4c7dd1-f00c-4983-8fa8-7496a57b60b5" name="Changes" comment="Realizar &quot;pedido como cliente&quot; funcional.">
+      <change afterPath="$PROJECT_DIR$/Administrador/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carrito/Carrito.py" beforeDir="false" afterPath="$PROJECT_DIR$/Carrito/Carrito.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrador/templates/Administrador/estadoPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/templates/Administrador/estadoPedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrador/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrador/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Administrador/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pedido/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/templates/Pedido/pedidoCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/templates/Pedido/pedidoCliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pedido/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuario/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pedido/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pedido/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/templates/Usuario/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/templates/Usuario/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/estadoPedidos.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/estadoPedidos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -37,15 +42,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/gusta/Desktop/django-cart",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gusta/Desktop/django-cart&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Rotiseria---El-mejor-sabor\rotiseria\static\img" />
@@ -105,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667391591529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Realizar &quot;pedido como cliente&quot; funcional.">
+      <created>1667427055112</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667427055113</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,7 +134,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Esbozado carrito de compras." />
     <MESSAGE value="Carrito de compras funcional, revisar detalles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Carrito de compras funcional, revisar detalles." />
+    <MESSAGE value="Realizar &quot;pedido como cliente&quot; funcional." />
+    <option name="LAST_COMMIT_MESSAGE" value="Realizar &quot;pedido como cliente&quot; funcional." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

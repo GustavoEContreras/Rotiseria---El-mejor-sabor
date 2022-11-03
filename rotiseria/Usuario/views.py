@@ -18,14 +18,18 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return HttpResponseRedirect(reverse("Usuario:index"))
+            messages.success(request, 'Bienvenido, {}'.format(user.username))
+            return HttpResponseRedirect(reverse("Usuario:login_index"))
+        else:
+            messages.error(
+                request, "El nombre de usuario y/o contraseña han sido ingresados incorrectamente. Intente de nuevo!")
     return render(request, 'Usuario/login.html')
 
 def logout_view(request):
     logout(request)
     return render(request, "Usuario/login.html")
 
-def index(request):
+def login_index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("Usuario:login"))
     return render(request, "Cliente/index.html")
@@ -33,7 +37,7 @@ def index(request):
 
 def create_user(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("Usuario:index"))
+        return HttpResponseRedirect(reverse("Usuario:login_index"))
     if request.method == 'POST':
         usuario_form = UsuarioForm(request.POST, request.FILES)
         cliente_form = ClienteForm(request.POST, request.FILES)
