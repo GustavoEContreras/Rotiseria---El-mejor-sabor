@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="{% static 'css/estiloGeneral.css' %}" type="text/css">
 {% endblock %}
 
-{% if not user.is_staff and user.is_authenticated %}
-{% block carrito%}
-<ul style="list-style-type: none;">
+{% if user.is_authenticated %}
+    {% if user.is_staff %}
+    {% else %}
+        {% block carrito%}
+            <ul style="list-style-type: none;">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"> <span><img class="pt-3" style="width: 50px; height: 80px;" src="{% static 'img/carro-de-la-carretilla.png' %}"></a>
           <ul class="dropdown-menu dropdown-cart" role="menu"  style="color:white; font-weight: bold;">
@@ -102,7 +104,8 @@
           </ul>
         </li>
     </ul>
-{% endblock %}
+        {% endblock %}
+    {% endif %}
 {% endif %}
 
 {% block contenido %}

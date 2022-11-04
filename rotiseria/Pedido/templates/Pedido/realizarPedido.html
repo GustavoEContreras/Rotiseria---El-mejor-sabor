@@ -37,6 +37,9 @@
 
                                         <label class="textoForm" for="{{ field.auto_id }}">{{ field.label }}</label>
                                         {{ field }}
+                                        {%if field.auto_id == "id_platos" %}
+                                            <p style="color:white;" class="textoForm">Manten apretada la tecla Ctrl para seleccionar más de un plato</p>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-3"></div>

@@ -23,7 +23,7 @@ def Pedido(request):
             pedido_form = PedidoForm(request.POST, request.FILES)
             if pedido_form.is_valid():
                 nuevo_pedido = pedido_form.save(commit=True)
-                messages.success(request, 'Se ha registrado correctamente el cliente '.format(nuevo_pedido))
+                messages.success(request, 'Se ha registrado correctamente el pedido')
                 return redirect(reverse('Pedido:registroPedido'))
         else:
             pedido_form = PedidoForm()

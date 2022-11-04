@@ -45,6 +45,7 @@
                     <tr>
                         <th scope="col">Codigo</th>
                         <th scope="col">Persona</th>
+                        <th scope="col">Fecha</th>
                         <th scope="col">Horario de entrega</th>
                         <th scope="col">Tipo de entrega</th>
                         <th scope="col">Estado</th>
@@ -58,6 +59,7 @@
                     <tr>
                         <th scope="row">{{pedido.id}}</th>
                         <td>{{pedido.Persona.nombre}} {{pedido.Persona.apellido}}</td>
+                        <td>{{pedido.fechaPedido}}</td>
                         <td>{{pedido.horaEntregaDesde}} - {{pedido.horaEntregaHasta}}</td>
                         <td>{{pedido.TipoEntrega.tipoEntrega}}</td>
                         <td>{{pedido.Estado.estadoPedido}}</td>
