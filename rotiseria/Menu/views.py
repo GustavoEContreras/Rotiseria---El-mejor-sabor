@@ -1,9 +1,11 @@
+from datetime import date
+
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse
 
-from Plato.models import Plato
+from Plato.models import Plato, Precio
 from Menu.models import Menu
 
 # Create your views here.
@@ -93,17 +95,21 @@ def MenuCeliaco(request):
 
 def EditarMenu(request):
     if request.user.is_authenticated and request.user.is_staff:
-        platos = None
+        platosEnMenu = None
+        platosInactivos = None
         MOSTRAR_DETALLE = False
         TIPO_MENU = None
         if request.GET.get("tipoMenu"):
             MOSTRAR_DETALLE = True
             TIPO_MENU = request.GET.get("tipoMenu")
-            platos = Plato.objects.filter(Menu__id=TIPO_MENU).filter(activo=True)
+            platos = Plato.objects.filter(Menu__id=TIPO_MENU)
+            platosInactivos = platos.filter(activo=False)
+            platosEnMenu = platos.filter(activo=True)
         menus = Menu.objects.all()
         context = {
             'menus': menus,
-            'platos': platos,
+            'platosEnMenu': platosEnMenu,
+            'platosInactivos': platosInactivos,
             'MOSTRAR_DETALLE': MOSTRAR_DETALLE,
             'TIPO_MENU': TIPO_MENU
         }
@@ -112,3 +118,94 @@ def EditarMenu(request):
         return redirect(reverse('Cliente:Index'))
 
 
+def QuitarPlato(request, plato_id, menu_id):
+    context = {
+
+    }
+    if request.user.is_authenticated and request.user.is_staff:
+        plato = Plato.objects.get(pk=plato_id)
+        plato.activo = False
+        plato.save()
+
+        MOSTRAR_DETALLE = True
+        TIPO_MENU = menu_id
+        platos = Plato.objects.filter(Menu__id=TIPO_MENU)
+        platosInactivos = platos.filter(activo=False)
+        platosEnMenu = platos.filter(activo=True)
+        menus = Menu.objects.all()
+        nombreMenu = Menu.objects.get(pk=TIPO_MENU).tipo
+        context = {
+            'menus': menus,
+            'platosEnMenu': platosEnMenu,
+            'platosInactivos': platosInactivos,
+            'MOSTRAR_DETALLE': MOSTRAR_DETALLE,
+            'TIPO_MENU': TIPO_MENU
+        }
+
+        messages.success(request, 'Ha eliminado el plato {} del menu {}.'.format(plato.nombre, nombreMenu))
+    return render(request, 'Menu/editarMenu.html', context)
+
+
+def CambiarPrecioPlato(request, plato_id, menu_id):
+    platosInactivos = None
+    platosEnMenu = None
+    MOSTRAR_DETALLE = False
+    TIPO_MENU = menu_id
+    if request.user.is_authenticated and request.user.is_staff:
+        if request.POST.get("precioPlato"):
+            precio_plato = request.POST.get("precioPlato")
+            precio_nuevo = Precio()
+            precio_nuevo.precio = precio_plato
+            precio_nuevo.fechaActualizacionPrecio = date.today()
+            plato = Plato.objects.get(pk=plato_id)
+            precio_nuevo.Plato = plato
+            precio_nuevo.save()
+
+            plato.Precio = precio_nuevo
+            plato.save()
+
+
+            MOSTRAR_DETALLE = True
+
+            platos = Plato.objects.filter(Menu__id=TIPO_MENU)
+            platosInactivos = platos.filter(activo=False)
+            platosEnMenu = platos.filter(activo=True)
+    menus = Menu.objects.all()
+    context = {
+        'menus': menus,
+        'platosEnMenu': platosEnMenu,
+        'platosInactivos': platosInactivos,
+        'MOSTRAR_DETALLE': MOSTRAR_DETALLE,
+        'TIPO_MENU': TIPO_MENU
+    }
+    return render(request, 'Menu/editarMenu.html', context)
+
+def AgregarPlato(request, menu_id):
+    platosEnMenu = None
+    platosInactivos = None
+    MOSTRAR_DETALLE = False
+    TIPO_MENU = menu_id
+    if request.user.is_authenticated and request.user.is_staff:
+        if request.GET.get("platoMenu"):
+            MOSTRAR_DETALLE = True
+            plato_id = request.GET.get("platoMenu")
+            plato = Plato.objects.get(pk=plato_id)
+            plato.activo = True
+            plato.save()
+
+            platos = Plato.objects.filter(Menu__id=menu_id)
+            platosInactivos = platos.filter(activo=False)
+            platosEnMenu = platos.filter(activo=True)
+
+            nombreMenu = Menu.objects.get(pk=TIPO_MENU).tipo
+    menus = Menu.objects.all()
+    context = {
+        'menus': menus,
+        'platosEnMenu': platosEnMenu,
+        'platosInactivos': platosInactivos,
+        'MOSTRAR_DETALLE': MOSTRAR_DETALLE,
+        'TIPO_MENU': TIPO_MENU
+    }
+
+    messages.success(request, 'Ha agregado el plato {} al menu {}.'.format(plato.nombre, nombreMenu))
+    return render(request, 'Menu/editarMenu.html', context)

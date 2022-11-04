@@ -18,7 +18,10 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            messages.success(request, 'Bienvenido, {}'.format(user.username))
+            if request.user.groups.filter(name='Cadete').exists():
+                messages.success(request, 'Bienvenido, cadete {}'.format(user.username))
+            else:
+                messages.success(request, 'Bienvenido, {}'.format(user.username))
             return HttpResponseRedirect(reverse("Usuario:login_index"))
         else:
             messages.error(

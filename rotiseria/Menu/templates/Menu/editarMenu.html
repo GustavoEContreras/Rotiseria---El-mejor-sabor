@@ -16,10 +16,10 @@
 {% block contenido %}
     <div class="container-fluid fondo" style="background-image: url({% static 'img/form-difuminado.png' %});">
             <hr class="featurette-divider">
-            <div class="container px-4 form">
+            <div class="px-5 form">
                 <form id="elegirMenu" action="{% url 'Menu:editarMenu' %}" method="GET">
                     <article id="tipoMenu">
-                        <div class="container px-5 my-5 mb-0">
+                        <div class="px-5 my-5 mb-0">
                             <div class="text-center">
                                 <h2>
                                    <span class="textoForm">Tipo de menu</span>
@@ -27,7 +27,7 @@
                             </div>
                             <div>
                                 <div class="row">
-                                    <div class="col-2">
+                                    <div class="col-3">
 
                                     </div>
                                     <div class="col-3">
@@ -51,13 +51,63 @@
                 </form>
             </div>
             {% if MOSTRAR_DETALLE %}
-            <div>
-                <form id="elegirPlato" action="{% url 'Menu:editarMenu' %}" method="GET">
+                <div class="text-center px-5 mx-5 mt-5 pb-5 row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <table class="table-primary table-bordered border-light table-hover textoForm bg-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Plato</th>
+                        <th scope="col">Tipo de plato</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for plato in platosEnMenu %}
+                    <tr>
+                        <th scope="row">{{plato.id}}</th>
+                        <td>{{plato.nombre}}</td>
+                        <td>{{plato.TipoPlato.tipoPlato}}</td>
+                        <form method="POST" action="{% url 'Menu:cambiarPrecioPlato' plato.id TIPO_MENU %}" class="form-horizontal">
+                            {% csrf_token %}
+                        <td>
+                            <div class="text-center w-auto row form-group">
+                                <div class="col-1"></div>
+                                <div class="col-9 ">
+                                    <input name="precioPlato" id="precioPlato" class="form-control input-sm" type="number" value="{{plato.Precio.precio}}" required>
+                                </div>
+
+                            </div>
+
+                        </td>
+                        <td>
+
+                            <input type="submit" class="btn btn-primary"  value="Guardar">
+                            </form>
+                            <a href="{% url 'Menu:quitarPlato' plato.id TIPO_MENU %}">
+                                <button type="button" class="btn btn-danger" value="Quitar">Quitar</button>
+                            </a>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+                </div>
+            </div>
+
+
+            {% if platosInactivos %}
+                <div>
+                <form id="agregarPlato" action="{% url 'Menu:agregarPlato' TIPO_MENU %}" method="GET">
                     <article id="tipoMenu">
-                        <div class="container px-5 my-5 mb-0">
+                        <div class="container-fluid px-5 my-5 mb-0">
                             <div class="text-center">
                                 <h2>
-                                   <span class="textoForm">Platos del menu</span>
+                                   <span class="textoForm">Agregar platos a menú</span>
                                 </h2>
                             </div>
                             <div>
@@ -67,10 +117,10 @@
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label textoForm" for="platoMenu" ><span class="textoSecundario">Plato</span></label>
-                                        <input type="text" list="platosDisponibles" placeholder="Nombre del plato" class="form-control">
+                                        <input type="text" list="platosDisponibles" placeholder="Nombre del plato" class="form-control" name="platoMenu">
                                         <datalist id="platosDisponibles">
-                                            {% for plato in platos %}
-                                                <option value="{{plato.nombre}}"></option>
+                                            {% for plato in platosInactivos %}
+                                                <option value="{{plato.id}}">{{plato.nombre}}</option>
                                             {% endfor %}
                                         </datalist>
                                     </div>
@@ -78,7 +128,8 @@
 
                                     </div>
                                     <div class="col-3" id="botonMenu">
-                                        <input type="submit" class="btn btn-primary"  value="Ver información">
+                                        <input type="submit" class="btn btn-primary"  value="Agregar">
+
                                     </div>
                                 </div>
                             </div>
@@ -86,6 +137,11 @@
                     </article>
                 </form>
             </div>
+            <br><br><br>
+            {% endif %}
+
+            {% else %}
+            <br><br><br><br><br><br><br><br><br>
             {% endif %}
     </div>
 {% endblock %}

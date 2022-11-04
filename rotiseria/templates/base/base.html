@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom-tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,22 +71,37 @@
                             {% if user.is_authenticated and user.is_superuser %}
                                 <li><hr class="dropdown-divider" /></li> <!-- Esta opcion es para mostrar una linea divisoria entre las opciones de la lista deplegable, puede ser util en otra situacion -->
                                 <li><a id="texto-color" class="dropdown-item" href="{% url 'Plato:registrar' %}">Registrar plato</a></li>
-                                <li><a id="texto-color" class="dropdown-item" href="">Editar menús</a></li>
+                                <li><a id="texto-color" class="dropdown-item" href="{% url 'Menu:editarMenu' %}">Editar menús</a></li>
+
+
                             {% endif %}
                         </ul>
+
+
                     </li>
-                    {% if user.is_authenticated and user.is_superuser %}
-                    <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
-                        <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
+                    {% if user.is_authenticated%}
+
+                            <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
+                            <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
 
 
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Pedido:registroPedido' %}">Registrar pedido</a></li>
-                            <li><a  id="texto-color" class="dropdown-item" href="{% url 'Administrador:estadoPedidos' %}">Estado de pedidos</a></li>
-                            <li><a id="texto-color" class="dropdown-item" href="{% url 'Estadisticas:Estadisticas' %}">Estadisticas</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% if user.is_superuser or user|has_group:"Cadete" %}
+                                    {% if user.is_superuser %}
+                                    <li><a id="texto-color" class="dropdown-item" href="{% url 'Pedido:registroPedido' %}">Registrar pedido</a></li>
+                                    <li><a  id="texto-color" class="dropdown-item" href="{% url 'Administrador:estadoPedidos' %}">Estado de pedidos</a></li>
+                                    <li><a id="texto-color" class="dropdown-item" href="{% url 'Estadisticas:Estadisticas' %}">Estadisticas</a></li>
+                                    {% else %}
+                                    <li><a id="texto-color" class="dropdown-item" href="{% url 'Administrador:estadoPedidosCadete' %}">Estado de pedidos</a></li>
+                                    {% endif %}
+                                {% else %}
+                                    <li><a id="texto-color" class="dropdown-item" href="{% url 'Administrador:estadoPedidoCliente' %}">Mis pedidos</a></li>
+                                {% endif %}
                         </ul>
+                                {% endif %}
                     </li>
-                    {% endif %}
+
+
                     {% if user.is_authenticated and user.is_superuser %}
                         <li class="nav-item dropdown"> <!-- Lista deplegable de menús, solo funciona con bootstrap.bundle.min.js. Si queres activarla, debes sacar el comentario que rodea a la etiqueta link más arriba -->
                         <a class="nav-link dropdown-toggle" id="texto-color" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
@@ -143,15 +159,11 @@
       </p>
     </footer>
     {% if messages %}
-    <ul>
         {% for message in messages %}
-            <li>
-                <script>
-                    alert("{{message}}");
-                </script>
-            </li>
+            <script>
+                alert("{{message}}");
+            </script>
         {% endfor %}
-    </ul>
     {% endif %}
     </body>
 </html>

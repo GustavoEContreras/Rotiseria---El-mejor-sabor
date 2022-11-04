@@ -20,7 +20,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <h1 class="lg-text titulos">Listado de pedidos</h1>
+                            <h1 class="lg-text titulos">
+                                {% if user.is_staff %}
+                                Listado de pedidos
+                                {% else %}
+                                Mis pedidos
+                                {% endif %}
+                            </h1>
                         </div>
 
                     <!-- <p class="image-aboutus-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>  -->
@@ -59,6 +65,7 @@
                         </div>
                     </a>
                     <li class="list-group-item">
+                        {% if user.is_staff %}
                         <form method="post" action="{% url 'Administrador:cambiarEstadoPedidoConComentario' pedido.id %}">
                             <div class="text-center">
                                 {% csrf_token %}
@@ -79,8 +86,21 @@
 
 
                                 <button type="submit" class="btn btn-primary pl-2" id="guardarEstadoPedido">Guardar</button>
-                        </div>
+                            </div>
                         </form>
+                        {% else %}
+                            <div class="text-center">
+                                {% csrf_token %}
+                                <select name="estadoPedido" class="selectpicker form-select" disabled>
+                                    {% for valor,texto in form.fields.estadoPedido.choices %}
+                                        {% if valor == pedido.Estado.id %}
+                                            <option value="{{valor}}" selected>{{texto}}</option>
+                                        {% else %}
+                                            <option value="{{valor}}">{{texto}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                        {% endif %}
 
 
                         <!--<input class="mt-2 estadoEntrega" type="text" placeholder="Comentario"> -->
